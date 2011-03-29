@@ -1,0 +1,5 @@
+_ReSharper.BootCamp
+*.user
+*.suo
+BootCamp/bin
+BootCamp/obj
