@@ -1,5 +1,7 @@
-_ReSharper.BootCamp
+*ReSharper.*
 *.user
 *.suo
-BootCamp/bin
-BootCamp/obj
+*.ncb
+*.obj
+bin/
+obj/
