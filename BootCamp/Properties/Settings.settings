@@ -1,0 +1,15 @@
+﻿<?xml version='1.0' encoding='utf-8'?>
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="BootCamp.Properties" GeneratedClassName="Settings">
+  <Profiles />
+  <Settings>
+    <Setting Name="EmulatorsPath" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">BootCamp\Emulators\</Value>
+    </Setting>
+    <Setting Name="BootListPath" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">BootCamp\bootlist.cfg</Value>
+    </Setting>
+    <Setting Name="FormAdd_LastSelectedEnvironment" Type="System.String" Scope="User">
+      <Value Profile="(Default)">Windows</Value>
+    </Setting>
+  </Settings>
+</SettingsFile>
