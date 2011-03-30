@@ -157,5 +157,13 @@ namespace BootCamp
 			else
 				return path;
 		}
+
+		private void OnContextMenuOpening(object sender, System.ComponentModel.CancelEventArgs e)
+		{
+			menuPlayGame.Enabled = GamesList.SelectedItems.Count > 0;
+			menuAddGame.Enabled = true;
+			menuDeleteGame.Enabled = GamesList.SelectedItems.Count > 0;
+			menuEditGame.Enabled = GamesList.SelectedItems.Count > 0;
+		}
 	}
 }

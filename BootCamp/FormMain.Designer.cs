@@ -28,11 +28,18 @@
 		/// </summary>
 		private void InitializeComponent()
 		{
+			this.components = new System.ComponentModel.Container();
 			System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormMain));
 			this.GamesList = new System.Windows.Forms.ListView();
 			this.Game = new System.Windows.Forms.ColumnHeader();
 			this.Genre = new System.Windows.Forms.ColumnHeader();
 			this.Environment = new System.Windows.Forms.ColumnHeader();
+			this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
+			this.menuPlayGame = new System.Windows.Forms.ToolStripMenuItem();
+			this.toolStripSeparator4 = new System.Windows.Forms.ToolStripSeparator();
+			this.menuAddGame = new System.Windows.Forms.ToolStripMenuItem();
+			this.menuDeleteGame = new System.Windows.Forms.ToolStripMenuItem();
+			this.menuEditGame = new System.Windows.Forms.ToolStripMenuItem();
 			this.toolStrip1 = new System.Windows.Forms.ToolStrip();
 			this.btnPlayGame = new System.Windows.Forms.ToolStripButton();
 			this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
@@ -45,6 +52,7 @@
 			this.environmentToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.toolStripSeparator3 = new System.Windows.Forms.ToolStripSeparator();
 			this.noneToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+			this.contextMenuStrip1.SuspendLayout();
 			this.toolStrip1.SuspendLayout();
 			this.SuspendLayout();
 			// 
@@ -58,6 +66,7 @@
             this.Game,
             this.Genre,
             this.Environment});
+			this.GamesList.ContextMenuStrip = this.contextMenuStrip1;
 			this.GamesList.FullRowSelect = true;
 			this.GamesList.Location = new System.Drawing.Point(0, 28);
 			this.GamesList.MultiSelect = false;
@@ -86,6 +95,51 @@
 			// 
 			this.Environment.Text = "Environment";
 			this.Environment.Width = 104;
+			// 
+			// contextMenuStrip1
+			// 
+			this.contextMenuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.menuPlayGame,
+            this.toolStripSeparator4,
+            this.menuAddGame,
+            this.menuDeleteGame,
+            this.menuEditGame});
+			this.contextMenuStrip1.Name = "contextMenuStrip1";
+			this.contextMenuStrip1.Size = new System.Drawing.Size(153, 120);
+			this.contextMenuStrip1.Opening += new System.ComponentModel.CancelEventHandler(this.OnContextMenuOpening);
+			// 
+			// menuPlayGame
+			// 
+			this.menuPlayGame.Name = "menuPlayGame";
+			this.menuPlayGame.Size = new System.Drawing.Size(152, 22);
+			this.menuPlayGame.Text = "Play Game";
+			this.menuPlayGame.Click += new System.EventHandler(this.OnPlayGame);
+			// 
+			// toolStripSeparator4
+			// 
+			this.toolStripSeparator4.Name = "toolStripSeparator4";
+			this.toolStripSeparator4.Size = new System.Drawing.Size(149, 6);
+			// 
+			// menuAddGame
+			// 
+			this.menuAddGame.Name = "menuAddGame";
+			this.menuAddGame.Size = new System.Drawing.Size(152, 22);
+			this.menuAddGame.Text = "Add Game";
+			this.menuAddGame.Click += new System.EventHandler(this.OnAddGame);
+			// 
+			// menuDeleteGame
+			// 
+			this.menuDeleteGame.Name = "menuDeleteGame";
+			this.menuDeleteGame.Size = new System.Drawing.Size(152, 22);
+			this.menuDeleteGame.Text = "Delete Game";
+			this.menuDeleteGame.Click += new System.EventHandler(this.OnDeleteGame);
+			// 
+			// menuEditGame
+			// 
+			this.menuEditGame.Name = "menuEditGame";
+			this.menuEditGame.Size = new System.Drawing.Size(152, 22);
+			this.menuEditGame.Text = "Edit Game";
+			this.menuEditGame.Click += new System.EventHandler(this.OnEditGame);
 			// 
 			// toolStrip1
 			// 
@@ -125,7 +179,7 @@
 			this.btnAddGame.ImageTransparentColor = System.Drawing.Color.Magenta;
 			this.btnAddGame.Name = "btnAddGame";
 			this.btnAddGame.Size = new System.Drawing.Size(23, 22);
-			this.btnAddGame.Text = "Add game";
+			this.btnAddGame.Text = "Add Game";
 			this.btnAddGame.Click += new System.EventHandler(this.OnAddGame);
 			// 
 			// btnDeleteGame
@@ -135,7 +189,7 @@
 			this.btnDeleteGame.ImageTransparentColor = System.Drawing.Color.Magenta;
 			this.btnDeleteGame.Name = "btnDeleteGame";
 			this.btnDeleteGame.Size = new System.Drawing.Size(23, 22);
-			this.btnDeleteGame.Text = "Delete game";
+			this.btnDeleteGame.Text = "Delete Game";
 			this.btnDeleteGame.Click += new System.EventHandler(this.OnDeleteGame);
 			// 
 			// btnEditGame
@@ -202,6 +256,7 @@
 			this.Controls.Add(this.GamesList);
 			this.Name = "FormMain";
 			this.Text = "Boot Camp";
+			this.contextMenuStrip1.ResumeLayout(false);
 			this.toolStrip1.ResumeLayout(false);
 			this.toolStrip1.PerformLayout();
 			this.ResumeLayout(false);
@@ -227,6 +282,12 @@
 		private System.Windows.Forms.ToolStripMenuItem environmentToolStripMenuItem;
 		private System.Windows.Forms.ToolStripSeparator toolStripSeparator3;
 		private System.Windows.Forms.ToolStripMenuItem noneToolStripMenuItem;
+		private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
+		private System.Windows.Forms.ToolStripMenuItem menuPlayGame;
+		private System.Windows.Forms.ToolStripSeparator toolStripSeparator4;
+		private System.Windows.Forms.ToolStripMenuItem menuAddGame;
+		private System.Windows.Forms.ToolStripMenuItem menuDeleteGame;
+		private System.Windows.Forms.ToolStripMenuItem menuEditGame;
 	}
 }
 
