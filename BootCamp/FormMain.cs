@@ -165,5 +165,10 @@ namespace BootCamp
 			menuDeleteGame.Enabled = GamesList.SelectedItems.Count > 0;
 			menuEditGame.Enabled = GamesList.SelectedItems.Count > 0;
 		}
+
+		private void FormMain_Resize(object sender, EventArgs e)
+		{
+			GamesList.Columns[GamesList.Columns.Count - 1].Width = -2;
+		}
 	}
 }

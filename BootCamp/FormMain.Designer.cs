@@ -89,12 +89,12 @@
 			// Genre
 			// 
 			this.Genre.Text = "Genre";
-			this.Genre.Width = 341;
+			this.Genre.Width = 322;
 			// 
 			// Environment
 			// 
 			this.Environment.Text = "Environment";
-			this.Environment.Width = 104;
+			this.Environment.Width = 123;
 			// 
 			// contextMenuStrip1
 			// 
@@ -105,39 +105,39 @@
             this.menuDeleteGame,
             this.menuEditGame});
 			this.contextMenuStrip1.Name = "contextMenuStrip1";
-			this.contextMenuStrip1.Size = new System.Drawing.Size(153, 120);
+			this.contextMenuStrip1.Size = new System.Drawing.Size(142, 98);
 			this.contextMenuStrip1.Opening += new System.ComponentModel.CancelEventHandler(this.OnContextMenuOpening);
 			// 
 			// menuPlayGame
 			// 
 			this.menuPlayGame.Name = "menuPlayGame";
-			this.menuPlayGame.Size = new System.Drawing.Size(152, 22);
+			this.menuPlayGame.Size = new System.Drawing.Size(141, 22);
 			this.menuPlayGame.Text = "Play Game";
 			this.menuPlayGame.Click += new System.EventHandler(this.OnPlayGame);
 			// 
 			// toolStripSeparator4
 			// 
 			this.toolStripSeparator4.Name = "toolStripSeparator4";
-			this.toolStripSeparator4.Size = new System.Drawing.Size(149, 6);
+			this.toolStripSeparator4.Size = new System.Drawing.Size(138, 6);
 			// 
 			// menuAddGame
 			// 
 			this.menuAddGame.Name = "menuAddGame";
-			this.menuAddGame.Size = new System.Drawing.Size(152, 22);
+			this.menuAddGame.Size = new System.Drawing.Size(141, 22);
 			this.menuAddGame.Text = "Add Game";
 			this.menuAddGame.Click += new System.EventHandler(this.OnAddGame);
 			// 
 			// menuDeleteGame
 			// 
 			this.menuDeleteGame.Name = "menuDeleteGame";
-			this.menuDeleteGame.Size = new System.Drawing.Size(152, 22);
+			this.menuDeleteGame.Size = new System.Drawing.Size(141, 22);
 			this.menuDeleteGame.Text = "Delete Game";
 			this.menuDeleteGame.Click += new System.EventHandler(this.OnDeleteGame);
 			// 
 			// menuEditGame
 			// 
 			this.menuEditGame.Name = "menuEditGame";
-			this.menuEditGame.Size = new System.Drawing.Size(152, 22);
+			this.menuEditGame.Size = new System.Drawing.Size(141, 22);
 			this.menuEditGame.Text = "Edit Game";
 			this.menuEditGame.Click += new System.EventHandler(this.OnEditGame);
 			// 
@@ -256,6 +256,7 @@
 			this.Controls.Add(this.GamesList);
 			this.Name = "FormMain";
 			this.Text = "Boot Camp";
+			this.Resize += new System.EventHandler(this.FormMain_Resize);
 			this.contextMenuStrip1.ResumeLayout(false);
 			this.toolStrip1.ResumeLayout(false);
 			this.toolStrip1.PerformLayout();
