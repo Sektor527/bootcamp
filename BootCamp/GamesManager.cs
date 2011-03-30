@@ -65,6 +65,21 @@ namespace BootCamp
 			get { return false; }
 		}
 
+		public List<string> Genres
+		{
+			get
+			{
+				List<string> result = new List<string>();
+				foreach (Game game in _games)
+				{
+					if (!result.Contains(game.Genre))
+						result.Add(game.Genre);
+				}
+
+				return result;
+			}
+		}
+
 		public int IndexOf(Game item)
 		{
 			return _games.IndexOf(item);

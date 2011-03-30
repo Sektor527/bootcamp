@@ -1,5 +1,5 @@
 ﻿using System;
-using System.Diagnostics;
+using System.Collections.Generic;
 using System.IO;
 using System.Windows.Forms;
 
@@ -23,23 +23,18 @@ namespace BootCamp
 			}
 		}
 
-		private void ReorderGamesList()
+		private void CreateGroups(bool ascending, List<string> list)
 		{
 			GamesList.ShowGroups = true;
 			GamesList.Groups.Clear();
 
-			foreach (string envname in Enum.GetNames(typeof(Environments)))
-			{
-				GamesList.Groups.Add(envname, envname);
-			}
+			if (ascending)
+				list.Sort((x, y) => x.CompareTo(y));
+			else
+				list.Sort((x, y) => y.CompareTo(x));
 
-			foreach (ListViewItem item in GamesList.Items)
-			{
-				Game game = (Game) item.Tag;
-
-				ListViewGroup group = GamesList.Groups[game.Environment.ToString()];
-				group.Items.Add(item);
-			}
+			foreach (string s in list)
+				GamesList.Groups.Add(s, s);
 		}
 
 		private void FillGamesList()
@@ -52,7 +47,32 @@ namespace BootCamp
 				GamesList.Items.Add(item);
 			}
 
-			ReorderGamesList();
+
+			//////////////
+
+			bool environments = true;
+			bool ascending = false;
+
+			List<string> list;
+			if (environments)
+				list = new List<string>(Enum.GetNames(typeof(Environments)));
+			else
+				list = Program.GamesManager.Genres;
+
+			CreateGroups(ascending, list);
+
+			foreach (ListViewItem item in GamesList.Items)
+			{
+				Game game = (Game)item.Tag;
+
+				ListViewGroup group;
+				if (environments)
+					group = GamesList.Groups[game.Environment.ToString()];
+				else
+					group = GamesList.Groups[game.Genre];
+
+				group.Items.Add(item);
+			}
 		}
 
 		private void OnGamesListDoubleClick(object sender, EventArgs e)
@@ -119,12 +139,12 @@ namespace BootCamp
 
 		private void OnDropFile(object sender, DragEventArgs e)
 		{
-			Array a = (Array) e.Data.GetData(DataFormats.FileDrop);
+			Array a = (Array)e.Data.GetData(DataFormats.FileDrop);
 			if (a == null) return;
 
 			foreach (string filename in a)
 			{
-				BeginInvoke(new DelegateAddGame(AddGame), new object[] {filename} );
+				BeginInvoke(new DelegateAddGame(AddGame), new object[] { filename });
 			}
 		}
 

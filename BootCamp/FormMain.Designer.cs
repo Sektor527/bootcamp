@@ -29,7 +29,6 @@
 		private void InitializeComponent()
 		{
 			this.components = new System.ComponentModel.Container();
-			System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormMain));
 			this.GamesList = new System.Windows.Forms.ListView();
 			this.Game = new System.Windows.Forms.ColumnHeader();
 			this.Genre = new System.Windows.Forms.ColumnHeader();
@@ -47,11 +46,6 @@
 			this.btnDeleteGame = new System.Windows.Forms.ToolStripButton();
 			this.btnEditGame = new System.Windows.Forms.ToolStripButton();
 			this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
-			this.toolStripDropDownButton1 = new System.Windows.Forms.ToolStripDropDownButton();
-			this.genreToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-			this.environmentToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-			this.toolStripSeparator3 = new System.Windows.Forms.ToolStripSeparator();
-			this.noneToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.contextMenuStrip1.SuspendLayout();
 			this.toolStrip1.SuspendLayout();
 			this.SuspendLayout();
@@ -149,8 +143,7 @@
             this.btnAddGame,
             this.btnDeleteGame,
             this.btnEditGame,
-            this.toolStripSeparator2,
-            this.toolStripDropDownButton1});
+            this.toolStripSeparator2});
 			this.toolStrip1.Location = new System.Drawing.Point(0, 0);
 			this.toolStrip1.Name = "toolStrip1";
 			this.toolStrip1.Size = new System.Drawing.Size(652, 25);
@@ -207,46 +200,6 @@
 			this.toolStripSeparator2.Name = "toolStripSeparator2";
 			this.toolStripSeparator2.Size = new System.Drawing.Size(6, 25);
 			// 
-			// toolStripDropDownButton1
-			// 
-			this.toolStripDropDownButton1.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
-			this.toolStripDropDownButton1.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.genreToolStripMenuItem,
-            this.environmentToolStripMenuItem,
-            this.toolStripSeparator3,
-            this.noneToolStripMenuItem});
-			this.toolStripDropDownButton1.Image = ((System.Drawing.Image)(resources.GetObject("toolStripDropDownButton1.Image")));
-			this.toolStripDropDownButton1.ImageTransparentColor = System.Drawing.Color.Magenta;
-			this.toolStripDropDownButton1.Name = "toolStripDropDownButton1";
-			this.toolStripDropDownButton1.Size = new System.Drawing.Size(81, 22);
-			this.toolStripDropDownButton1.Text = "Group By ...";
-			// 
-			// genreToolStripMenuItem
-			// 
-			this.genreToolStripMenuItem.CheckOnClick = true;
-			this.genreToolStripMenuItem.Name = "genreToolStripMenuItem";
-			this.genreToolStripMenuItem.Size = new System.Drawing.Size(142, 22);
-			this.genreToolStripMenuItem.Text = "Genre";
-			// 
-			// environmentToolStripMenuItem
-			// 
-			this.environmentToolStripMenuItem.CheckOnClick = true;
-			this.environmentToolStripMenuItem.Name = "environmentToolStripMenuItem";
-			this.environmentToolStripMenuItem.Size = new System.Drawing.Size(142, 22);
-			this.environmentToolStripMenuItem.Text = "Environment";
-			// 
-			// toolStripSeparator3
-			// 
-			this.toolStripSeparator3.Name = "toolStripSeparator3";
-			this.toolStripSeparator3.Size = new System.Drawing.Size(139, 6);
-			// 
-			// noneToolStripMenuItem
-			// 
-			this.noneToolStripMenuItem.CheckOnClick = true;
-			this.noneToolStripMenuItem.Name = "noneToolStripMenuItem";
-			this.noneToolStripMenuItem.Size = new System.Drawing.Size(142, 22);
-			this.noneToolStripMenuItem.Text = "None";
-			// 
 			// FormMain
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -278,11 +231,6 @@
 		private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
 		private System.Windows.Forms.ToolStripButton btnEditGame;
 		private System.Windows.Forms.ToolStripSeparator toolStripSeparator2;
-		private System.Windows.Forms.ToolStripDropDownButton toolStripDropDownButton1;
-		private System.Windows.Forms.ToolStripMenuItem genreToolStripMenuItem;
-		private System.Windows.Forms.ToolStripMenuItem environmentToolStripMenuItem;
-		private System.Windows.Forms.ToolStripSeparator toolStripSeparator3;
-		private System.Windows.Forms.ToolStripMenuItem noneToolStripMenuItem;
 		private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
 		private System.Windows.Forms.ToolStripMenuItem menuPlayGame;
 		private System.Windows.Forms.ToolStripSeparator toolStripSeparator4;
