@@ -29,6 +29,14 @@
 		private void InitializeComponent()
 		{
 			this.components = new System.ComponentModel.Container();
+			System.Windows.Forms.ToolStripSeparator toolStripSeparator3;
+			System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormMain));
+			this.GroupByName = new System.Windows.Forms.ToolStripMenuItem();
+			this.GroupByGenre = new System.Windows.Forms.ToolStripMenuItem();
+			this.GroupByEnvironment = new System.Windows.Forms.ToolStripMenuItem();
+			this.GroupByNone = new System.Windows.Forms.ToolStripMenuItem();
+			this.GroupAscending = new System.Windows.Forms.ToolStripMenuItem();
+			this.GroupDescending = new System.Windows.Forms.ToolStripMenuItem();
 			this.GamesList = new System.Windows.Forms.ListView();
 			this.Game = new System.Windows.Forms.ColumnHeader();
 			this.Genre = new System.Windows.Forms.ColumnHeader();
@@ -46,9 +54,58 @@
 			this.btnDeleteGame = new System.Windows.Forms.ToolStripButton();
 			this.btnEditGame = new System.Windows.Forms.ToolStripButton();
 			this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
+			this.toolStripDropDownButton1 = new System.Windows.Forms.ToolStripDropDownButton();
+			toolStripSeparator3 = new System.Windows.Forms.ToolStripSeparator();
 			this.contextMenuStrip1.SuspendLayout();
 			this.toolStrip1.SuspendLayout();
 			this.SuspendLayout();
+			// 
+			// GroupByName
+			// 
+			this.GroupByName.Name = "GroupByName";
+			this.GroupByName.Size = new System.Drawing.Size(152, 22);
+			this.GroupByName.Text = "Name";
+			this.GroupByName.Click += new System.EventHandler(this.OnGrouping);
+			// 
+			// GroupByGenre
+			// 
+			this.GroupByGenre.Name = "GroupByGenre";
+			this.GroupByGenre.Size = new System.Drawing.Size(152, 22);
+			this.GroupByGenre.Text = "Genre";
+			this.GroupByGenre.Click += new System.EventHandler(this.OnGrouping);
+			// 
+			// GroupByEnvironment
+			// 
+			this.GroupByEnvironment.Name = "GroupByEnvironment";
+			this.GroupByEnvironment.Size = new System.Drawing.Size(152, 22);
+			this.GroupByEnvironment.Text = "Environment";
+			this.GroupByEnvironment.Click += new System.EventHandler(this.OnGrouping);
+			// 
+			// GroupByNone
+			// 
+			this.GroupByNone.Name = "GroupByNone";
+			this.GroupByNone.Size = new System.Drawing.Size(152, 22);
+			this.GroupByNone.Text = "(None)";
+			this.GroupByNone.Click += new System.EventHandler(this.OnGrouping);
+			// 
+			// toolStripSeparator3
+			// 
+			toolStripSeparator3.Name = "toolStripSeparator3";
+			toolStripSeparator3.Size = new System.Drawing.Size(149, 6);
+			// 
+			// GroupAscending
+			// 
+			this.GroupAscending.Name = "GroupAscending";
+			this.GroupAscending.Size = new System.Drawing.Size(152, 22);
+			this.GroupAscending.Text = "Ascending";
+			this.GroupAscending.Click += new System.EventHandler(this.OnGrouping);
+			// 
+			// GroupDescending
+			// 
+			this.GroupDescending.Name = "GroupDescending";
+			this.GroupDescending.Size = new System.Drawing.Size(152, 22);
+			this.GroupDescending.Text = "Descending";
+			this.GroupDescending.Click += new System.EventHandler(this.OnGrouping);
 			// 
 			// GamesList
 			// 
@@ -143,7 +200,8 @@
             this.btnAddGame,
             this.btnDeleteGame,
             this.btnEditGame,
-            this.toolStripSeparator2});
+            this.toolStripSeparator2,
+            this.toolStripDropDownButton1});
 			this.toolStrip1.Location = new System.Drawing.Point(0, 0);
 			this.toolStrip1.Name = "toolStrip1";
 			this.toolStrip1.Size = new System.Drawing.Size(652, 25);
@@ -200,6 +258,24 @@
 			this.toolStripSeparator2.Name = "toolStripSeparator2";
 			this.toolStripSeparator2.Size = new System.Drawing.Size(6, 25);
 			// 
+			// toolStripDropDownButton1
+			// 
+			this.toolStripDropDownButton1.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
+			this.toolStripDropDownButton1.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.GroupByName,
+            this.GroupByGenre,
+            this.GroupByEnvironment,
+            this.GroupByNone,
+            toolStripSeparator3,
+            this.GroupDescending,
+            this.GroupAscending});
+			this.toolStripDropDownButton1.Image = ((System.Drawing.Image)(resources.GetObject("toolStripDropDownButton1.Image")));
+			this.toolStripDropDownButton1.ImageTransparentColor = System.Drawing.Color.Magenta;
+			this.toolStripDropDownButton1.Name = "toolStripDropDownButton1";
+			this.toolStripDropDownButton1.Size = new System.Drawing.Size(69, 22);
+			this.toolStripDropDownButton1.Text = "Group By";
+			this.toolStripDropDownButton1.DropDownOpening += new System.EventHandler(this.OnGroupMenuOpening);
+			// 
 			// FormMain
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -209,6 +285,7 @@
 			this.Controls.Add(this.GamesList);
 			this.Name = "FormMain";
 			this.Text = "Boot Camp";
+			this.Load += new System.EventHandler(this.OnLoad);
 			this.Resize += new System.EventHandler(this.FormMain_Resize);
 			this.contextMenuStrip1.ResumeLayout(false);
 			this.toolStrip1.ResumeLayout(false);
@@ -237,6 +314,13 @@
 		private System.Windows.Forms.ToolStripMenuItem menuAddGame;
 		private System.Windows.Forms.ToolStripMenuItem menuDeleteGame;
 		private System.Windows.Forms.ToolStripMenuItem menuEditGame;
+		private System.Windows.Forms.ToolStripDropDownButton toolStripDropDownButton1;
+		private System.Windows.Forms.ToolStripMenuItem GroupByName;
+		private System.Windows.Forms.ToolStripMenuItem GroupByGenre;
+		private System.Windows.Forms.ToolStripMenuItem GroupByEnvironment;
+		private System.Windows.Forms.ToolStripMenuItem GroupByNone;
+		private System.Windows.Forms.ToolStripMenuItem GroupAscending;
+		private System.Windows.Forms.ToolStripMenuItem GroupDescending;
 	}
 }
 
