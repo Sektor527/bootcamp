@@ -286,7 +286,7 @@
 			this.Name = "FormMain";
 			this.Text = "Boot Camp";
 			this.Load += new System.EventHandler(this.OnLoad);
-			this.Resize += new System.EventHandler(this.FormMain_Resize);
+			this.Resize += new System.EventHandler(this.OnResize);
 			this.contextMenuStrip1.ResumeLayout(false);
 			this.toolStrip1.ResumeLayout(false);
 			this.toolStrip1.PerformLayout();
