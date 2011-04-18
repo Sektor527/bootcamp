@@ -35,6 +35,10 @@ namespace BootCamp
 						ProcessStartInfo info = new ProcessStartInfo("dosbox.exe");
 						info.WorkingDirectory = Path.GetFullPath(Path.Combine(Properties.Settings.Default.EmulatorsPath, "Dosbox"));
 						info.Arguments = String.Format("\"{0}\" -exit -noconsole", Path.GetFullPath(game.Executable));
+						if (game.Name == "Carmageddon")
+						{
+							info.Arguments += String.Format(" -c \"imgmount d '{0}' -t iso\"", Path.GetFullPath(Path.Combine(Path.GetDirectoryName(game.Executable), "ISO\\Carmgeddon.cue")));
+						}
 						Process.Start(info);
 						break;
 					}
