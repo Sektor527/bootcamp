@@ -66,7 +66,7 @@
 			btnOK.Location = new System.Drawing.Point(122, 174);
 			btnOK.Name = "btnOK";
 			btnOK.Size = new System.Drawing.Size(75, 23);
-			btnOK.TabIndex = 4;
+			btnOK.TabIndex = 6;
 			btnOK.Text = "OK";
 			btnOK.UseVisualStyleBackColor = true;
 			// 
@@ -126,7 +126,7 @@
 			this.lstGenre.Location = new System.Drawing.Point(84, 107);
 			this.lstGenre.Name = "lstGenre";
 			this.lstGenre.Size = new System.Drawing.Size(194, 21);
-			this.lstGenre.TabIndex = 2;
+			this.lstGenre.TabIndex = 3;
 			// 
 			// lstEnvironment
 			// 
@@ -136,7 +136,7 @@
 			this.lstEnvironment.Name = "lstEnvironment";
 			this.lstEnvironment.Size = new System.Drawing.Size(194, 21);
 			this.lstEnvironment.Sorted = true;
-			this.lstEnvironment.TabIndex = 3;
+			this.lstEnvironment.TabIndex = 4;
 			// 
 			// label5
 			// 
@@ -152,7 +152,7 @@
 			this.txtISO.Location = new System.Drawing.Point(84, 73);
 			this.txtISO.Name = "txtISO";
 			this.txtISO.Size = new System.Drawing.Size(195, 20);
-			this.txtISO.TabIndex = 11;
+			this.txtISO.TabIndex = 2;
 			// 
 			// FormAddGame
 			// 
