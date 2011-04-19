@@ -24,6 +24,7 @@ namespace BootCamp
 			_game.Name = game.Name;
 			_game.Environment = game.Environment;
 			_game.Executable = game.Executable;
+			_game.Arguments = game.Arguments;
 			_game.ISO = game.ISO;
 			_game.Genre = game.Genre;
 
@@ -41,6 +42,7 @@ namespace BootCamp
 		{
 			txtName.Text = _game.Name;
 			txtExecutable.Text = _game.Executable;
+			txtArguments.Text = _game.Arguments;
 			txtISO.Text = _game.ISO;
 			lstGenre.Text = _game.Genre;
 			lstEnvironment.Text = _game.Environment.ToString();
@@ -50,6 +52,7 @@ namespace BootCamp
 		{
 			_game.Name = txtName.Text;
 			_game.Executable = txtExecutable.Text;
+			_game.Arguments = txtArguments.Text;
 			_game.ISO = txtISO.Text;
 			_game.Genre = lstGenre.Text;
 			_game.Environment = (Environments)Enum.Parse(typeof(Environments), lstEnvironment.Text, true);

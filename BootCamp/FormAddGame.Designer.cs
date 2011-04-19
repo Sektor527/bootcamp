@@ -40,6 +40,8 @@
 			this.lstEnvironment = new System.Windows.Forms.ComboBox();
 			this.label5 = new System.Windows.Forms.Label();
 			this.txtISO = new System.Windows.Forms.TextBox();
+			this.label6 = new System.Windows.Forms.Label();
+			this.txtArguments = new System.Windows.Forms.TextBox();
 			btnCancel = new System.Windows.Forms.Button();
 			btnOK = new System.Windows.Forms.Button();
 			label1 = new System.Windows.Forms.Label();
@@ -52,7 +54,7 @@
 			// 
 			btnCancel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
 			btnCancel.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-			btnCancel.Location = new System.Drawing.Point(203, 174);
+			btnCancel.Location = new System.Drawing.Point(203, 251);
 			btnCancel.Name = "btnCancel";
 			btnCancel.Size = new System.Drawing.Size(75, 23);
 			btnCancel.TabIndex = 5;
@@ -63,7 +65,7 @@
 			// 
 			btnOK.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
 			btnOK.DialogResult = System.Windows.Forms.DialogResult.OK;
-			btnOK.Location = new System.Drawing.Point(122, 174);
+			btnOK.Location = new System.Drawing.Point(122, 251);
 			btnOK.Name = "btnOK";
 			btnOK.Size = new System.Drawing.Size(75, 23);
 			btnOK.TabIndex = 6;
@@ -91,7 +93,7 @@
 			// label3
 			// 
 			label3.AutoSize = true;
-			label3.Location = new System.Drawing.Point(12, 110);
+			label3.Location = new System.Drawing.Point(12, 149);
 			label3.Name = "label3";
 			label3.Size = new System.Drawing.Size(36, 13);
 			label3.TabIndex = 8;
@@ -100,7 +102,7 @@
 			// label4
 			// 
 			label4.AutoSize = true;
-			label4.Location = new System.Drawing.Point(12, 144);
+			label4.Location = new System.Drawing.Point(12, 183);
 			label4.Name = "label4";
 			label4.Size = new System.Drawing.Size(66, 13);
 			label4.TabIndex = 9;
@@ -123,7 +125,7 @@
 			// lstGenre
 			// 
 			this.lstGenre.FormattingEnabled = true;
-			this.lstGenre.Location = new System.Drawing.Point(84, 107);
+			this.lstGenre.Location = new System.Drawing.Point(84, 146);
 			this.lstGenre.Name = "lstGenre";
 			this.lstGenre.Size = new System.Drawing.Size(194, 21);
 			this.lstGenre.TabIndex = 3;
@@ -132,7 +134,7 @@
 			// 
 			this.lstEnvironment.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
 			this.lstEnvironment.FormattingEnabled = true;
-			this.lstEnvironment.Location = new System.Drawing.Point(84, 141);
+			this.lstEnvironment.Location = new System.Drawing.Point(84, 180);
 			this.lstEnvironment.Name = "lstEnvironment";
 			this.lstEnvironment.Size = new System.Drawing.Size(194, 21);
 			this.lstEnvironment.Sorted = true;
@@ -141,7 +143,7 @@
 			// label5
 			// 
 			this.label5.AutoSize = true;
-			this.label5.Location = new System.Drawing.Point(15, 76);
+			this.label5.Location = new System.Drawing.Point(15, 115);
 			this.label5.Name = "label5";
 			this.label5.Size = new System.Drawing.Size(25, 13);
 			this.label5.TabIndex = 10;
@@ -149,10 +151,26 @@
 			// 
 			// txtISO
 			// 
-			this.txtISO.Location = new System.Drawing.Point(84, 73);
+			this.txtISO.Location = new System.Drawing.Point(84, 112);
 			this.txtISO.Name = "txtISO";
 			this.txtISO.Size = new System.Drawing.Size(195, 20);
 			this.txtISO.TabIndex = 2;
+			// 
+			// label6
+			// 
+			this.label6.AutoSize = true;
+			this.label6.Location = new System.Drawing.Point(12, 78);
+			this.label6.Name = "label6";
+			this.label6.Size = new System.Drawing.Size(57, 13);
+			this.label6.TabIndex = 11;
+			this.label6.Text = "Arguments";
+			// 
+			// txtArguments
+			// 
+			this.txtArguments.Location = new System.Drawing.Point(84, 75);
+			this.txtArguments.Name = "txtArguments";
+			this.txtArguments.Size = new System.Drawing.Size(194, 20);
+			this.txtArguments.TabIndex = 12;
 			// 
 			// FormAddGame
 			// 
@@ -160,7 +178,9 @@
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.CancelButton = btnCancel;
-			this.ClientSize = new System.Drawing.Size(291, 209);
+			this.ClientSize = new System.Drawing.Size(291, 286);
+			this.Controls.Add(this.txtArguments);
+			this.Controls.Add(this.label6);
 			this.Controls.Add(this.txtISO);
 			this.Controls.Add(this.label5);
 			this.Controls.Add(this.lstEnvironment);
@@ -189,6 +209,8 @@
 		private System.Windows.Forms.ComboBox lstEnvironment;
 		private System.Windows.Forms.Label label5;
 		private System.Windows.Forms.TextBox txtISO;
+		private System.Windows.Forms.Label label6;
+		private System.Windows.Forms.TextBox txtArguments;
 
 
 	}
