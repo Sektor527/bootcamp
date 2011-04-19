@@ -8,18 +8,16 @@ namespace BootCamp
 		public Environments Environment { get; set; }
 		public string Genre { get; set; }
 		public string Executable { get; set; }
-		public string Arguments { get; set; }
 		public string ISO { get; set; }
 
 		public Game()
 		{
 			Environment = Environments.Windows;
 		}
-		public Game(string name, string executable, string arguments, Environments environment, string iso)
+		public Game(string name, string executable, Environments environment, string iso)
 		{
 			Name = name;
 			Executable = executable;
-			Arguments = arguments;
 			Environment = environment;
 			ISO = iso;
 		}
