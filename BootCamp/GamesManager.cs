@@ -119,6 +119,7 @@ namespace BootCamp
 					Game game = new Game();
 					game.Name = reader.GetAttribute("Name");
 					game.Executable = reader.GetAttribute("Executable");
+					game.ISO = reader.GetAttribute("ISO");
 					game.Environment = (Environments)Enum.Parse(typeof(Environments), reader.GetAttribute("Environment"), true);
 					game.Genre = reader.GetAttribute("Genre");
 					reader.ReadStartElement();
@@ -150,6 +151,7 @@ namespace BootCamp
 					writer.WriteStartElement("Game");
 					writer.WriteAttributeString("Name", game.Name);
 					writer.WriteAttributeString("Executable", game.Executable);
+					writer.WriteAttributeString("ISO", game.ISO);
 					writer.WriteAttributeString("Environment", game.Environment.ToString());
 					writer.WriteAttributeString("Genre", game.Genre);
 					writer.WriteEndElement();
