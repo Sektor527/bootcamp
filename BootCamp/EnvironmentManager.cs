@@ -34,7 +34,7 @@ namespace BootCamp
 					{
 						ProcessStartInfo info = new ProcessStartInfo("dosbox.exe");
 						info.WorkingDirectory = Path.GetFullPath(Path.Combine(Properties.Settings.Default.EmulatorsPath, "Dosbox"));
-						info.Arguments = String.Format("\"{0}\" -exit -noconsole", Path.GetFullPath(game.Executable));
+						info.Arguments = String.Format("\"{0}\" -exit -noconsole -fullscreen", Path.GetFullPath(game.Executable));
 						if (!String.IsNullOrEmpty(game.ISO))
 						{
 							info.Arguments += String.Format(" -c \"imgmount d '{0}' -t iso\"", Path.GetFullPath(game.ISO));
