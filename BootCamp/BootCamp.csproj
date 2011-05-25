@@ -109,6 +109,13 @@
   <ItemGroup>
     <None Include="Resources\edit-3.png" />
   </ItemGroup>
+  <ItemGroup>
+    <Content Include="Resources\c64.png" />
+    <Content Include="Resources\dosbox.png" />
+    <Content Include="Resources\N64.png" />
+    <Content Include="Resources\snes9x_icon.png" />
+    <Content Include="Resources\visualboyadvance.jpeg" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
