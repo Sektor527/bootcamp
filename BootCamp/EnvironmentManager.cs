@@ -81,5 +81,40 @@ namespace BootCamp
 					}
 			}
 		}
+
+		internal static void Dosbox()
+		{
+			ProcessStartInfo info = new ProcessStartInfo("dosbox.exe");
+			info.WorkingDirectory = Path.GetFullPath(Path.Combine(Properties.Settings.Default.EmulatorsPath, "Dosbox"));
+			Process.Start(info);
+		}
+		internal static void C64()
+		{
+			ProcessStartInfo info = new ProcessStartInfo("ccs64.exe");
+			info.WorkingDirectory = Path.GetFullPath(Path.Combine(Properties.Settings.Default.EmulatorsPath, "CCS64"));
+			Process.Start(info);
+		}
+		internal static void ScummVM()
+		{
+			
+		}
+		internal static void Gameboy()
+		{
+			ProcessStartInfo info = new ProcessStartInfo("VisualBoyAdvance.exe");
+			info.WorkingDirectory = Path.GetFullPath(Path.Combine(Properties.Settings.Default.EmulatorsPath, "Gameboy"));
+			Process.Start(info);
+		}
+		internal static void Nintendo64()
+		{
+			ProcessStartInfo info = new ProcessStartInfo("project64.exe");
+			info.WorkingDirectory = Path.GetFullPath(Path.Combine(Properties.Settings.Default.EmulatorsPath, "nintendo 64"));
+			Process.Start(info);
+		}
+		internal static void SuperNintendo()
+		{
+			ProcessStartInfo info = new ProcessStartInfo("snes9x.exe");
+			info.WorkingDirectory = Path.GetFullPath(Path.Combine(Properties.Settings.Default.EmulatorsPath, "super nintendo"));
+			Process.Start(info);
+		}
 	}
 }
