@@ -258,5 +258,30 @@ namespace BootCamp
 		{
 			GamesList.Columns[GamesList.Columns.Count - 1].Width = -2;
 		}
+
+		private void OnStartDosbox(object sender, EventArgs e)
+		{
+			EnvironmentManager.Dosbox();
+		}
+
+		private void OnStartC64(object sender, EventArgs e)
+		{
+			EnvironmentManager.C64();
+		}
+
+		private void OnStartGameboy(object sender, EventArgs e)
+		{
+			EnvironmentManager.Gameboy();
+		}
+
+		private void OnStartNintendo64(object sender, EventArgs e)
+		{
+			EnvironmentManager.Nintendo64();
+		}
+
+		private void OnStartSuperNintendo(object sender, EventArgs e)
+		{
+			EnvironmentManager.SuperNintendo();
+		}
 	}
 }
