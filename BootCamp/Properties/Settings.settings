@@ -11,5 +11,8 @@
     <Setting Name="FormAdd_LastSelectedEnvironment" Type="System.String" Scope="User">
       <Value Profile="(Default)">Windows</Value>
     </Setting>
+    <Setting Name="FormMain_WindowSize" Type="System.Drawing.Size" Scope="User">
+      <Value Profile="(Default)">668, 362</Value>
+    </Setting>
   </Settings>
 </SettingsFile>

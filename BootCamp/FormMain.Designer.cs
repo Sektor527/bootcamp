@@ -30,8 +30,13 @@
 		{
 			this.components = new System.ComponentModel.Container();
 			System.Windows.Forms.ToolStripSeparator toolStripSeparator3;
-			System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormMain));
 			System.Windows.Forms.ToolStripDropDownButton toolStripDropDownButton2;
+			System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormMain));
+			this.mnuDosbox = new System.Windows.Forms.ToolStripMenuItem();
+			this.mnuC64 = new System.Windows.Forms.ToolStripMenuItem();
+			this.mnuGameboy = new System.Windows.Forms.ToolStripMenuItem();
+			this.mnuNintendo64 = new System.Windows.Forms.ToolStripMenuItem();
+			this.mnuSuperNintendo = new System.Windows.Forms.ToolStripMenuItem();
 			this.GamesList = new System.Windows.Forms.ListView();
 			this.Game = new System.Windows.Forms.ColumnHeader();
 			this.Genre = new System.Windows.Forms.ColumnHeader();
@@ -57,11 +62,7 @@
 			this.GroupDescending = new System.Windows.Forms.ToolStripMenuItem();
 			this.GroupAscending = new System.Windows.Forms.ToolStripMenuItem();
 			this.toolStripSeparator5 = new System.Windows.Forms.ToolStripSeparator();
-			this.mnuDosbox = new System.Windows.Forms.ToolStripMenuItem();
-			this.mnuC64 = new System.Windows.Forms.ToolStripMenuItem();
-			this.mnuGameboy = new System.Windows.Forms.ToolStripMenuItem();
-			this.mnuNintendo64 = new System.Windows.Forms.ToolStripMenuItem();
-			this.mnuSuperNintendo = new System.Windows.Forms.ToolStripMenuItem();
+			this.timer1 = new System.Windows.Forms.Timer(this.components);
 			toolStripSeparator3 = new System.Windows.Forms.ToolStripSeparator();
 			toolStripDropDownButton2 = new System.Windows.Forms.ToolStripDropDownButton();
 			this.contextMenuStrip1.SuspendLayout();
@@ -72,6 +73,62 @@
 			// 
 			toolStripSeparator3.Name = "toolStripSeparator3";
 			toolStripSeparator3.Size = new System.Drawing.Size(139, 6);
+			// 
+			// toolStripDropDownButton2
+			// 
+			toolStripDropDownButton2.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
+			toolStripDropDownButton2.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
+			toolStripDropDownButton2.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.mnuDosbox,
+            this.mnuC64,
+            this.mnuGameboy,
+            this.mnuNintendo64,
+            this.mnuSuperNintendo});
+			toolStripDropDownButton2.Image = ((System.Drawing.Image)(resources.GetObject("toolStripDropDownButton2.Image")));
+			toolStripDropDownButton2.ImageTransparentColor = System.Drawing.Color.Magenta;
+			toolStripDropDownButton2.Name = "toolStripDropDownButton2";
+			toolStripDropDownButton2.Size = new System.Drawing.Size(73, 22);
+			toolStripDropDownButton2.Text = "Emulators";
+			// 
+			// mnuDosbox
+			// 
+			this.mnuDosbox.Image = global::BootCamp.Properties.Resources.dosbox;
+			this.mnuDosbox.Name = "mnuDosbox";
+			this.mnuDosbox.Size = new System.Drawing.Size(157, 22);
+			this.mnuDosbox.Text = "Dosbox";
+			this.mnuDosbox.Click += new System.EventHandler(this.OnStartDosbox);
+			// 
+			// mnuC64
+			// 
+			this.mnuC64.Image = global::BootCamp.Properties.Resources.c64;
+			this.mnuC64.Name = "mnuC64";
+			this.mnuC64.Size = new System.Drawing.Size(157, 22);
+			this.mnuC64.Text = "C64";
+			this.mnuC64.Click += new System.EventHandler(this.OnStartC64);
+			// 
+			// mnuGameboy
+			// 
+			this.mnuGameboy.Image = global::BootCamp.Properties.Resources.visualboyadvance;
+			this.mnuGameboy.Name = "mnuGameboy";
+			this.mnuGameboy.Size = new System.Drawing.Size(157, 22);
+			this.mnuGameboy.Text = "Gameboy";
+			this.mnuGameboy.Click += new System.EventHandler(this.OnStartGameboy);
+			// 
+			// mnuNintendo64
+			// 
+			this.mnuNintendo64.Image = global::BootCamp.Properties.Resources.N64;
+			this.mnuNintendo64.Name = "mnuNintendo64";
+			this.mnuNintendo64.Size = new System.Drawing.Size(157, 22);
+			this.mnuNintendo64.Text = "Nintendo 64";
+			this.mnuNintendo64.Click += new System.EventHandler(this.OnStartNintendo64);
+			// 
+			// mnuSuperNintendo
+			// 
+			this.mnuSuperNintendo.Image = global::BootCamp.Properties.Resources.snes9x_icon;
+			this.mnuSuperNintendo.Name = "mnuSuperNintendo";
+			this.mnuSuperNintendo.Size = new System.Drawing.Size(157, 22);
+			this.mnuSuperNintendo.Text = "Super Nintendo";
+			this.mnuSuperNintendo.Click += new System.EventHandler(this.OnStartSuperNintendo);
 			// 
 			// GamesList
 			// 
@@ -291,62 +348,6 @@
 			this.toolStripSeparator5.Name = "toolStripSeparator5";
 			this.toolStripSeparator5.Size = new System.Drawing.Size(6, 25);
 			// 
-			// toolStripDropDownButton2
-			// 
-			toolStripDropDownButton2.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
-			toolStripDropDownButton2.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
-			toolStripDropDownButton2.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.mnuDosbox,
-            this.mnuC64,
-            this.mnuGameboy,
-            this.mnuNintendo64,
-            this.mnuSuperNintendo});
-			toolStripDropDownButton2.Image = ((System.Drawing.Image)(resources.GetObject("toolStripDropDownButton2.Image")));
-			toolStripDropDownButton2.ImageTransparentColor = System.Drawing.Color.Magenta;
-			toolStripDropDownButton2.Name = "toolStripDropDownButton2";
-			toolStripDropDownButton2.Size = new System.Drawing.Size(73, 22);
-			toolStripDropDownButton2.Text = "Emulators";
-			// 
-			// mnuDosbox
-			// 
-			this.mnuDosbox.Image = global::BootCamp.Properties.Resources.dosbox;
-			this.mnuDosbox.Name = "mnuDosbox";
-			this.mnuDosbox.Size = new System.Drawing.Size(157, 22);
-			this.mnuDosbox.Text = "Dosbox";
-			this.mnuDosbox.Click += new System.EventHandler(this.OnStartDosbox);
-			// 
-			// mnuC64
-			// 
-			this.mnuC64.Image = global::BootCamp.Properties.Resources.c64;
-			this.mnuC64.Name = "mnuC64";
-			this.mnuC64.Size = new System.Drawing.Size(157, 22);
-			this.mnuC64.Text = "C64";
-			this.mnuC64.Click += new System.EventHandler(this.OnStartC64);
-			// 
-			// mnuGameboy
-			// 
-			this.mnuGameboy.Image = global::BootCamp.Properties.Resources.visualboyadvance;
-			this.mnuGameboy.Name = "mnuGameboy";
-			this.mnuGameboy.Size = new System.Drawing.Size(157, 22);
-			this.mnuGameboy.Text = "Gameboy";
-			this.mnuGameboy.Click += new System.EventHandler(this.OnStartGameboy);
-			// 
-			// mnuNintendo64
-			// 
-			this.mnuNintendo64.Image = global::BootCamp.Properties.Resources.N64;
-			this.mnuNintendo64.Name = "mnuNintendo64";
-			this.mnuNintendo64.Size = new System.Drawing.Size(157, 22);
-			this.mnuNintendo64.Text = "Nintendo 64";
-			this.mnuNintendo64.Click += new System.EventHandler(this.OnStartNintendo64);
-			// 
-			// mnuSuperNintendo
-			// 
-			this.mnuSuperNintendo.Image = global::BootCamp.Properties.Resources.snes9x_icon;
-			this.mnuSuperNintendo.Name = "mnuSuperNintendo";
-			this.mnuSuperNintendo.Size = new System.Drawing.Size(157, 22);
-			this.mnuSuperNintendo.Text = "Super Nintendo";
-			this.mnuSuperNintendo.Click += new System.EventHandler(this.OnStartSuperNintendo);
-			// 
 			// FormMain
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -357,6 +358,7 @@
 			this.Name = "FormMain";
 			this.Text = "Boot Camp";
 			this.Load += new System.EventHandler(this.OnLoad);
+			this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.FormMain_FormClosing);
 			this.Resize += new System.EventHandler(this.OnResize);
 			this.contextMenuStrip1.ResumeLayout(false);
 			this.toolStrip1.ResumeLayout(false);
@@ -398,6 +400,7 @@
 		private System.Windows.Forms.ToolStripMenuItem mnuGameboy;
 		private System.Windows.Forms.ToolStripMenuItem mnuNintendo64;
 		private System.Windows.Forms.ToolStripMenuItem mnuSuperNintendo;
+		private System.Windows.Forms.Timer timer1;
 	}
 }
 

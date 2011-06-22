@@ -15,6 +15,7 @@ namespace BootCamp
 
 		private void OnLoad(object sender, EventArgs e)
 		{
+			Size = Properties.Settings.Default.FormMain_WindowSize;
 			_ascending = true;
 			_groupCategory = GroupCategory.Environment;
 			FillGamesList();
@@ -282,6 +283,11 @@ namespace BootCamp
 		private void OnStartSuperNintendo(object sender, EventArgs e)
 		{
 			EnvironmentManager.SuperNintendo();
+		}
+
+		private void FormMain_FormClosing(object sender, FormClosingEventArgs e)
+		{
+			Properties.Settings.Default.FormMain_WindowSize = Size;
 		}
 	}
 }

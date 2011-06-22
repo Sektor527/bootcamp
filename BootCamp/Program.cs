@@ -18,9 +18,13 @@ namespace BootCamp
 			Application.EnableVisualStyles();
 			Application.SetCompatibleTextRenderingDefault(false);
 
+			Properties.Settings.Default.Reload();
+
 			GamesManager = new GamesManager();
 
 			Application.Run(new FormMain());
+
+			Properties.Settings.Default.Save();
 		}
 	}
 }
