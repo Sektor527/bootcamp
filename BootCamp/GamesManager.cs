@@ -76,6 +76,7 @@ namespace BootCamp
 						result.Add(game.Genre);
 				}
 
+				result.Sort();
 				return result;
 			}
 		}
