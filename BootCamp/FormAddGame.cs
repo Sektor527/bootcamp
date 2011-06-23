@@ -14,6 +14,7 @@ namespace BootCamp
 			InitializeComponent();
 
 			UpdateEnvironmentList();
+			UpdateGenreList();
 			UpdateFields();
 		}
 
@@ -29,6 +30,7 @@ namespace BootCamp
 			_game.Genre = game.Genre;
 
 			UpdateEnvironmentList();
+			UpdateGenreList();
 			UpdateFields();
 		}
 
@@ -36,6 +38,12 @@ namespace BootCamp
 		{
 			foreach (string envname in Enum.GetNames(typeof(Environments)))
 				lstEnvironment.Items.Add(envname);
+		}
+
+		private void UpdateGenreList()
+		{
+			foreach (string genre in Program.GamesManager.Genres)
+				lstGenre.Items.Add(genre);
 		}
 
 		private void UpdateFields()
