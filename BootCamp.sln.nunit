@@ -1,0 +1,9 @@
+﻿<NUnitProject>
+  <Settings activeconfig="Release" />
+  <Config name="Debug" binpathtype="Auto">
+    <assembly path="BootCampTests\bin\Debug\BootCampTests.dll" />
+  </Config>
+  <Config name="Release" binpathtype="Auto">
+    <assembly path="BootCampTests\bin\Release\BootCampTests.dll" />
+  </Config>
+</NUnitProject>
