@@ -167,5 +167,29 @@ namespace BootCamp
 					writer.Close();
 			}
 		}
+
+		public void SetFavorite(Game game, bool favorite)
+		{
+			if (!_games.Contains(game)) return;
+
+			if (favorite && !_favorites.Contains(game))
+				_favorites.Add(game);
+
+			if (!favorite && _favorites.Contains(game))
+				_favorites.Remove(game);
+		}
+
+		#region Favorites
+		private List<Game> _favorites = new List<Game>();
+		public int CountFavorites
+		{
+			get { return _favorites.Count; }
+		}
+
+		public bool IsFavorite(Game game)
+		{
+			return _favorites.Contains(game);
+		}
+		#endregion
 	}
 }
