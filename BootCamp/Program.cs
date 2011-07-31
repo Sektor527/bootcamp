@@ -20,7 +20,7 @@ namespace BootCamp
 
 			Properties.Settings.Default.Reload();
 
-			GamesManager = new GamesManager();
+			GamesManager = new GamesManager(Properties.Settings.Default.BootListPath);
 
 			Application.Run(new FormMain());
 

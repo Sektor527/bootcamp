@@ -9,12 +9,14 @@ namespace BootCamp
 	class GamesManager : IList<Game>
 	{
 		private List<Game> _games = new List<Game>();
+		private string _bootListPath;
 
-		public GamesManager()
+		public GamesManager(string bootListPath)
 		{
+			_bootListPath = bootListPath;
 			Load();
 		}
-		
+
 		public IEnumerator<Game> GetEnumerator()
 		{
 			return _games.GetEnumerator();
@@ -106,13 +108,13 @@ namespace BootCamp
 
 		private void Load()
 		{
-			if (!File.Exists(Properties.Settings.Default.BootListPath)) return;
+			if (!File.Exists(_bootListPath)) return;
 
 			XmlReader reader = null;
 
 			try
 			{
-				reader = XmlReader.Create(Properties.Settings.Default.BootListPath);
+				reader = XmlReader.Create(_bootListPath);
 
 				reader.ReadStartElement("Games");
 				while (reader.IsStartElement("Game"))
@@ -145,7 +147,7 @@ namespace BootCamp
 
 			try
 			{
-				writer = XmlWriter.Create(Properties.Settings.Default.BootListPath, settings);
+				writer = XmlWriter.Create(_bootListPath, settings);
 				writer.WriteStartElement("Games");
 				foreach (Game game in _games)
 				{
