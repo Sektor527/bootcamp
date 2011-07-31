@@ -42,6 +42,7 @@
 			this.txtISO = new System.Windows.Forms.TextBox();
 			this.label6 = new System.Windows.Forms.Label();
 			this.txtArguments = new System.Windows.Forms.TextBox();
+			this.checkBox1 = new System.Windows.Forms.CheckBox();
 			btnCancel = new System.Windows.Forms.Button();
 			btnOK = new System.Windows.Forms.Button();
 			label1 = new System.Windows.Forms.Label();
@@ -172,6 +173,16 @@
 			this.txtArguments.Size = new System.Drawing.Size(194, 20);
 			this.txtArguments.TabIndex = 12;
 			// 
+			// checkBox1
+			// 
+			this.checkBox1.AutoSize = true;
+			this.checkBox1.Location = new System.Drawing.Point(12, 221);
+			this.checkBox1.Name = "checkBox1";
+			this.checkBox1.Size = new System.Drawing.Size(64, 17);
+			this.checkBox1.TabIndex = 13;
+			this.checkBox1.Text = "Favorite";
+			this.checkBox1.UseVisualStyleBackColor = true;
+			// 
 			// FormAddGame
 			// 
 			this.AcceptButton = btnOK;
@@ -179,6 +190,7 @@
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.CancelButton = btnCancel;
 			this.ClientSize = new System.Drawing.Size(291, 286);
+			this.Controls.Add(this.checkBox1);
 			this.Controls.Add(this.txtArguments);
 			this.Controls.Add(this.label6);
 			this.Controls.Add(this.txtISO);
@@ -211,6 +223,7 @@
 		private System.Windows.Forms.TextBox txtISO;
 		private System.Windows.Forms.Label label6;
 		private System.Windows.Forms.TextBox txtArguments;
+		private System.Windows.Forms.CheckBox checkBox1;
 
 
 	}

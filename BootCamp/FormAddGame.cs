@@ -5,29 +5,24 @@ namespace BootCamp
 {
 	internal partial class FormAddGame : Form
 	{
-		private readonly Game _game = new Game();
-
-		internal Game Game { get { return _game; } }
+		internal Game Game { get; private set; }
 
 		internal FormAddGame()
 		{
 			InitializeComponent();
+
+			Game = new Game();
 
 			UpdateEnvironmentList();
 			UpdateGenreList();
 			UpdateFields();
 		}
 
-		internal FormAddGame(Game game)
+		internal FormAddGame(ref Game game)
 		{
 			InitializeComponent();
 
-			_game.Name = game.Name;
-			_game.Environment = game.Environment;
-			_game.Executable = game.Executable;
-			_game.Arguments = game.Arguments;
-			_game.ISO = game.ISO;
-			_game.Genre = game.Genre;
+			Game = game;
 
 			UpdateEnvironmentList();
 			UpdateGenreList();
@@ -48,22 +43,26 @@ namespace BootCamp
 
 		private void UpdateFields()
 		{
-			txtName.Text = _game.Name;
-			txtExecutable.Text = _game.Executable;
-			txtArguments.Text = _game.Arguments;
-			txtISO.Text = _game.ISO;
-			lstGenre.Text = _game.Genre;
-			lstEnvironment.Text = _game.Environment.ToString();
+			txtName.Text = Game.Name;
+			txtExecutable.Text = Game.Executable;
+			txtArguments.Text = Game.Arguments;
+			txtISO.Text = Game.ISO;
+			lstGenre.Text = Game.Genre;
+			lstEnvironment.Text = Game.Environment.ToString();
+
+			checkBox1.Checked = Program.GamesManager.IsFavorite(Game);
 		}
 
 		private void OnClosed(object sender, FormClosedEventArgs e)
 		{
-			_game.Name = txtName.Text;
-			_game.Executable = txtExecutable.Text;
-			_game.Arguments = txtArguments.Text;
-			_game.ISO = txtISO.Text;
-			_game.Genre = lstGenre.Text;
-			_game.Environment = (Environments)Enum.Parse(typeof(Environments), lstEnvironment.Text, true);
+			Game.Name = txtName.Text;
+			Game.Executable = txtExecutable.Text;
+			Game.Arguments = txtArguments.Text;
+			Game.ISO = txtISO.Text;
+			Game.Genre = lstGenre.Text;
+			Game.Environment = (Environments)Enum.Parse(typeof(Environments), lstEnvironment.Text, true);
+
+			Program.GamesManager.SetFavorite(Game, checkBox1.Checked);
 
 			Properties.Settings.Default.FormAdd_LastSelectedEnvironment = lstEnvironment.Text;
 		}

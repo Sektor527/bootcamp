@@ -190,7 +190,9 @@ namespace BootCamp
 		{
 			if (SelectedGame == null) return;
 
-			FormAddGame form = new FormAddGame(SelectedGame);
+			Game selected = SelectedGame;
+
+			FormAddGame form = new FormAddGame(ref selected);
 			if (form.ShowDialog() == DialogResult.Cancel) return;
 
 			Program.GamesManager.Remove(SelectedGame);
@@ -226,7 +228,7 @@ namespace BootCamp
 			game.Environment = (Environments)Enum.Parse(typeof(Environments), Properties.Settings.Default.FormAdd_LastSelectedEnvironment);
 
 
-			FormAddGame form = new FormAddGame(game);
+			FormAddGame form = new FormAddGame(ref game);
 			if (form.ShowDialog() == DialogResult.Cancel) return;
 
 			Program.GamesManager.Add(form.Game);
