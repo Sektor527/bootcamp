@@ -11,6 +11,17 @@ namespace BootCamp
 		private List<Game> _games = new List<Game>();
 		private string _bootListPath;
 
+		public List<string> Names 
+		{ 
+			get 
+			{ 
+				List<string> result = new List<string>(); 
+				foreach (Game game in _games) 
+					result.Add(game.Name);
+				return result;
+			}
+		} 
+
 		public GamesManager(string bootListPath)
 		{
 			_bootListPath = bootListPath;

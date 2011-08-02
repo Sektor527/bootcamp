@@ -45,7 +45,7 @@ namespace BootCamp
 
 		private void OnGrouping(object sender, EventArgs e)
 		{
-			ToolStripMenuItem menuitem = (ToolStripMenuItem) sender;
+			ToolStripMenuItem menuitem = (ToolStripMenuItem)sender;
 
 			switch (menuitem.Name)
 			{
@@ -79,7 +79,9 @@ namespace BootCamp
 			switch (_groupCategory)
 			{
 				case GroupCategory.Name:
-					throw new NotImplementedException();
+					AlphabeticGrouper grouper = new AlphabeticGrouper { MinimumItemsPerGroup = 15, Ascending = _ascending };
+					ShowGroups(grouper.Group(Program.GamesManager.Names), "Name", _ascending);
+					break;
 				case GroupCategory.Genre:
 					ShowGroups(Program.GamesManager.Genres, "Genre", _ascending);
 					break;
@@ -109,7 +111,19 @@ namespace BootCamp
 			foreach (ListViewItem item in GamesList.Items)
 			{
 				Game game = (Game)item.Tag;
-				GamesList.Groups[prop.GetValue(game, null).ToString()].Items.Add(item);
+				if (_groupCategory == GroupCategory.Name)
+				{
+					foreach (ListViewGroup group in GamesList.Groups)
+					{
+						if (game.Name.Substring(0, 1).CompareTo(group.Name.Substring(0, 1)) >= 0 && game.Name.Substring(0, 1).CompareTo(group.Name.Substring(group.Name.Length - 1, 1)) <= 0)
+						{
+							group.Items.Add(item);
+							continue;
+						}
+					}
+				}
+				else
+					GamesList.Groups[prop.GetValue(game, null).ToString()].Items.Add(item);
 			}
 		}
 
