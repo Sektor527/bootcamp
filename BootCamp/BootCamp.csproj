@@ -114,6 +114,7 @@
     <Content Include="Resources\dosbox.png" />
     <Content Include="Resources\N64.png" />
     <Content Include="Resources\snes9x_icon.png" />
+    <None Include="Resources\star.png" />
     <Content Include="Resources\visualboyadvance.jpeg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

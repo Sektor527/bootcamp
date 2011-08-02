@@ -29,14 +29,9 @@
 		private void InitializeComponent()
 		{
 			this.components = new System.ComponentModel.Container();
+			System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormMain));
 			System.Windows.Forms.ToolStripSeparator toolStripSeparator3;
 			System.Windows.Forms.ToolStripDropDownButton toolStripDropDownButton2;
-			System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormMain));
-			this.mnuDosbox = new System.Windows.Forms.ToolStripMenuItem();
-			this.mnuC64 = new System.Windows.Forms.ToolStripMenuItem();
-			this.mnuGameboy = new System.Windows.Forms.ToolStripMenuItem();
-			this.mnuNintendo64 = new System.Windows.Forms.ToolStripMenuItem();
-			this.mnuSuperNintendo = new System.Windows.Forms.ToolStripMenuItem();
 			this.GamesList = new System.Windows.Forms.ListView();
 			this.Game = new System.Windows.Forms.ColumnHeader();
 			this.Genre = new System.Windows.Forms.ColumnHeader();
@@ -48,12 +43,14 @@
 			this.menuDeleteGame = new System.Windows.Forms.ToolStripMenuItem();
 			this.menuEditGame = new System.Windows.Forms.ToolStripMenuItem();
 			this.toolStrip1 = new System.Windows.Forms.ToolStrip();
-			this.btnPlayGame = new System.Windows.Forms.ToolStripButton();
 			this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
+			this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
+			this.toolStripSeparator5 = new System.Windows.Forms.ToolStripSeparator();
+			this.timer1 = new System.Windows.Forms.Timer(this.components);
+			this.btnPlayGame = new System.Windows.Forms.ToolStripButton();
 			this.btnAddGame = new System.Windows.Forms.ToolStripButton();
 			this.btnDeleteGame = new System.Windows.Forms.ToolStripButton();
 			this.btnEditGame = new System.Windows.Forms.ToolStripButton();
-			this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
 			this.toolStripDropDownButton1 = new System.Windows.Forms.ToolStripDropDownButton();
 			this.GroupByName = new System.Windows.Forms.ToolStripMenuItem();
 			this.GroupByGenre = new System.Windows.Forms.ToolStripMenuItem();
@@ -61,74 +58,17 @@
 			this.GroupByNone = new System.Windows.Forms.ToolStripMenuItem();
 			this.GroupDescending = new System.Windows.Forms.ToolStripMenuItem();
 			this.GroupAscending = new System.Windows.Forms.ToolStripMenuItem();
-			this.toolStripSeparator5 = new System.Windows.Forms.ToolStripSeparator();
-			this.timer1 = new System.Windows.Forms.Timer(this.components);
+			this.mnuDosbox = new System.Windows.Forms.ToolStripMenuItem();
+			this.mnuC64 = new System.Windows.Forms.ToolStripMenuItem();
+			this.mnuGameboy = new System.Windows.Forms.ToolStripMenuItem();
+			this.mnuNintendo64 = new System.Windows.Forms.ToolStripMenuItem();
+			this.mnuSuperNintendo = new System.Windows.Forms.ToolStripMenuItem();
+			this.btnToggleFavorites = new System.Windows.Forms.ToolStripButton();
 			toolStripSeparator3 = new System.Windows.Forms.ToolStripSeparator();
 			toolStripDropDownButton2 = new System.Windows.Forms.ToolStripDropDownButton();
 			this.contextMenuStrip1.SuspendLayout();
 			this.toolStrip1.SuspendLayout();
 			this.SuspendLayout();
-			// 
-			// toolStripSeparator3
-			// 
-			toolStripSeparator3.Name = "toolStripSeparator3";
-			toolStripSeparator3.Size = new System.Drawing.Size(139, 6);
-			// 
-			// toolStripDropDownButton2
-			// 
-			toolStripDropDownButton2.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
-			toolStripDropDownButton2.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
-			toolStripDropDownButton2.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.mnuDosbox,
-            this.mnuC64,
-            this.mnuGameboy,
-            this.mnuNintendo64,
-            this.mnuSuperNintendo});
-			toolStripDropDownButton2.Image = ((System.Drawing.Image)(resources.GetObject("toolStripDropDownButton2.Image")));
-			toolStripDropDownButton2.ImageTransparentColor = System.Drawing.Color.Magenta;
-			toolStripDropDownButton2.Name = "toolStripDropDownButton2";
-			toolStripDropDownButton2.Size = new System.Drawing.Size(73, 22);
-			toolStripDropDownButton2.Text = "Emulators";
-			// 
-			// mnuDosbox
-			// 
-			this.mnuDosbox.Image = global::BootCamp.Properties.Resources.dosbox;
-			this.mnuDosbox.Name = "mnuDosbox";
-			this.mnuDosbox.Size = new System.Drawing.Size(157, 22);
-			this.mnuDosbox.Text = "Dosbox";
-			this.mnuDosbox.Click += new System.EventHandler(this.OnStartDosbox);
-			// 
-			// mnuC64
-			// 
-			this.mnuC64.Image = global::BootCamp.Properties.Resources.c64;
-			this.mnuC64.Name = "mnuC64";
-			this.mnuC64.Size = new System.Drawing.Size(157, 22);
-			this.mnuC64.Text = "C64";
-			this.mnuC64.Click += new System.EventHandler(this.OnStartC64);
-			// 
-			// mnuGameboy
-			// 
-			this.mnuGameboy.Image = global::BootCamp.Properties.Resources.visualboyadvance;
-			this.mnuGameboy.Name = "mnuGameboy";
-			this.mnuGameboy.Size = new System.Drawing.Size(157, 22);
-			this.mnuGameboy.Text = "Gameboy";
-			this.mnuGameboy.Click += new System.EventHandler(this.OnStartGameboy);
-			// 
-			// mnuNintendo64
-			// 
-			this.mnuNintendo64.Image = global::BootCamp.Properties.Resources.N64;
-			this.mnuNintendo64.Name = "mnuNintendo64";
-			this.mnuNintendo64.Size = new System.Drawing.Size(157, 22);
-			this.mnuNintendo64.Text = "Nintendo 64";
-			this.mnuNintendo64.Click += new System.EventHandler(this.OnStartNintendo64);
-			// 
-			// mnuSuperNintendo
-			// 
-			this.mnuSuperNintendo.Image = global::BootCamp.Properties.Resources.snes9x_icon;
-			this.mnuSuperNintendo.Name = "mnuSuperNintendo";
-			this.mnuSuperNintendo.Size = new System.Drawing.Size(157, 22);
-			this.mnuSuperNintendo.Text = "Super Nintendo";
-			this.mnuSuperNintendo.Click += new System.EventHandler(this.OnStartSuperNintendo);
 			// 
 			// GamesList
 			// 
@@ -224,6 +164,7 @@
             this.btnDeleteGame,
             this.btnEditGame,
             this.toolStripSeparator2,
+            this.btnToggleFavorites,
             this.toolStripDropDownButton1,
             this.toolStripSeparator5,
             toolStripDropDownButton2});
@@ -232,6 +173,21 @@
 			this.toolStrip1.Size = new System.Drawing.Size(652, 25);
 			this.toolStrip1.TabIndex = 3;
 			this.toolStrip1.Text = "toolStrip1";
+			// 
+			// toolStripSeparator1
+			// 
+			this.toolStripSeparator1.Name = "toolStripSeparator1";
+			this.toolStripSeparator1.Size = new System.Drawing.Size(6, 25);
+			// 
+			// toolStripSeparator2
+			// 
+			this.toolStripSeparator2.Name = "toolStripSeparator2";
+			this.toolStripSeparator2.Size = new System.Drawing.Size(6, 25);
+			// 
+			// toolStripSeparator5
+			// 
+			this.toolStripSeparator5.Name = "toolStripSeparator5";
+			this.toolStripSeparator5.Size = new System.Drawing.Size(6, 25);
 			// 
 			// btnPlayGame
 			// 
@@ -242,11 +198,6 @@
 			this.btnPlayGame.Size = new System.Drawing.Size(23, 22);
 			this.btnPlayGame.Text = "Play game";
 			this.btnPlayGame.Click += new System.EventHandler(this.OnPlayGame);
-			// 
-			// toolStripSeparator1
-			// 
-			this.toolStripSeparator1.Name = "toolStripSeparator1";
-			this.toolStripSeparator1.Size = new System.Drawing.Size(6, 25);
 			// 
 			// btnAddGame
 			// 
@@ -277,11 +228,6 @@
 			this.btnEditGame.Size = new System.Drawing.Size(23, 22);
 			this.btnEditGame.Text = "Edit Game";
 			this.btnEditGame.Click += new System.EventHandler(this.OnEditGame);
-			// 
-			// toolStripSeparator2
-			// 
-			this.toolStripSeparator2.Name = "toolStripSeparator2";
-			this.toolStripSeparator2.Size = new System.Drawing.Size(6, 25);
 			// 
 			// toolStripDropDownButton1
 			// 
@@ -329,6 +275,11 @@
 			this.GroupByNone.Text = "(None)";
 			this.GroupByNone.Click += new System.EventHandler(this.OnGrouping);
 			// 
+			// toolStripSeparator3
+			// 
+			toolStripSeparator3.Name = "toolStripSeparator3";
+			toolStripSeparator3.Size = new System.Drawing.Size(139, 6);
+			// 
 			// GroupDescending
 			// 
 			this.GroupDescending.Name = "GroupDescending";
@@ -343,10 +294,71 @@
 			this.GroupAscending.Text = "Ascending";
 			this.GroupAscending.Click += new System.EventHandler(this.OnGrouping);
 			// 
-			// toolStripSeparator5
+			// toolStripDropDownButton2
 			// 
-			this.toolStripSeparator5.Name = "toolStripSeparator5";
-			this.toolStripSeparator5.Size = new System.Drawing.Size(6, 25);
+			toolStripDropDownButton2.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
+			toolStripDropDownButton2.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
+			toolStripDropDownButton2.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.mnuDosbox,
+            this.mnuC64,
+            this.mnuGameboy,
+            this.mnuNintendo64,
+            this.mnuSuperNintendo});
+			toolStripDropDownButton2.Image = ((System.Drawing.Image)(resources.GetObject("toolStripDropDownButton2.Image")));
+			toolStripDropDownButton2.ImageTransparentColor = System.Drawing.Color.Magenta;
+			toolStripDropDownButton2.Name = "toolStripDropDownButton2";
+			toolStripDropDownButton2.Size = new System.Drawing.Size(73, 22);
+			toolStripDropDownButton2.Text = "Emulators";
+			// 
+			// mnuDosbox
+			// 
+			this.mnuDosbox.Image = global::BootCamp.Properties.Resources.dosbox;
+			this.mnuDosbox.Name = "mnuDosbox";
+			this.mnuDosbox.Size = new System.Drawing.Size(157, 22);
+			this.mnuDosbox.Text = "Dosbox";
+			this.mnuDosbox.Click += new System.EventHandler(this.OnStartDosbox);
+			// 
+			// mnuC64
+			// 
+			this.mnuC64.Image = global::BootCamp.Properties.Resources.c64;
+			this.mnuC64.Name = "mnuC64";
+			this.mnuC64.Size = new System.Drawing.Size(157, 22);
+			this.mnuC64.Text = "C64";
+			this.mnuC64.Click += new System.EventHandler(this.OnStartC64);
+			// 
+			// mnuGameboy
+			// 
+			this.mnuGameboy.Image = global::BootCamp.Properties.Resources.visualboyadvance;
+			this.mnuGameboy.Name = "mnuGameboy";
+			this.mnuGameboy.Size = new System.Drawing.Size(157, 22);
+			this.mnuGameboy.Text = "Gameboy";
+			this.mnuGameboy.Click += new System.EventHandler(this.OnStartGameboy);
+			// 
+			// mnuNintendo64
+			// 
+			this.mnuNintendo64.Image = global::BootCamp.Properties.Resources.N64;
+			this.mnuNintendo64.Name = "mnuNintendo64";
+			this.mnuNintendo64.Size = new System.Drawing.Size(157, 22);
+			this.mnuNintendo64.Text = "Nintendo 64";
+			this.mnuNintendo64.Click += new System.EventHandler(this.OnStartNintendo64);
+			// 
+			// mnuSuperNintendo
+			// 
+			this.mnuSuperNintendo.Image = global::BootCamp.Properties.Resources.snes9x_icon;
+			this.mnuSuperNintendo.Name = "mnuSuperNintendo";
+			this.mnuSuperNintendo.Size = new System.Drawing.Size(157, 22);
+			this.mnuSuperNintendo.Text = "Super Nintendo";
+			this.mnuSuperNintendo.Click += new System.EventHandler(this.OnStartSuperNintendo);
+			// 
+			// btnToggleFavorites
+			// 
+			this.btnToggleFavorites.CheckOnClick = true;
+			this.btnToggleFavorites.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+			this.btnToggleFavorites.Image = global::BootCamp.Properties.Resources.star;
+			this.btnToggleFavorites.ImageTransparentColor = System.Drawing.Color.Magenta;
+			this.btnToggleFavorites.Name = "btnToggleFavorites";
+			this.btnToggleFavorites.Size = new System.Drawing.Size(23, 22);
+			this.btnToggleFavorites.Text = "Favorites";
 			// 
 			// FormMain
 			// 
@@ -401,6 +413,7 @@
 		private System.Windows.Forms.ToolStripMenuItem mnuNintendo64;
 		private System.Windows.Forms.ToolStripMenuItem mnuSuperNintendo;
 		private System.Windows.Forms.Timer timer1;
+		private System.Windows.Forms.ToolStripButton btnToggleFavorites;
 	}
 }
 
