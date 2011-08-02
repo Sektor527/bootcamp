@@ -8,10 +8,27 @@ namespace BootCamp
 	internal class AlphabeticGrouper
 	{
 		public int MinimumItemsPerGroup { get; set; }
+		public bool Ascending { get; set; }
+
+		private class DescendingComparer<T> : IComparer<T> where T : IComparable<T>
+		{
+			public int Compare(T x, T y)
+			{
+				return y.CompareTo(x);
+			}
+		}
+
+		public AlphabeticGrouper()
+		{
+			Ascending = true;
+			MinimumItemsPerGroup = 1;
+		}
 
 		public List<string> Group(List<string> elements)
 		{
-			SortedDictionary<string, int> groups = new SortedDictionary<string, int>();
+			SortedDictionary<string, int> groups;
+			if (Ascending) groups = new SortedDictionary<string, int>();
+			else groups = new SortedDictionary<string, int>(new DescendingComparer<string>());
 
 			ExtractLetters(elements, groups);
 
@@ -59,7 +76,7 @@ namespace BootCamp
 			if (regroup.Key == null)
 				return group;
 
-			if (regroup.Key.Substring(0,1).CompareTo(group.Key) < 0)
+			if (regroup.Key.Substring(0, 1).CompareTo(group.Key) < 0)
 				return new KeyValuePair<string, int>(regroup.Key.Substring(0, 1) + "-" + group.Key, regroup.Value + group.Value);
 			else
 				return new KeyValuePair<string, int>(group.Key + "-" + regroup.Key.Substring(0, 1), regroup.Value + group.Value);
