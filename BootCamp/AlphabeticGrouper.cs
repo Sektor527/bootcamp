@@ -79,7 +79,7 @@ namespace BootCamp
 			if (regroup.Key.Substring(0, 1).CompareTo(group.Key) < 0)
 				return new KeyValuePair<string, int>(regroup.Key.Substring(0, 1) + "-" + group.Key, regroup.Value + group.Value);
 			else
-				return new KeyValuePair<string, int>(group.Key + "-" + regroup.Key.Substring(0, 1), regroup.Value + group.Value);
+				return new KeyValuePair<string, int>(group.Key + "-" + regroup.Key.Substring(regroup.Key.Length - 1, 1), regroup.Value + group.Value);
 		}
 	}
 }

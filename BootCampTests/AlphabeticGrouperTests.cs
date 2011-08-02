@@ -93,14 +93,13 @@ namespace BootCampTests
 		[Test]
 		public void DescendedGroupWithTwo()
 		{
-			AlphabeticGrouper grouper = new AlphabeticGrouper {MinimumItemsPerGroup = 2, Ascending = false};
+			AlphabeticGrouper grouper = new AlphabeticGrouper {MinimumItemsPerGroup = 3, Ascending = false};
 
-			List<string> groups = grouper.Group(new List<string>() { "aaa", "zzz", "bbb", "yyy", "mmm" });
+			List<string> groups = grouper.Group(new List<string>() { "aaa", "zzz", "bbb", "xxx", "yyy", "mmm" });
 			
-			Assert.AreEqual(3, groups.Count);
-			Assert.Contains("Y-Z", groups);
-			Assert.Contains("B-M", groups);
-			Assert.Contains("A", groups);
+			Assert.AreEqual(2, groups.Count);
+			Assert.Contains("X-Z", groups);
+			Assert.Contains("A-M", groups);
 		}
 	}
 }
