@@ -359,6 +359,7 @@
 			this.btnToggleFavorites.Name = "btnToggleFavorites";
 			this.btnToggleFavorites.Size = new System.Drawing.Size(23, 22);
 			this.btnToggleFavorites.Text = "Favorites";
+			this.btnToggleFavorites.CheckedChanged += new System.EventHandler(this.OnFavoriteToggled);
 			// 
 			// FormMain
 			// 

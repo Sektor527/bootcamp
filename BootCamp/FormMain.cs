@@ -138,7 +138,8 @@ namespace BootCamp
 			foreach (Game game in Program.GamesManager)
 			{
 				ListViewItem item = new ListViewItem(new[] { game.Name, game.Genre, game.Environment.ToString() }) { Tag = game };
-				GamesList.Items.Add(item);
+				if (!btnToggleFavorites.Checked || Program.GamesManager.IsFavorite(game))
+					GamesList.Items.Add(item);
 			}
 
 			UpdateGroups();
@@ -290,6 +291,11 @@ namespace BootCamp
 		private void FormMain_FormClosing(object sender, FormClosingEventArgs e)
 		{
 			Properties.Settings.Default.FormMain_WindowSize = Size;
+		}
+
+		private void OnFavoriteToggled(object sender, EventArgs e)
+		{
+			FillGamesList();
 		}
 	}
 }
