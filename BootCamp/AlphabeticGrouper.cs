@@ -11,14 +11,14 @@ namespace BootCamp
 
 		public List<string> Group(List<string> elements)
 		{
-			Dictionary<string, int> groups = new Dictionary<string, int>();
+			SortedDictionary<string, int> groups = new SortedDictionary<string, int>();
 
 			ExtractLetters(elements, groups);
 
 			return GroupLetters(groups);
 		}
 
-		private void ExtractLetters(List<string> elements, Dictionary<string, int> groups)
+		private void ExtractLetters(List<string> elements, SortedDictionary<string, int> groups)
 		{
 			foreach (string element in elements)
 			{
@@ -30,7 +30,7 @@ namespace BootCamp
 			}
 		}
 
-		private List<string> GroupLetters(Dictionary<string, int> groups)
+		private List<string> GroupLetters(SortedDictionary<string, int> groups)
 		{
 			List<string> result = new List<string>();
 

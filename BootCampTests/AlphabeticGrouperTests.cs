@@ -62,5 +62,18 @@ namespace BootCampTests
 			Assert.Contains("A", groups);
 			Assert.Contains("B-C", groups);
 		}
+
+		[Test]
+		public void GroupingNonOrdered()
+		{
+			AlphabeticGrouper grouper = new AlphabeticGrouper {MinimumItemsPerGroup = 2};
+
+			List<string> groups = grouper.Group(new List<string>() {"aaa", "zzz", "bbb", "yyy", "mmm"});
+
+			Assert.AreEqual(3, groups.Count);
+			Assert.Contains("A-B", groups);
+			Assert.Contains("M-Y", groups);
+			Assert.Contains("Z", groups);
+		}
 	}
 }
