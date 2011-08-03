@@ -36,5 +36,17 @@ namespace BootCamp
 		{
 			return Name;
 		}
+
+		public override bool Equals(object obj)
+		{
+			return (obj != null && obj.GetType() == GetType() && obj.GetHashCode() == GetHashCode());
+		}
+
+		public override int GetHashCode()
+		{
+			return 3*Name.GetHashCode() +
+			       5*Environment.GetHashCode() +
+			       7*Path.GetFileName(Executable).GetHashCode();
+		}
 	}
 }
