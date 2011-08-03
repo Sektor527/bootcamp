@@ -11,16 +11,17 @@ namespace BootCamp
 		public string Arguments { get; set; }
 		public string ISO { get; set; }
 
-		public Game()
+		public Game() : this("", "", "", Environments.Windows, "")
 		{
-			Environment = Environments.Windows;
 		}
+
 		public Game(string name, string executable, string arguments, Environments environment, string iso)
 		{
 			Name = name;
+			Environment = environment;
+			Genre = "";
 			Executable = executable;
 			Arguments = arguments;
-			Environment = environment;
 			ISO = iso;
 		}
 

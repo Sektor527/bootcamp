@@ -19,7 +19,7 @@ namespace BootCampTests
 		public void Init()
 		{
 			_manager = new GamesManager("bootlist.cfg");
-			_game = new Game();
+			_game = new Game("Original Game", "executable", "", Environments.Windows, "");
 
 			_manager.Add(_game);
 		}
