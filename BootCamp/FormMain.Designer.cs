@@ -47,6 +47,7 @@
 			this.menuAddGame = new System.Windows.Forms.ToolStripMenuItem();
 			this.menuDeleteGame = new System.Windows.Forms.ToolStripMenuItem();
 			this.menuEditGame = new System.Windows.Forms.ToolStripMenuItem();
+			this.imgListFavorites = new System.Windows.Forms.ImageList(this.components);
 			this.toolStrip1 = new System.Windows.Forms.ToolStrip();
 			this.btnPlayGame = new System.Windows.Forms.ToolStripButton();
 			this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
@@ -64,7 +65,8 @@
 			this.GroupAscending = new System.Windows.Forms.ToolStripMenuItem();
 			this.toolStripSeparator5 = new System.Windows.Forms.ToolStripSeparator();
 			this.timer1 = new System.Windows.Forms.Timer(this.components);
-			this.imgListFavorites = new System.Windows.Forms.ImageList(this.components);
+			this.toolStripSeparator6 = new System.Windows.Forms.ToolStripSeparator();
+			this.menuFavorite = new System.Windows.Forms.ToolStripMenuItem();
 			toolStripSeparator3 = new System.Windows.Forms.ToolStripSeparator();
 			toolStripDropDownButton2 = new System.Windows.Forms.ToolStripDropDownButton();
 			this.contextMenuStrip1.SuspendLayout();
@@ -180,43 +182,51 @@
             this.toolStripSeparator4,
             this.menuAddGame,
             this.menuDeleteGame,
-            this.menuEditGame});
+            this.menuEditGame,
+            this.toolStripSeparator6,
+            this.menuFavorite});
 			this.contextMenuStrip1.Name = "contextMenuStrip1";
-			this.contextMenuStrip1.Size = new System.Drawing.Size(142, 98);
+			this.contextMenuStrip1.Size = new System.Drawing.Size(157, 148);
 			this.contextMenuStrip1.Opening += new System.ComponentModel.CancelEventHandler(this.OnContextMenuOpening);
 			// 
 			// menuPlayGame
 			// 
 			this.menuPlayGame.Name = "menuPlayGame";
-			this.menuPlayGame.Size = new System.Drawing.Size(141, 22);
+			this.menuPlayGame.Size = new System.Drawing.Size(156, 22);
 			this.menuPlayGame.Text = "Play Game";
 			this.menuPlayGame.Click += new System.EventHandler(this.OnPlayGame);
 			// 
 			// toolStripSeparator4
 			// 
 			this.toolStripSeparator4.Name = "toolStripSeparator4";
-			this.toolStripSeparator4.Size = new System.Drawing.Size(138, 6);
+			this.toolStripSeparator4.Size = new System.Drawing.Size(153, 6);
 			// 
 			// menuAddGame
 			// 
 			this.menuAddGame.Name = "menuAddGame";
-			this.menuAddGame.Size = new System.Drawing.Size(141, 22);
+			this.menuAddGame.Size = new System.Drawing.Size(156, 22);
 			this.menuAddGame.Text = "Add Game";
 			this.menuAddGame.Click += new System.EventHandler(this.OnAddGame);
 			// 
 			// menuDeleteGame
 			// 
 			this.menuDeleteGame.Name = "menuDeleteGame";
-			this.menuDeleteGame.Size = new System.Drawing.Size(141, 22);
+			this.menuDeleteGame.Size = new System.Drawing.Size(156, 22);
 			this.menuDeleteGame.Text = "Delete Game";
 			this.menuDeleteGame.Click += new System.EventHandler(this.OnDeleteGame);
 			// 
 			// menuEditGame
 			// 
 			this.menuEditGame.Name = "menuEditGame";
-			this.menuEditGame.Size = new System.Drawing.Size(141, 22);
+			this.menuEditGame.Size = new System.Drawing.Size(156, 22);
 			this.menuEditGame.Text = "Edit Game";
 			this.menuEditGame.Click += new System.EventHandler(this.OnEditGame);
+			// 
+			// imgListFavorites
+			// 
+			this.imgListFavorites.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("imgListFavorites.ImageStream")));
+			this.imgListFavorites.TransparentColor = System.Drawing.Color.Transparent;
+			this.imgListFavorites.Images.SetKeyName(0, "star.png");
 			// 
 			// toolStrip1
 			// 
@@ -363,11 +373,17 @@
 			this.toolStripSeparator5.Name = "toolStripSeparator5";
 			this.toolStripSeparator5.Size = new System.Drawing.Size(6, 25);
 			// 
-			// imgListFavorites
+			// toolStripSeparator6
 			// 
-			this.imgListFavorites.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("imgListFavorites.ImageStream")));
-			this.imgListFavorites.TransparentColor = System.Drawing.Color.Transparent;
-			this.imgListFavorites.Images.SetKeyName(0, "star.png");
+			this.toolStripSeparator6.Name = "toolStripSeparator6";
+			this.toolStripSeparator6.Size = new System.Drawing.Size(153, 6);
+			// 
+			// menuFavorite
+			// 
+			this.menuFavorite.Name = "menuFavorite";
+			this.menuFavorite.Size = new System.Drawing.Size(156, 22);
+			this.menuFavorite.Text = "Toggle Favorite";
+			this.menuFavorite.Click += new System.EventHandler(this.OnToggleFavorite);
 			// 
 			// FormMain
 			// 
@@ -424,6 +440,8 @@
 		private System.Windows.Forms.Timer timer1;
 		private System.Windows.Forms.ToolStripButton btnToggleFavorites;
 		private System.Windows.Forms.ImageList imgListFavorites;
+		private System.Windows.Forms.ToolStripSeparator toolStripSeparator6;
+		private System.Windows.Forms.ToolStripMenuItem menuFavorite;
 	}
 }
 

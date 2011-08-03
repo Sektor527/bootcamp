@@ -42,7 +42,6 @@
 			this.txtISO = new System.Windows.Forms.TextBox();
 			this.label6 = new System.Windows.Forms.Label();
 			this.txtArguments = new System.Windows.Forms.TextBox();
-			this.checkBox1 = new System.Windows.Forms.CheckBox();
 			btnCancel = new System.Windows.Forms.Button();
 			btnOK = new System.Windows.Forms.Button();
 			label1 = new System.Windows.Forms.Label();
@@ -55,7 +54,7 @@
 			// 
 			btnCancel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
 			btnCancel.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-			btnCancel.Location = new System.Drawing.Point(203, 251);
+			btnCancel.Location = new System.Drawing.Point(203, 215);
 			btnCancel.Name = "btnCancel";
 			btnCancel.Size = new System.Drawing.Size(75, 23);
 			btnCancel.TabIndex = 5;
@@ -66,7 +65,7 @@
 			// 
 			btnOK.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
 			btnOK.DialogResult = System.Windows.Forms.DialogResult.OK;
-			btnOK.Location = new System.Drawing.Point(122, 251);
+			btnOK.Location = new System.Drawing.Point(122, 215);
 			btnOK.Name = "btnOK";
 			btnOK.Size = new System.Drawing.Size(75, 23);
 			btnOK.TabIndex = 6;
@@ -173,24 +172,13 @@
 			this.txtArguments.Size = new System.Drawing.Size(194, 20);
 			this.txtArguments.TabIndex = 12;
 			// 
-			// checkBox1
-			// 
-			this.checkBox1.AutoSize = true;
-			this.checkBox1.Location = new System.Drawing.Point(12, 221);
-			this.checkBox1.Name = "checkBox1";
-			this.checkBox1.Size = new System.Drawing.Size(64, 17);
-			this.checkBox1.TabIndex = 13;
-			this.checkBox1.Text = "Favorite";
-			this.checkBox1.UseVisualStyleBackColor = true;
-			// 
 			// FormAddGame
 			// 
 			this.AcceptButton = btnOK;
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.CancelButton = btnCancel;
-			this.ClientSize = new System.Drawing.Size(291, 286);
-			this.Controls.Add(this.checkBox1);
+			this.ClientSize = new System.Drawing.Size(291, 250);
 			this.Controls.Add(this.txtArguments);
 			this.Controls.Add(this.label6);
 			this.Controls.Add(this.txtISO);
@@ -223,7 +211,6 @@
 		private System.Windows.Forms.TextBox txtISO;
 		private System.Windows.Forms.Label label6;
 		private System.Windows.Forms.TextBox txtArguments;
-		private System.Windows.Forms.CheckBox checkBox1;
 
 
 	}

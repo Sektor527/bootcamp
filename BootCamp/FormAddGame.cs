@@ -49,8 +49,6 @@ namespace BootCamp
 			txtISO.Text = Game.ISO;
 			lstGenre.Text = Game.Genre;
 			lstEnvironment.Text = Game.Environment.ToString();
-
-			checkBox1.Checked = Program.GamesManager.IsFavorite(Game);
 		}
 
 		private void OnClosed(object sender, FormClosedEventArgs e)
@@ -61,8 +59,6 @@ namespace BootCamp
 			Game.ISO = txtISO.Text;
 			Game.Genre = lstGenre.Text;
 			Game.Environment = (Environments)Enum.Parse(typeof(Environments), lstEnvironment.Text, true);
-
-			Program.GamesManager.SetFavorite(Game, checkBox1.Checked);
 
 			Properties.Settings.Default.FormAdd_LastSelectedEnvironment = lstEnvironment.Text;
 		}

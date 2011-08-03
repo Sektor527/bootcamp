@@ -217,6 +217,13 @@ namespace BootCamp
 			FillGamesList();
 		}
 
+		private void OnToggleFavorite(object sender, EventArgs e)
+		{
+			if (SelectedGame == null) return;
+			Program.GamesManager.SetFavorite(SelectedGame, !Program.GamesManager.IsFavorite(SelectedGame));
+			FillGamesList();
+		}
+
 		private void OnDragOver(object sender, DragEventArgs e)
 		{
 			if (e.Data.GetDataPresent(DataFormats.FileDrop))
@@ -272,6 +279,7 @@ namespace BootCamp
 			menuAddGame.Enabled = true;
 			menuDeleteGame.Enabled = GamesList.SelectedItems.Count > 0;
 			menuEditGame.Enabled = GamesList.SelectedItems.Count > 0;
+			menuFavorite.Enabled = GamesList.SelectedItems.Count > 0;
 		}
 
 		private void OnResize(object sender, EventArgs e)
