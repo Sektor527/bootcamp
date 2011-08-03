@@ -153,7 +153,7 @@ namespace BootCamp
 
 			foreach (Game game in Program.GamesManager)
 			{
-				ListViewItem item = new ListViewItem(new[] { game.Name, game.Genre, game.Environment.ToString() }) { Tag = game };
+				ListViewItem item = new ListViewItem(new[] { game.Name, game.Genre, game.Environment.ToString() }, Program.GamesManager.IsFavorite(game) ? 0 : -1) { Tag = game };
 				if (!btnToggleFavorites.Checked || Program.GamesManager.IsFavorite(game))
 					GamesList.Items.Add(item);
 			}
