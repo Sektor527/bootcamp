@@ -204,14 +204,15 @@ namespace BootCamp
 
 		public void SaveFavorites()
 		{
+			Properties.Settings.Default.FavoritesList.Clear();
 			foreach (Game game in _favorites)
-				Properties.Settings.Default.FavoritesList.Add(game.Name);
+				Properties.Settings.Default.FavoritesList.Add(game.GetHashCode().ToString());
 		}
 
 		public void LoadFavorites()
 		{
-			foreach (String name in Properties.Settings.Default.FavoritesList)
-				_favorites.Add(_games.Find(g => g.Name == name));
+			foreach (String hash in Properties.Settings.Default.FavoritesList)
+				_favorites.Add(_games.Find(g => g.GetHashCode().ToString() == hash));
 		}
 
 		#endregion
