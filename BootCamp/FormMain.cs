@@ -16,6 +16,8 @@ namespace BootCamp
 		private void OnLoad(object sender, EventArgs e)
 		{
 			Size = Properties.Settings.Default.FormMain_WindowSize;
+			Program.GamesManager.LoadFavorites();
+
 			_ascending = true;
 			_groupCategory = GroupCategory.Environment;
 			FillGamesList();
@@ -305,6 +307,7 @@ namespace BootCamp
 		private void FormMain_FormClosing(object sender, FormClosingEventArgs e)
 		{
 			Properties.Settings.Default.FormMain_WindowSize = Size;
+			Program.GamesManager.SaveFavorites();
 		}
 
 		private void OnFavoriteToggled(object sender, EventArgs e)

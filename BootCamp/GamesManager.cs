@@ -179,6 +179,13 @@ namespace BootCamp
 			}
 		}
 
+		#region Favorites
+		private List<Game> _favorites = new List<Game>();
+		public int CountFavorites
+		{
+			get { return _favorites.Count; }
+		}
+
 		public void SetFavorite(Game game, bool favorite)
 		{
 			if (!_games.Contains(game)) return;
@@ -190,17 +197,23 @@ namespace BootCamp
 				_favorites.Remove(game);
 		}
 
-		#region Favorites
-		private List<Game> _favorites = new List<Game>();
-		public int CountFavorites
-		{
-			get { return _favorites.Count; }
-		}
-
 		public bool IsFavorite(Game game)
 		{
 			return _favorites.Contains(game);
 		}
+
+		public void SaveFavorites()
+		{
+			foreach (Game game in _favorites)
+				Properties.Settings.Default.FavoritesList.Add(game.Name);
+		}
+
+		public void LoadFavorites()
+		{
+			foreach (String name in Properties.Settings.Default.FavoritesList)
+				_favorites.Add(_games.Find(g => g.Name == name));
+		}
+
 		#endregion
 	}
 }
