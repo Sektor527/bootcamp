@@ -18,8 +18,11 @@ namespace BootCamp
 			Size = Properties.Settings.Default.FormMain_WindowSize;
 			Program.GamesManager.LoadFavorites();
 
-			_ascending = true;
+			_groupAscending = true;
 			_groupCategory = GroupCategory.Environment;
+
+			GamesList.ListViewItemSorter = new GamesListSorter();
+
 			FillGamesList();
 		}
 
@@ -43,7 +46,7 @@ namespace BootCamp
 		}
 
 		private GroupCategory _groupCategory;
-		private bool _ascending;
+		private bool _groupAscending;
 
 		private void OnGrouping(object sender, EventArgs e)
 		{
@@ -64,10 +67,10 @@ namespace BootCamp
 					_groupCategory = GroupCategory.None;
 					break;
 				case "GroupAscending":
-					_ascending = true;
+					_groupAscending = true;
 					break;
 				case "GroupDescending":
-					_ascending = false;
+					_groupAscending = false;
 					break;
 				default:
 					throw new NotImplementedException();
@@ -81,14 +84,14 @@ namespace BootCamp
 			switch (_groupCategory)
 			{
 				case GroupCategory.Name:
-					AlphabeticGrouper grouper = new AlphabeticGrouper { MinimumItemsPerGroup = 15, Ascending = _ascending };
-					ShowGroups(grouper.Group(Program.GamesManager.Names), "Name", _ascending);
+					AlphabeticGrouper grouper = new AlphabeticGrouper { MinimumItemsPerGroup = 15, Ascending = _groupAscending };
+					ShowGroups(grouper.Group(Program.GamesManager.Names), "Name", _groupAscending);
 					break;
 				case GroupCategory.Genre:
-					ShowGroups(Program.GamesManager.Genres, "Genre", _ascending);
+					ShowGroups(Program.GamesManager.Genres, "Genre", _groupAscending);
 					break;
 				case GroupCategory.Environment:
-					ShowGroups(new List<string>(Enum.GetNames(typeof(Environments))), "Environment", _ascending);
+					ShowGroups(new List<string>(Enum.GetNames(typeof(Environments))), "Environment", _groupAscending);
 					break;
 				case GroupCategory.None:
 					HideGroups();
@@ -141,9 +144,16 @@ namespace BootCamp
 			GroupByEnvironment.Checked = _groupCategory == GroupCategory.Environment;
 			GroupByNone.Checked = _groupCategory == GroupCategory.None;
 
-			GroupAscending.Checked = _ascending;
-			GroupDescending.Checked = !_ascending;
+			GroupAscending.Checked = _groupAscending;
+			GroupDescending.Checked = !_groupAscending;
 		}
+
+		#endregion
+
+		#region Sorting
+		private GroupCategory _sortCategory;
+		private bool _sortAscending;
+
 
 		#endregion
 
@@ -321,6 +331,55 @@ namespace BootCamp
 		private void OnFavoriteToggled(object sender, EventArgs e)
 		{
 			FillGamesList();
+		}
+
+		private void OnGamesListColumnClick(object sender, ColumnClickEventArgs e)
+		{
+			GamesListSorter sorter = GamesList.ListViewItemSorter as GamesListSorter;
+
+			switch (e.Column)
+			{
+				case 0: // Name
+					sorter.SortCategory = GroupCategory.Name;
+					sorter.SortOrder = SortOrder.Ascending;
+					break;
+				case 1: // Genre
+					sorter.SortCategory = GroupCategory.Genre;
+					sorter.SortOrder = SortOrder.Ascending;
+					break;
+				case 2: // Environment
+					sorter.SortCategory = GroupCategory.Environment;
+					sorter.SortOrder = SortOrder.Ascending;
+					break;
+			}
+
+			GamesList.Sort();
+		}
+
+		private class GamesListSorter : System.Collections.IComparer
+		{
+			public GroupCategory SortCategory { get; set; }
+			public SortOrder SortOrder { get; set; }
+
+			public int Compare(object x, object y)
+			{
+				if (x.GetType() != typeof(ListViewItem) || y.GetType() != typeof(ListViewItem)) throw new ArgumentException();
+
+				ListViewItem _x = x as ListViewItem;
+				ListViewItem _y = y as ListViewItem;
+
+				switch (SortCategory)
+				{
+					case GroupCategory.Name:
+						return _x.SubItems[0].Text.CompareTo(_y.SubItems[0].Text)/* * (SortOrder == SortOrder.Ascending ? -1 : 1)*/;
+					case GroupCategory.Genre:
+						return _x.SubItems[1].Text.CompareTo(_y.SubItems[1].Text)/* * (SortOrder == SortOrder.Ascending ? -1 : 1)*/;
+					case GroupCategory.Environment:
+						return _x.SubItems[2].Text.CompareTo(_y.SubItems[2].Text)/* * (SortOrder == SortOrder.Ascending ? -1 : 1)*/;
+					default:
+						throw new ArgumentException();
+				}
+			}
 		}
 	}
 }

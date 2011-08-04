@@ -47,6 +47,8 @@
 			this.menuAddGame = new System.Windows.Forms.ToolStripMenuItem();
 			this.menuDeleteGame = new System.Windows.Forms.ToolStripMenuItem();
 			this.menuEditGame = new System.Windows.Forms.ToolStripMenuItem();
+			this.toolStripSeparator6 = new System.Windows.Forms.ToolStripSeparator();
+			this.menuFavorite = new System.Windows.Forms.ToolStripMenuItem();
 			this.imgListFavorites = new System.Windows.Forms.ImageList(this.components);
 			this.toolStrip1 = new System.Windows.Forms.ToolStrip();
 			this.btnPlayGame = new System.Windows.Forms.ToolStripButton();
@@ -65,8 +67,6 @@
 			this.GroupAscending = new System.Windows.Forms.ToolStripMenuItem();
 			this.toolStripSeparator5 = new System.Windows.Forms.ToolStripSeparator();
 			this.timer1 = new System.Windows.Forms.Timer(this.components);
-			this.toolStripSeparator6 = new System.Windows.Forms.ToolStripSeparator();
-			this.menuFavorite = new System.Windows.Forms.ToolStripMenuItem();
 			toolStripSeparator3 = new System.Windows.Forms.ToolStripSeparator();
 			toolStripDropDownButton2 = new System.Windows.Forms.ToolStripDropDownButton();
 			this.contextMenuStrip1.SuspendLayout();
@@ -157,6 +157,7 @@
 			this.GamesList.View = System.Windows.Forms.View.Details;
 			this.GamesList.DoubleClick += new System.EventHandler(this.OnGamesListDoubleClick);
 			this.GamesList.DragDrop += new System.Windows.Forms.DragEventHandler(this.OnDropFile);
+			this.GamesList.ColumnClick += new System.Windows.Forms.ColumnClickEventHandler(this.OnGamesListColumnClick);
 			this.GamesList.DragEnter += new System.Windows.Forms.DragEventHandler(this.OnDragOver);
 			this.GamesList.KeyDown += new System.Windows.Forms.KeyEventHandler(this.OnGamesListKey);
 			// 
@@ -186,7 +187,7 @@
             this.toolStripSeparator6,
             this.menuFavorite});
 			this.contextMenuStrip1.Name = "contextMenuStrip1";
-			this.contextMenuStrip1.Size = new System.Drawing.Size(157, 148);
+			this.contextMenuStrip1.Size = new System.Drawing.Size(157, 126);
 			this.contextMenuStrip1.Opening += new System.ComponentModel.CancelEventHandler(this.OnContextMenuOpening);
 			// 
 			// menuPlayGame
@@ -221,6 +222,18 @@
 			this.menuEditGame.Size = new System.Drawing.Size(156, 22);
 			this.menuEditGame.Text = "Edit Game";
 			this.menuEditGame.Click += new System.EventHandler(this.OnEditGame);
+			// 
+			// toolStripSeparator6
+			// 
+			this.toolStripSeparator6.Name = "toolStripSeparator6";
+			this.toolStripSeparator6.Size = new System.Drawing.Size(153, 6);
+			// 
+			// menuFavorite
+			// 
+			this.menuFavorite.Name = "menuFavorite";
+			this.menuFavorite.Size = new System.Drawing.Size(156, 22);
+			this.menuFavorite.Text = "Toggle Favorite";
+			this.menuFavorite.Click += new System.EventHandler(this.OnToggleFavorite);
 			// 
 			// imgListFavorites
 			// 
@@ -372,18 +385,6 @@
 			// 
 			this.toolStripSeparator5.Name = "toolStripSeparator5";
 			this.toolStripSeparator5.Size = new System.Drawing.Size(6, 25);
-			// 
-			// toolStripSeparator6
-			// 
-			this.toolStripSeparator6.Name = "toolStripSeparator6";
-			this.toolStripSeparator6.Size = new System.Drawing.Size(153, 6);
-			// 
-			// menuFavorite
-			// 
-			this.menuFavorite.Name = "menuFavorite";
-			this.menuFavorite.Size = new System.Drawing.Size(156, 22);
-			this.menuFavorite.Text = "Toggle Favorite";
-			this.menuFavorite.Click += new System.EventHandler(this.OnToggleFavorite);
 			// 
 			// FormMain
 			// 
