@@ -341,15 +341,12 @@ namespace BootCamp
 			{
 				case 0: // Name
 					sorter.SortCategory = GroupCategory.Name;
-					sorter.SortOrder = SortOrder.Ascending;
 					break;
 				case 1: // Genre
 					sorter.SortCategory = GroupCategory.Genre;
-					sorter.SortOrder = SortOrder.Ascending;
 					break;
 				case 2: // Environment
 					sorter.SortCategory = GroupCategory.Environment;
-					sorter.SortOrder = SortOrder.Ascending;
 					break;
 			}
 
@@ -358,8 +355,24 @@ namespace BootCamp
 
 		private class GamesListSorter : System.Collections.IComparer
 		{
-			public GroupCategory SortCategory { get; set; }
-			public SortOrder SortOrder { get; set; }
+			private GroupCategory _sortCategory = GroupCategory.Name;
+			private SortOrder _sortOrder = SortOrder.Ascending;
+
+			public GroupCategory SortCategory
+			{
+				set
+				{
+					if (_sortCategory != value)
+					{
+						_sortCategory = value;
+						_sortOrder = SortOrder.Ascending;
+					}
+					else
+					{
+						_sortOrder = (_sortOrder == SortOrder.Ascending ? SortOrder.Descending : SortOrder.Ascending);
+					}
+				}
+			}
 
 			public int Compare(object x, object y)
 			{
@@ -368,14 +381,14 @@ namespace BootCamp
 				ListViewItem _x = x as ListViewItem;
 				ListViewItem _y = y as ListViewItem;
 
-				switch (SortCategory)
+				switch (_sortCategory)
 				{
 					case GroupCategory.Name:
-						return _x.SubItems[0].Text.CompareTo(_y.SubItems[0].Text)/* * (SortOrder == SortOrder.Ascending ? -1 : 1)*/;
+						return _x.SubItems[0].Text.CompareTo(_y.SubItems[0].Text) * (_sortOrder == SortOrder.Ascending ? 1 : -1);
 					case GroupCategory.Genre:
-						return _x.SubItems[1].Text.CompareTo(_y.SubItems[1].Text)/* * (SortOrder == SortOrder.Ascending ? -1 : 1)*/;
+						return _x.SubItems[1].Text.CompareTo(_y.SubItems[1].Text) * (_sortOrder == SortOrder.Ascending ? 1 : -1);
 					case GroupCategory.Environment:
-						return _x.SubItems[2].Text.CompareTo(_y.SubItems[2].Text)/* * (SortOrder == SortOrder.Ascending ? -1 : 1)*/;
+						return _x.SubItems[2].Text.CompareTo(_y.SubItems[2].Text) * (_sortOrder == SortOrder.Ascending ? 1 : -1);
 					default:
 						throw new ArgumentException();
 				}
