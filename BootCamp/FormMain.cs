@@ -266,7 +266,7 @@ namespace BootCamp
 			item.SubItems[0].Text = form.Game.Name;
 			item.SubItems[1].Text = form.Game.Genre;
 			item.SubItems[2].Text = form.Game.Environment.ToString();
-			item.ImageIndex = Program.GamesManager.IsFavorite(form.Game) ? 0 : -1;
+			item.ImageIndex = Program.GamesManager.IsFavorite(form.Game) ? 0 : 1;
 			AssignItemToGroup(item);
 		}
 
