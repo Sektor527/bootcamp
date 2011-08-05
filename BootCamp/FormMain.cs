@@ -241,20 +241,22 @@ namespace BootCamp
 		{
 			if (SelectedGame == null) return;
 
-			ListViewItem item = GamesList.SelectedItems[0];
 			Game selected = SelectedGame;
 
+			// Fill information
 			FormAddGame form = new FormAddGame(ref selected);
 			if (form.ShowDialog() == DialogResult.Cancel) return;
 
+			// Update game list
 			Program.GamesManager.Remove(SelectedGame);
 			Program.GamesManager.Add(form.Game);
 
+			// Update listview
+			ListViewItem item = GamesList.SelectedItems[0];
 			item.SubItems[0].Text = form.Game.Name;
 			item.SubItems[1].Text = form.Game.Genre;
 			item.SubItems[2].Text = form.Game.Environment.ToString();
 			item.ImageIndex = Program.GamesManager.IsFavorite(form.Game) ? 0 : -1;
-
 			AssignItemToGroup(item);
 		}
 
