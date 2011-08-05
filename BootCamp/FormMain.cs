@@ -217,7 +217,13 @@ namespace BootCamp
 			if (form.ShowDialog() == DialogResult.Cancel) return;
 
 			Program.GamesManager.Add(form.Game);
-			FillGamesList();
+
+			if (!btnToggleFavorites.Checked || Program.GamesManager.IsFavorite(form.Game))
+			{
+				ListViewItem item = new ListViewItem(new[] { form.Game.Name, form.Game.Genre, form.Game.Environment.ToString() }, Program.GamesManager.IsFavorite(form.Game) ? 0 : -1) { Tag = form.Game };
+				GamesList.Items.Add(item);
+				AssignItemToGroup(item);
+			}
 		}
 
 		private void OnDeleteGame(object sender, EventArgs e)
