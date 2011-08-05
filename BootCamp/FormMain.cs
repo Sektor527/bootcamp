@@ -274,7 +274,9 @@ namespace BootCamp
 		{
 			if (SelectedGame == null) return;
 			Program.GamesManager.SetFavorite(SelectedGame, !Program.GamesManager.IsFavorite(SelectedGame));
-			FillGamesList();
+
+			ListViewItem item = GamesList.SelectedItems[0];
+			item.ImageIndex = Program.GamesManager.IsFavorite((Game)item.Tag) ? 0 : 1;
 		}
 
 		private void OnDragOver(object sender, DragEventArgs e)
