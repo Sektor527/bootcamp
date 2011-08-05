@@ -77,6 +77,11 @@ namespace BootCamp
 			}
 
 			UpdateGroups();
+
+			foreach (ListViewItem item in GamesList.Items)
+			{
+				AssignItemToGroup(item);
+			}
 		}
 
 		private void UpdateGroups()
@@ -96,11 +101,6 @@ namespace BootCamp
 				case GroupCategory.None:
 					HideGroups();
 					break;
-			}
-
-			foreach (ListViewItem item in GamesList.Items)
-			{
-				AssignItemToGroup(item);
 			}
 		}
 
@@ -182,14 +182,17 @@ namespace BootCamp
 		{
 			GamesList.Items.Clear();
 
+			UpdateGroups();
+
 			foreach (Game game in Program.GamesManager)
 			{
 				ListViewItem item = new ListViewItem(new[] { game.Name, game.Genre, game.Environment.ToString() }, Program.GamesManager.IsFavorite(game) ? 0 : -1) { Tag = game };
 				if (!btnToggleFavorites.Checked || Program.GamesManager.IsFavorite(game))
+				{
 					GamesList.Items.Add(item);
+					AssignItemToGroup(item);
+				}
 			}
-
-			UpdateGroups();
 		}
 
 		private void OnGamesListDoubleClick(object sender, EventArgs e)
