@@ -23,6 +23,7 @@ namespace BootCamp
 
 			GamesList.ListViewItemSorter = new GamesListSorter();
 
+			CreateGroups();
 			FillGamesList();
 		}
 
@@ -181,8 +182,6 @@ namespace BootCamp
 		private void FillGamesList()
 		{
 			GamesList.Items.Clear();
-
-                       CreateGroups();
 
 			foreach (Game game in Program.GamesManager)
 			{
