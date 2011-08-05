@@ -238,6 +238,7 @@ namespace BootCamp
 		{
 			if (SelectedGame == null) return;
 
+			ListViewItem item = GamesList.SelectedItems[0];
 			Game selected = SelectedGame;
 
 			FormAddGame form = new FormAddGame(ref selected);
@@ -245,7 +246,13 @@ namespace BootCamp
 
 			Program.GamesManager.Remove(SelectedGame);
 			Program.GamesManager.Add(form.Game);
-			FillGamesList();
+
+			item.SubItems[0].Text = form.Game.Name;
+			item.SubItems[1].Text = form.Game.Genre;
+			item.SubItems[2].Text = form.Game.Environment.ToString();
+			item.ImageIndex = Program.GamesManager.IsFavorite(form.Game) ? 0 : -1;
+
+			AssignItemToGroup(item);
 		}
 
 		private void OnToggleFavorite(object sender, EventArgs e)
