@@ -67,10 +67,14 @@
 			this.GroupAscending = new System.Windows.Forms.ToolStripMenuItem();
 			this.toolStripSeparator5 = new System.Windows.Forms.ToolStripSeparator();
 			this.timer1 = new System.Windows.Forms.Timer(this.components);
+			this.statusStrip1 = new System.Windows.Forms.StatusStrip();
+			this.lblVersion = new System.Windows.Forms.ToolStripStatusLabel();
+			this.toolStripStatusLabel1 = new System.Windows.Forms.ToolStripStatusLabel();
 			toolStripSeparator3 = new System.Windows.Forms.ToolStripSeparator();
 			toolStripDropDownButton2 = new System.Windows.Forms.ToolStripDropDownButton();
 			this.contextMenuStrip1.SuspendLayout();
 			this.toolStrip1.SuspendLayout();
+			this.statusStrip1.SuspendLayout();
 			this.SuspendLayout();
 			// 
 			// toolStripSeparator3
@@ -149,7 +153,7 @@
 			this.GamesList.Location = new System.Drawing.Point(0, 28);
 			this.GamesList.MultiSelect = false;
 			this.GamesList.Name = "GamesList";
-			this.GamesList.Size = new System.Drawing.Size(652, 296);
+			this.GamesList.Size = new System.Drawing.Size(652, 273);
 			this.GamesList.SmallImageList = this.imgListFavorites;
 			this.GamesList.Sorting = System.Windows.Forms.SortOrder.Ascending;
 			this.GamesList.TabIndex = 2;
@@ -386,11 +390,37 @@
 			this.toolStripSeparator5.Name = "toolStripSeparator5";
 			this.toolStripSeparator5.Size = new System.Drawing.Size(6, 25);
 			// 
+			// statusStrip1
+			// 
+			this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.lblVersion,
+            this.toolStripStatusLabel1});
+			this.statusStrip1.Location = new System.Drawing.Point(0, 302);
+			this.statusStrip1.Name = "statusStrip1";
+			this.statusStrip1.Size = new System.Drawing.Size(652, 22);
+			this.statusStrip1.SizingGrip = false;
+			this.statusStrip1.TabIndex = 4;
+			this.statusStrip1.Text = "statusStrip1";
+			// 
+			// lblVersion
+			// 
+			this.lblVersion.Name = "lblVersion";
+			this.lblVersion.Size = new System.Drawing.Size(0, 17);
+			// 
+			// toolStripStatusLabel1
+			// 
+			this.toolStripStatusLabel1.Name = "toolStripStatusLabel1";
+			this.toolStripStatusLabel1.Size = new System.Drawing.Size(606, 17);
+			this.toolStripStatusLabel1.Spring = true;
+			this.toolStripStatusLabel1.Text = "v1.0.0-RC1";
+			this.toolStripStatusLabel1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+			// 
 			// FormMain
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.ClientSize = new System.Drawing.Size(652, 324);
+			this.Controls.Add(this.statusStrip1);
 			this.Controls.Add(this.toolStrip1);
 			this.Controls.Add(this.GamesList);
 			this.Name = "FormMain";
@@ -401,6 +431,8 @@
 			this.contextMenuStrip1.ResumeLayout(false);
 			this.toolStrip1.ResumeLayout(false);
 			this.toolStrip1.PerformLayout();
+			this.statusStrip1.ResumeLayout(false);
+			this.statusStrip1.PerformLayout();
 			this.ResumeLayout(false);
 			this.PerformLayout();
 
@@ -443,6 +475,9 @@
 		private System.Windows.Forms.ImageList imgListFavorites;
 		private System.Windows.Forms.ToolStripSeparator toolStripSeparator6;
 		private System.Windows.Forms.ToolStripMenuItem menuFavorite;
+		private System.Windows.Forms.StatusStrip statusStrip1;
+		private System.Windows.Forms.ToolStripStatusLabel lblVersion;
+		private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel1;
 	}
 }
 
