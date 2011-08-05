@@ -233,8 +233,12 @@ namespace BootCamp
 			if (MessageBox.Show(String.Format("Are you sure you want to remove '{0}'?", SelectedGame.Name), "Boot Camp", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.No)
 				return;
 
+			// Update game list
 			Program.GamesManager.Remove(SelectedGame);
-			FillGamesList();
+
+			// Update listview
+			ListViewItem item = GamesList.SelectedItems[0];
+			GamesList.Items.Remove(item);
 		}
 
 		private void OnPlayGame(object sender, EventArgs e)
