@@ -97,6 +97,11 @@ namespace BootCamp
 					HideGroups();
 					break;
 			}
+
+			foreach (ListViewItem item in GamesList.Items)
+			{
+				AssignItemToGroup(item);
+			}
 		}
 
 		internal void ShowGroups(List<string> list, string property, bool ascending)
@@ -111,25 +116,41 @@ namespace BootCamp
 
 			foreach (string s in list)
 				GamesList.Groups.Add(s, s);
+		}
+
+		private void AssignItemToGroup(ListViewItem item)
+		{
+			string property = "";
+			switch (_groupCategory)
+			{
+				case GroupCategory.Name:
+					property = "Name";
+					break;
+				case GroupCategory.Genre:
+					property = "Genre";
+					break;
+				case GroupCategory.Environment:
+					property = "Environment";
+					break;
+			}
 
 			PropertyInfo prop = typeof(Game).GetProperty(property);
-			foreach (ListViewItem item in GamesList.Items)
+
+			Game game = (Game) item.Tag;
+			if (_groupCategory == GroupCategory.Name)
 			{
-				Game game = (Game)item.Tag;
-				if (_groupCategory == GroupCategory.Name)
+				foreach (ListViewGroup group in GamesList.Groups)
 				{
-					foreach (ListViewGroup group in GamesList.Groups)
+					if (game.Name.Substring(0, 1).CompareTo(group.Name.Substring(0, 1)) >= 0 &&
+					    game.Name.Substring(0, 1).CompareTo(group.Name.Substring(group.Name.Length - 1, 1)) <= 0)
 					{
-						if (game.Name.Substring(0, 1).CompareTo(group.Name.Substring(0, 1)) >= 0 && game.Name.Substring(0, 1).CompareTo(group.Name.Substring(group.Name.Length - 1, 1)) <= 0)
-						{
-							group.Items.Add(item);
-							continue;
-						}
+						group.Items.Add(item);
+						continue;
 					}
 				}
-				else
-					GamesList.Groups[prop.GetValue(game, null).ToString()].Items.Add(item);
 			}
+			else
+				GamesList.Groups[prop.GetValue(game, null).ToString()].Items.Add(item);
 		}
 
 		internal void HideGroups()
