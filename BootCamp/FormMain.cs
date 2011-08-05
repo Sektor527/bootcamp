@@ -76,7 +76,7 @@ namespace BootCamp
 					throw new NotImplementedException();
 			}
 
-			UpdateGroups();
+			CreateGroups();
 
 			foreach (ListViewItem item in GamesList.Items)
 			{
@@ -84,7 +84,7 @@ namespace BootCamp
 			}
 		}
 
-		private void UpdateGroups()
+		private void CreateGroups()
 		{
 			switch (_groupCategory)
 			{
@@ -182,7 +182,7 @@ namespace BootCamp
 		{
 			GamesList.Items.Clear();
 
-			UpdateGroups();
+                       CreateGroups();
 
 			foreach (Game game in Program.GamesManager)
 			{
