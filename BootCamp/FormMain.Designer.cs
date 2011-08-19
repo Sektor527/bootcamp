@@ -412,7 +412,7 @@
 			this.toolStripStatusLabel1.Name = "toolStripStatusLabel1";
 			this.toolStripStatusLabel1.Size = new System.Drawing.Size(606, 17);
 			this.toolStripStatusLabel1.Spring = true;
-			this.toolStripStatusLabel1.Text = "v1.0.0-rc2";
+			this.toolStripStatusLabel1.Text = "v1.0";
 			this.toolStripStatusLabel1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
 			// 
 			// FormMain
