@@ -30,7 +30,11 @@ namespace BootCamp
 			if (string.IsNullOrEmpty(Executable)) return;
 
 			envManager.Run(this);
+
+			RunCount++;
 		}
+
+		public int RunCount { get; internal set; }
 
 		public override string ToString()
 		{

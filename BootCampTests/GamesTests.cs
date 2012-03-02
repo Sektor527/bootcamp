@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using NUnit.Framework;
@@ -10,6 +11,10 @@ namespace BootCampTests
 	[TestFixture]
 	public class GamesTests
 	{
+		MockEnvironmentManager _voidEnvManager = new MockEnvironmentManager(MockAction.DoNothing);
+		MockEnvironmentManager _excEnvManager = new MockEnvironmentManager(MockAction.ThrowException);
+
+
 		[Test]
 		public void Hashing_Self()
 		{
@@ -64,6 +69,33 @@ namespace BootCampTests
 			// Only same executable filename
 			game2 = new Game("name_1", "other_path\\exec_1.exe", "arguments_2", Environments.Dosbox, "ISO_2");
 			Assert.AreEqual(game1.GetHashCode(), game2.GetHashCode());
+		}
+
+		[Test]
+		public void RunCount_Increment()
+		{
+			Game game1 = new Game("name", "path\\exec.exe", "arguments", Environments.Dosbox, "ISO");
+			Assert.AreEqual(0, game1.RunCount);
+
+			game1.Run(_voidEnvManager);
+			Assert.AreEqual(1, game1.RunCount);
+
+			game1.Run(_voidEnvManager);
+			Assert.AreEqual(2, game1.RunCount);
+		}
+
+		[Test]
+		public void RunCount_RunFailed()
+		{
+			Game game1 = new Game("name", "path\\exec.exe", "arguments", Environments.Dosbox, "ISO");
+
+			try { game1.Run(_excEnvManager); }
+			catch (Win32Exception) { }
+			Assert.AreEqual(0, game1.RunCount);
+
+			try { game1.Run(_excEnvManager); }
+			catch (Win32Exception) { }
+			Assert.AreEqual(0, game1.RunCount);
 		}
 	}
 }
