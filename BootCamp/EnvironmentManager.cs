@@ -16,9 +16,9 @@ namespace BootCamp
 		GameAndWatch
 	}
 
-	internal static class EnvironmentManager
+	public class EnvironmentManager
 	{
-		internal static void Run(Game game)
+		internal void Run(Game game)
 		{
 			switch (game.Environment)
 			{

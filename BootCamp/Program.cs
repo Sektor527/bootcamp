@@ -22,7 +22,7 @@ namespace BootCamp
 
 			GamesManager = new GamesManager(Properties.Settings.Default.BootListPath);
 
-			Application.Run(new FormMain());
+			Application.Run(new FormMain(new EnvironmentManager()));
 
 			Properties.Settings.Default.Save();
 		}

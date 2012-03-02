@@ -8,9 +8,11 @@ namespace BootCamp
 {
 	public partial class FormMain : Form
 	{
-		public FormMain()
+		public FormMain(EnvironmentManager envManager)
 		{
 			InitializeComponent();
+
+			_environmentManager = envManager;
 		}
 
 		private void OnLoad(object sender, EventArgs e)
@@ -207,7 +209,7 @@ namespace BootCamp
 		private void LaunchGame()
 		{
 			if (SelectedGame == null) return;
-			SelectedGame.Run();
+			SelectedGame.Run(_environmentManager);
 		}
 
 		private void OnAddGame(object sender, EventArgs e)
@@ -243,7 +245,7 @@ namespace BootCamp
 		private void OnPlayGame(object sender, EventArgs e)
 		{
 			if (SelectedGame == null) return;
-			SelectedGame.Run();
+			SelectedGame.Run(_environmentManager);
 		}
 
 		private void OnEditGame(object sender, EventArgs e)
@@ -444,5 +446,7 @@ namespace BootCamp
 				}
 			}
 		}
+
+		private EnvironmentManager _environmentManager;
 	}
 }

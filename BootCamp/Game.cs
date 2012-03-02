@@ -25,11 +25,11 @@ namespace BootCamp
 			ISO = iso;
 		}
 
-		public void Run()
+		public void Run(EnvironmentManager envManager)
 		{
 			if (string.IsNullOrEmpty(Executable)) return;
 
-			EnvironmentManager.Run(this);
+			envManager.Run(this);
 		}
 
 		public override string ToString()
