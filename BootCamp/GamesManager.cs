@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Globalization;
 using System.IO;
 using System.Xml;
 
@@ -140,6 +141,9 @@ namespace BootCamp
 					if (reader.GetAttribute("RunCount") != null)
 						game.RunCount = int.Parse(reader.GetAttribute("RunCount"));
 
+					if (reader.GetAttribute("RunTimestamp") != null)
+						game.RunTimestamp = DateTime.ParseExact(reader.GetAttribute("RunTimestamp"), "u", DateTimeFormatInfo.InvariantInfo);
+
 					reader.ReadStartElement();
 
 					_games.Add(game);
@@ -173,6 +177,7 @@ namespace BootCamp
 					writer.WriteAttributeString("Environment", game.Environment.ToString());
 					writer.WriteAttributeString("Genre", game.Genre);
 					writer.WriteAttributeString("RunCount", game.RunCount.ToString());
+					writer.WriteAttributeString("RunTimestamp", game.RunTimestamp.ToString("u", DateTimeFormatInfo.InvariantInfo));
 					writer.WriteEndElement();
 				}
 				writer.WriteEndElement();
