@@ -50,6 +50,7 @@
     <Compile Include="Favorites.cs" />
     <Compile Include="AlphabeticGrouperTests.cs" />
     <Compile Include="GamesTests.cs" />
+    <Compile Include="MockEnvironmentManager.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

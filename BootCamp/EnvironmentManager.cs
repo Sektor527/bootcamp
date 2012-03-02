@@ -18,7 +18,7 @@ namespace BootCamp
 
 	public class EnvironmentManager
 	{
-		internal void Run(Game game)
+		internal virtual void Run(Game game)
 		{
 			switch (game.Environment)
 			{
