@@ -97,5 +97,30 @@ namespace BootCampTests
 			catch (Win32Exception) { }
 			Assert.AreEqual(0, game1.RunCount);
 		}
+
+		[Test]
+		public void RunTimestamp_Update()
+		{
+			Game game1 = new Game("name", "path\\exec.exe", "arguments", Environments.Dosbox, "ISO");
+
+			DateTime before = DateTime.Now;
+			game1.Run(_voidEnvManager);
+			DateTime after = DateTime.Now;
+
+			Assert.LessOrEqual(before, game1.RunTimestamp);
+			Assert.GreaterOrEqual(after, game1.RunTimestamp);
+		}
+
+		[Test]
+		public void RunTimestamp_RunFailed()
+		{
+			Game game1 = new Game("name", "path\\exec.exe", "arguments", Environments.Dosbox, "ISO");
+
+			DateTime before = DateTime.Now;
+			try { game1.Run(_excEnvManager); }
+			catch (Win32Exception) { }
+
+			Assert.GreaterOrEqual(before, game1.RunTimestamp);
+		}
 	}
 }

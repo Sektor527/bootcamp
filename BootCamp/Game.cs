@@ -1,4 +1,5 @@
-﻿using System.IO;
+﻿using System;
+using System.IO;
 
 namespace BootCamp
 {
@@ -32,9 +33,11 @@ namespace BootCamp
 			envManager.Run(this);
 
 			RunCount++;
+			RunTimestamp = DateTime.Now;
 		}
 
 		public int RunCount { get; internal set; }
+		public DateTime RunTimestamp { get; internal set; }
 
 		public override string ToString()
 		{
