@@ -45,6 +45,8 @@ namespace BootCamp
 			Name,
 			Genre,
 			Environment,
+			RunCount,
+			RunTimestamp,
 			None
 		}
 
@@ -411,6 +413,12 @@ namespace BootCamp
 				case 2: // Environment
 					sorter.SortCategory = GroupCategory.Environment;
 					break;
+				case 3: // Times Played
+					sorter.SortCategory = GroupCategory.RunCount;
+					break;
+				case 4: // Last Played
+					sorter.SortCategory = GroupCategory.RunTimestamp;
+					break;
 			}
 
 			GamesList.Sort();
@@ -452,6 +460,10 @@ namespace BootCamp
 						return _x.SubItems[1].Text.CompareTo(_y.SubItems[1].Text) * (_sortOrder == SortOrder.Ascending ? 1 : -1);
 					case GroupCategory.Environment:
 						return _x.SubItems[2].Text.CompareTo(_y.SubItems[2].Text) * (_sortOrder == SortOrder.Ascending ? 1 : -1);
+					case GroupCategory.RunCount:
+						return ((Game)(_x.Tag)).RunCount.CompareTo(((Game)_y.Tag).RunCount) * (_sortOrder == SortOrder.Ascending ? 1 : -1);
+					case GroupCategory.RunTimestamp:
+						return ((Game)(_x.Tag)).RunTimestamp.CompareTo(((Game)_y.Tag).RunTimestamp) * (_sortOrder == SortOrder.Ascending ? 1 : -1);
 					default:
 						throw new ArgumentException();
 				}
