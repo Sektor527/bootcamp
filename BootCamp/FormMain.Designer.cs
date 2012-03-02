@@ -41,6 +41,7 @@
 			this.Game = new System.Windows.Forms.ColumnHeader();
 			this.Genre = new System.Windows.Forms.ColumnHeader();
 			this.Environment = new System.Windows.Forms.ColumnHeader();
+			this.RunCount = new System.Windows.Forms.ColumnHeader();
 			this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
 			this.menuPlayGame = new System.Windows.Forms.ToolStripMenuItem();
 			this.toolStripSeparator4 = new System.Windows.Forms.ToolStripSeparator();
@@ -67,7 +68,7 @@
 			this.GroupAscending = new System.Windows.Forms.ToolStripMenuItem();
 			this.toolStripSeparator5 = new System.Windows.Forms.ToolStripSeparator();
 			this.timer1 = new System.Windows.Forms.Timer(this.components);
-			this.RunCount = new System.Windows.Forms.ColumnHeader();
+			this.RunTimestamp = new System.Windows.Forms.ColumnHeader();
 			toolStripSeparator3 = new System.Windows.Forms.ToolStripSeparator();
 			toolStripDropDownButton2 = new System.Windows.Forms.ToolStripDropDownButton();
 			this.contextMenuStrip1.SuspendLayout();
@@ -145,7 +146,8 @@
             this.Game,
             this.Genre,
             this.Environment,
-            this.RunCount});
+            this.RunCount,
+            this.RunTimestamp});
 			this.GamesList.ContextMenuStrip = this.contextMenuStrip1;
 			this.GamesList.FullRowSelect = true;
 			this.GamesList.Location = new System.Drawing.Point(0, 28);
@@ -177,6 +179,11 @@
 			// 
 			this.Environment.Text = "Environment";
 			this.Environment.Width = 123;
+			// 
+			// RunCount
+			// 
+			this.RunCount.Text = "Times Played";
+			this.RunCount.Width = 80;
 			// 
 			// contextMenuStrip1
 			// 
@@ -388,9 +395,9 @@
 			this.toolStripSeparator5.Name = "toolStripSeparator5";
 			this.toolStripSeparator5.Size = new System.Drawing.Size(6, 25);
 			// 
-			// RunCount
+			// RunTimestamp
 			// 
-			this.RunCount.Text = "Times Played";
+			this.RunTimestamp.Text = "Last Played";
 			// 
 			// FormMain
 			// 
@@ -450,6 +457,7 @@
 		private System.Windows.Forms.ToolStripSeparator toolStripSeparator6;
 		private System.Windows.Forms.ToolStripMenuItem menuFavorite;
 		private System.Windows.Forms.ColumnHeader RunCount;
+		private System.Windows.Forms.ColumnHeader RunTimestamp;
 	}
 }
 

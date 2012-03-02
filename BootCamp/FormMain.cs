@@ -187,7 +187,15 @@ namespace BootCamp
 
 			foreach (Game game in Program.GamesManager)
 			{
-				ListViewItem item = new ListViewItem(new[] { game.Name, game.Genre, game.Environment.ToString(), game.RunCount.ToString() }, Program.GamesManager.IsFavorite(game) ? 0 : -1) { Tag = game };
+				string count = "";
+				if (game.RunCount > 0)
+					count = game.RunCount.ToString();
+
+				string timestamp = "";
+				if (game.RunTimestamp > DateTime.MinValue)
+					timestamp = game.RunTimestamp.ToString("d MMMM yyyy, H:mm");
+
+				ListViewItem item = new ListViewItem(new[] { game.Name, game.Genre, game.Environment.ToString(), count, timestamp }, Program.GamesManager.IsFavorite(game) ? 0 : -1) { Tag = game };
 				if (!btnToggleFavorites.Checked || Program.GamesManager.IsFavorite(game))
 				{
 					GamesList.Items.Add(item);
@@ -212,6 +220,7 @@ namespace BootCamp
 			SelectedGame.Run(_environmentManager);
 			Program.GamesManager.Save();
 			GamesList.SelectedItems[0].SubItems[3].Text = SelectedGame.RunCount.ToString();
+			GamesList.SelectedItems[0].SubItems[4].Text = SelectedGame.RunTimestamp.ToString("d MMMM yyyy, H:mm");
 		}
 
 		private void OnAddGame(object sender, EventArgs e)
