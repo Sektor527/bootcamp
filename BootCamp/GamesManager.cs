@@ -153,7 +153,7 @@ namespace BootCamp
 			}
 		}
 
-		private void Save()
+		internal void Save()
 		{
 			XmlWriterSettings settings = new XmlWriterSettings();
 			settings.Indent = true;

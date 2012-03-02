@@ -187,7 +187,7 @@ namespace BootCamp
 
 			foreach (Game game in Program.GamesManager)
 			{
-				ListViewItem item = new ListViewItem(new[] { game.Name, game.Genre, game.Environment.ToString() }, Program.GamesManager.IsFavorite(game) ? 0 : -1) { Tag = game };
+				ListViewItem item = new ListViewItem(new[] { game.Name, game.Genre, game.Environment.ToString(), game.RunCount.ToString() }, Program.GamesManager.IsFavorite(game) ? 0 : -1) { Tag = game };
 				if (!btnToggleFavorites.Checked || Program.GamesManager.IsFavorite(game))
 				{
 					GamesList.Items.Add(item);
@@ -210,6 +210,8 @@ namespace BootCamp
 		{
 			if (SelectedGame == null) return;
 			SelectedGame.Run(_environmentManager);
+			Program.GamesManager.Save();
+			GamesList.SelectedItems[0].SubItems[3].Text = SelectedGame.RunCount.ToString();
 		}
 
 		private void OnAddGame(object sender, EventArgs e)

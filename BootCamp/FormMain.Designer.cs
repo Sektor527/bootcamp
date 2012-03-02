@@ -67,6 +67,7 @@
 			this.GroupAscending = new System.Windows.Forms.ToolStripMenuItem();
 			this.toolStripSeparator5 = new System.Windows.Forms.ToolStripSeparator();
 			this.timer1 = new System.Windows.Forms.Timer(this.components);
+			this.RunCount = new System.Windows.Forms.ColumnHeader();
 			toolStripSeparator3 = new System.Windows.Forms.ToolStripSeparator();
 			toolStripDropDownButton2 = new System.Windows.Forms.ToolStripDropDownButton();
 			this.contextMenuStrip1.SuspendLayout();
@@ -143,7 +144,8 @@
 			this.GamesList.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.Game,
             this.Genre,
-            this.Environment});
+            this.Environment,
+            this.RunCount});
 			this.GamesList.ContextMenuStrip = this.contextMenuStrip1;
 			this.GamesList.FullRowSelect = true;
 			this.GamesList.Location = new System.Drawing.Point(0, 28);
@@ -386,6 +388,10 @@
 			this.toolStripSeparator5.Name = "toolStripSeparator5";
 			this.toolStripSeparator5.Size = new System.Drawing.Size(6, 25);
 			// 
+			// RunCount
+			// 
+			this.RunCount.Text = "Times Played";
+			// 
 			// FormMain
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -443,6 +449,7 @@
 		private System.Windows.Forms.ImageList imgListFavorites;
 		private System.Windows.Forms.ToolStripSeparator toolStripSeparator6;
 		private System.Windows.Forms.ToolStripMenuItem menuFavorite;
+		private System.Windows.Forms.ColumnHeader RunCount;
 	}
 }
 
