@@ -136,6 +136,10 @@ namespace BootCamp
 					game.ISO = reader.GetAttribute("ISO");
 					game.Environment = (Environments)Enum.Parse(typeof(Environments), reader.GetAttribute("Environment"), true);
 					game.Genre = reader.GetAttribute("Genre");
+
+					if (reader.GetAttribute("RunCount") != null)
+						game.RunCount = int.Parse(reader.GetAttribute("RunCount"));
+
 					reader.ReadStartElement();
 
 					_games.Add(game);
@@ -168,6 +172,7 @@ namespace BootCamp
 					writer.WriteAttributeString("ISO", game.ISO);
 					writer.WriteAttributeString("Environment", game.Environment.ToString());
 					writer.WriteAttributeString("Genre", game.Genre);
+					writer.WriteAttributeString("RunCount", game.RunCount.ToString());
 					writer.WriteEndElement();
 				}
 				writer.WriteEndElement();
