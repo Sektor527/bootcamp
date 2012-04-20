@@ -387,6 +387,11 @@ namespace BootCamp
 			EnvironmentManager.SuperNintendo();
 		}
 
+		private void OnStartZMachine(object sender, EventArgs e)
+		{
+			EnvironmentManager.ZMachine();
+		}
+
 		private void FormMain_FormClosing(object sender, FormClosingEventArgs e)
 		{
 			Properties.Settings.Default.FormMain_WindowSize = Size;

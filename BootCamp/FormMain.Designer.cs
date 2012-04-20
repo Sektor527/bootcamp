@@ -37,11 +37,13 @@
 			this.mnuGameboy = new System.Windows.Forms.ToolStripMenuItem();
 			this.mnuNintendo64 = new System.Windows.Forms.ToolStripMenuItem();
 			this.mnuSuperNintendo = new System.Windows.Forms.ToolStripMenuItem();
+			this.zMachineToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.GamesList = new System.Windows.Forms.ListView();
 			this.Game = new System.Windows.Forms.ColumnHeader();
 			this.Genre = new System.Windows.Forms.ColumnHeader();
 			this.Environment = new System.Windows.Forms.ColumnHeader();
 			this.RunCount = new System.Windows.Forms.ColumnHeader();
+			this.RunTimestamp = new System.Windows.Forms.ColumnHeader();
 			this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
 			this.menuPlayGame = new System.Windows.Forms.ToolStripMenuItem();
 			this.toolStripSeparator4 = new System.Windows.Forms.ToolStripSeparator();
@@ -68,7 +70,6 @@
 			this.GroupAscending = new System.Windows.Forms.ToolStripMenuItem();
 			this.toolStripSeparator5 = new System.Windows.Forms.ToolStripSeparator();
 			this.timer1 = new System.Windows.Forms.Timer(this.components);
-			this.RunTimestamp = new System.Windows.Forms.ColumnHeader();
 			toolStripSeparator3 = new System.Windows.Forms.ToolStripSeparator();
 			toolStripDropDownButton2 = new System.Windows.Forms.ToolStripDropDownButton();
 			this.contextMenuStrip1.SuspendLayout();
@@ -89,7 +90,8 @@
             this.mnuC64,
             this.mnuGameboy,
             this.mnuNintendo64,
-            this.mnuSuperNintendo});
+            this.mnuSuperNintendo,
+            this.zMachineToolStripMenuItem});
 			toolStripDropDownButton2.Image = ((System.Drawing.Image)(resources.GetObject("toolStripDropDownButton2.Image")));
 			toolStripDropDownButton2.ImageTransparentColor = System.Drawing.Color.Magenta;
 			toolStripDropDownButton2.Name = "toolStripDropDownButton2";
@@ -135,6 +137,14 @@
 			this.mnuSuperNintendo.Size = new System.Drawing.Size(157, 22);
 			this.mnuSuperNintendo.Text = "Super Nintendo";
 			this.mnuSuperNintendo.Click += new System.EventHandler(this.OnStartSuperNintendo);
+			// 
+			// zMachineToolStripMenuItem
+			// 
+			this.zMachineToolStripMenuItem.Image = global::BootCamp.Properties.Resources.frotz;
+			this.zMachineToolStripMenuItem.Name = "zMachineToolStripMenuItem";
+			this.zMachineToolStripMenuItem.Size = new System.Drawing.Size(157, 22);
+			this.zMachineToolStripMenuItem.Text = "Z-Machine";
+			this.zMachineToolStripMenuItem.Click += new System.EventHandler(this.OnStartZMachine);
 			// 
 			// GamesList
 			// 
@@ -184,6 +194,10 @@
 			// 
 			this.RunCount.Text = "Times Played";
 			this.RunCount.Width = 80;
+			// 
+			// RunTimestamp
+			// 
+			this.RunTimestamp.Text = "Last Played";
 			// 
 			// contextMenuStrip1
 			// 
@@ -395,10 +409,6 @@
 			this.toolStripSeparator5.Name = "toolStripSeparator5";
 			this.toolStripSeparator5.Size = new System.Drawing.Size(6, 25);
 			// 
-			// RunTimestamp
-			// 
-			this.RunTimestamp.Text = "Last Played";
-			// 
 			// FormMain
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -458,6 +468,7 @@
 		private System.Windows.Forms.ToolStripMenuItem menuFavorite;
 		private System.Windows.Forms.ColumnHeader RunCount;
 		private System.Windows.Forms.ColumnHeader RunTimestamp;
+		private System.Windows.Forms.ToolStripMenuItem zMachineToolStripMenuItem;
 	}
 }
 

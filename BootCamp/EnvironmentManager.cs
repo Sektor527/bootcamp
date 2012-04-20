@@ -13,7 +13,8 @@ namespace BootCamp
 		Gameboy,
 		Nintendo64,
 		SuperNintendo,
-		GameAndWatch
+		GameAndWatch,
+		ZMachine
 	}
 
 	public class EnvironmentManager
@@ -80,6 +81,14 @@ namespace BootCamp
 						Process.Start(info);
 						break;
 					}
+				case Environments.ZMachine:
+					{
+						ProcessStartInfo info = new ProcessStartInfo("frotz.exe");
+						info.WorkingDirectory = Path.GetFullPath(Path.Combine(Properties.Settings.Default.EmulatorsPath, "winfrotz"));
+						info.Arguments = String.Format("\"{0}\"", Path.GetFullPath(game.Executable));
+						Process.Start(info);
+						break;
+					}
 			}
 		}
 
@@ -115,6 +124,12 @@ namespace BootCamp
 		{
 			ProcessStartInfo info = new ProcessStartInfo("snes9x.exe");
 			info.WorkingDirectory = Path.GetFullPath(Path.Combine(Properties.Settings.Default.EmulatorsPath, "super nintendo"));
+			Process.Start(info);
+		}
+		internal static void ZMachine()
+		{
+			ProcessStartInfo info = new ProcessStartInfo("frotz");
+			info.WorkingDirectory = Path.GetFullPath(Path.Combine(Properties.Settings.Default.EmulatorsPath, "winfrotz"));
 			Process.Start(info);
 		}
 	}
