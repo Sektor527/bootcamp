@@ -249,7 +249,21 @@ namespace BootCamp
 		private void OnPlayGame(object sender, EventArgs e)
 		{
 			if (SelectedGame == null) return;
-			SelectedGame.Run(_environmentManager);
+			
+			Game.Result result = SelectedGame.Run(_environmentManager);
+			switch (result)
+			{
+				case BootCamp.Game.Result.ExecutableEmptyError:
+					MessageBox.Show("This game has no executable.\n\nEdit the game and fill in the 'Executable' text box.",
+					                "No executable designated", MessageBoxButtons.OK, MessageBoxIcon.Error);
+					return;
+				case BootCamp.Game.Result.ExecutableDoesNotExistError:
+					MessageBox.Show(
+						"The executable does not exist.\n\nEdit the game and make sure the 'Executable' text box has a correct reference to an existing executable.",
+						"Executable doesn't exist", MessageBoxButtons.OK, MessageBoxIcon.Error);
+					return;
+			}
+
 			Program.GamesManager.Save();
 			GamesList.SelectedItems[0].SubItems[3].Text = SelectedGame.RunCount.ToString();
 			GamesList.SelectedItems[0].SubItems[4].Text = SelectedGame.RunTimestamp.ToString("d MMMM yyyy, H:mm");
