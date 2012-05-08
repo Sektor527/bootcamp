@@ -500,5 +500,18 @@ namespace BootCamp
 				GamesList.Focus();
 			}
 		}
+
+		protected override bool ProcessCmdKey(ref Message msg, Keys keyData)
+		{
+			switch (keyData)
+			{
+				case Keys.Control | Keys.F:
+					inputSearch.Focus();
+					inputSearch.Text = "";
+					return true;
+			}
+			
+			return base.ProcessCmdKey(ref msg, keyData);
+		}
 	}
 }
