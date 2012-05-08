@@ -29,6 +29,7 @@ namespace BootCamp
 		public void Run(EnvironmentManager envManager)
 		{
 			if (string.IsNullOrEmpty(Executable)) return;
+			if (!File.Exists(Path.GetFullPath(Executable))) return;
 
 			envManager.Run(this);
 
