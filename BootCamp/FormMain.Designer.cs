@@ -69,6 +69,7 @@
 			this.GroupDescending = new System.Windows.Forms.ToolStripMenuItem();
 			this.GroupAscending = new System.Windows.Forms.ToolStripMenuItem();
 			this.toolStripSeparator5 = new System.Windows.Forms.ToolStripSeparator();
+			this.inputSearch = new System.Windows.Forms.ToolStripTextBox();
 			this.timer1 = new System.Windows.Forms.Timer(this.components);
 			toolStripSeparator3 = new System.Windows.Forms.ToolStripSeparator();
 			toolStripDropDownButton2 = new System.Windows.Forms.ToolStripDropDownButton();
@@ -276,7 +277,8 @@
             this.btnToggleFavorites,
             this.toolStripDropDownButton1,
             this.toolStripSeparator5,
-            toolStripDropDownButton2});
+            toolStripDropDownButton2,
+            this.inputSearch});
 			this.toolStrip1.Location = new System.Drawing.Point(0, 0);
 			this.toolStrip1.Name = "toolStrip1";
 			this.toolStrip1.Size = new System.Drawing.Size(652, 25);
@@ -409,6 +411,13 @@
 			this.toolStripSeparator5.Name = "toolStripSeparator5";
 			this.toolStripSeparator5.Size = new System.Drawing.Size(6, 25);
 			// 
+			// inputSearch
+			// 
+			this.inputSearch.Name = "inputSearch";
+			this.inputSearch.Size = new System.Drawing.Size(200, 25);
+			this.inputSearch.KeyDown += new System.Windows.Forms.KeyEventHandler(this.OnSearchKeyDown);
+			this.inputSearch.TextChanged += new System.EventHandler(this.OnSearchChanged);
+			// 
 			// FormMain
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -469,6 +478,7 @@
 		private System.Windows.Forms.ColumnHeader RunCount;
 		private System.Windows.Forms.ColumnHeader RunTimestamp;
 		private System.Windows.Forms.ToolStripMenuItem zMachineToolStripMenuItem;
+		private System.Windows.Forms.ToolStripTextBox inputSearch;
 	}
 }
 

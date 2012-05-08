@@ -189,6 +189,8 @@ namespace BootCamp
 
 			foreach (Game game in Program.GamesManager)
 			{
+				if (!string.IsNullOrEmpty(inputSearch.Text) && !game.Name.ToLower().Contains(inputSearch.Text.ToLower())) continue;
+
 				string count = "";
 				if (game.RunCount > 0)
 					count = game.RunCount.ToString();
@@ -484,5 +486,19 @@ namespace BootCamp
 		}
 
 		private EnvironmentManager _environmentManager;
+
+		private void OnSearchChanged(object sender, EventArgs e)
+		{
+			FillGamesList();
+		}
+
+		private void OnSearchKeyDown(object sender, KeyEventArgs e)
+		{
+			if (e.KeyData == Keys.Enter)
+			{
+				e.Handled = true;
+				GamesList.Focus();
+			}
+		}
 	}
 }
