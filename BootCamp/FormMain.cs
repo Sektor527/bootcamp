@@ -208,21 +208,12 @@ namespace BootCamp
 
 		private void OnGamesListDoubleClick(object sender, EventArgs e)
 		{
-			LaunchGame();
+			OnPlayGame(sender, EventArgs.Empty);
 		}
 
 		private void OnGamesListKey(object sender, KeyEventArgs e)
 		{
-			if (e.KeyCode == Keys.Enter) LaunchGame();
-		}
-
-		private void LaunchGame()
-		{
-			if (SelectedGame == null) return;
-			SelectedGame.Run(_environmentManager);
-			Program.GamesManager.Save();
-			GamesList.SelectedItems[0].SubItems[3].Text = SelectedGame.RunCount.ToString();
-			GamesList.SelectedItems[0].SubItems[4].Text = SelectedGame.RunTimestamp.ToString("d MMMM yyyy, H:mm");
+			if (e.KeyCode == Keys.Enter) OnPlayGame(sender, EventArgs.Empty);
 		}
 
 		private void OnAddGame(object sender, EventArgs e)
@@ -259,6 +250,9 @@ namespace BootCamp
 		{
 			if (SelectedGame == null) return;
 			SelectedGame.Run(_environmentManager);
+			Program.GamesManager.Save();
+			GamesList.SelectedItems[0].SubItems[3].Text = SelectedGame.RunCount.ToString();
+			GamesList.SelectedItems[0].SubItems[4].Text = SelectedGame.RunTimestamp.ToString("d MMMM yyyy, H:mm");
 		}
 
 		private void OnEditGame(object sender, EventArgs e)
