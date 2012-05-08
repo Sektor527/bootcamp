@@ -26,15 +26,17 @@ namespace BootCamp
 			ISO = iso;
 		}
 
-		public void Run(EnvironmentManager envManager)
+		public Result Run(EnvironmentManager envManager)
 		{
-			if (string.IsNullOrEmpty(Executable)) return;
-			if (!File.Exists(Path.GetFullPath(Executable))) return;
+			if (string.IsNullOrEmpty(Executable)) return Result.ExecutableEmptyError;
+			if (!File.Exists(Path.GetFullPath(Executable))) return Result.ExecutableDoesNotExistError;
 
 			envManager.Run(this);
 
 			RunCount++;
 			RunTimestamp = DateTime.Now;
+
+			return Result.OK;
 		}
 
 		public int RunCount { get; internal set; }
@@ -55,6 +57,14 @@ namespace BootCamp
 			return 3*Name.GetHashCode() +
 			       5*Environment.GetHashCode() +
 			       7*Path.GetFileName(Executable).GetHashCode();
+		}
+
+		public enum Result
+		{
+			OK,
+
+			ExecutableEmptyError,
+			ExecutableDoesNotExistError
 		}
 	}
 }

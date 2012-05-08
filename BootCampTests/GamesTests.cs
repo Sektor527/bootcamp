@@ -72,9 +72,36 @@ namespace BootCampTests
 		}
 
 		[Test]
+		public void RunResult_ExecutableNull()
+		{
+			Game game1 = new Game("name", null, "arguments", Environments.Windows, "ISO");
+			Game.Result result = game1.Run(_voidEnvManager);
+
+			Assert.AreEqual(Game.Result.ExecutableEmptyError, result);
+		}
+
+		[Test]
+		public void RunResult_ExecutableEmpty()
+		{
+			Game game1 = new Game("name", "", "arguments", Environments.Windows, "ISO");
+			Game.Result result = game1.Run(_voidEnvManager);
+
+			Assert.AreEqual(Game.Result.ExecutableEmptyError, result);
+		}
+
+		[Test]
+		public void RunResult_ExecutableDoesNotExist()
+		{
+			Game game1 = new Game("name", "DOESNTEXIST\\bogus.exe", "arguments", Environments.Windows, "ISO");
+			Game.Result result = game1.Run(_voidEnvManager);
+
+			Assert.AreEqual(Game.Result.ExecutableDoesNotExistError, result);
+		}
+
+		[Test]
 		public void RunCount_Increment()
 		{
-			Game game1 = new Game("name", "path\\exec.exe", "arguments", Environments.Dosbox, "ISO");
+			Game game1 = new Game("name", "bootcamp.exe", "arguments", Environments.Dosbox, "ISO");
 			Assert.AreEqual(0, game1.RunCount);
 
 			game1.Run(_voidEnvManager);
@@ -87,7 +114,7 @@ namespace BootCampTests
 		[Test]
 		public void RunCount_RunFailed()
 		{
-			Game game1 = new Game("name", "path\\exec.exe", "arguments", Environments.Dosbox, "ISO");
+			Game game1 = new Game("name", "bootcamp.exe", "arguments", Environments.Dosbox, "ISO");
 
 			try { game1.Run(_excEnvManager); }
 			catch (Win32Exception) { }
@@ -101,7 +128,7 @@ namespace BootCampTests
 		[Test]
 		public void RunTimestamp_Update()
 		{
-			Game game1 = new Game("name", "path\\exec.exe", "arguments", Environments.Dosbox, "ISO");
+			Game game1 = new Game("name", "bootcamp.exe", "arguments", Environments.Dosbox, "ISO");
 
 			DateTime before = DateTime.Now;
 			game1.Run(_voidEnvManager);
