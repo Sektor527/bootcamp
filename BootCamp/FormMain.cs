@@ -509,6 +509,11 @@ namespace BootCamp
 					inputSearch.Focus();
 					inputSearch.Text = "";
 					return true;
+
+				case Keys.Escape:
+					inputSearch.Text = "";
+					GamesList.Focus();
+					return true;
 			}
 			
 			return base.ProcessCmdKey(ref msg, keyData);
