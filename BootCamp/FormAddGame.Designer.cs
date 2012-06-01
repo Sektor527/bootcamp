@@ -57,7 +57,7 @@
 			btnCancel.Location = new System.Drawing.Point(203, 215);
 			btnCancel.Name = "btnCancel";
 			btnCancel.Size = new System.Drawing.Size(75, 23);
-			btnCancel.TabIndex = 5;
+			btnCancel.TabIndex = 8;
 			btnCancel.Text = "Cancel";
 			btnCancel.UseVisualStyleBackColor = true;
 			// 
@@ -68,7 +68,7 @@
 			btnOK.Location = new System.Drawing.Point(122, 215);
 			btnOK.Name = "btnOK";
 			btnOK.Size = new System.Drawing.Size(75, 23);
-			btnOK.TabIndex = 6;
+			btnOK.TabIndex = 7;
 			btnOK.Text = "OK";
 			btnOK.UseVisualStyleBackColor = true;
 			// 
@@ -113,14 +113,14 @@
 			this.txtExecutable.Location = new System.Drawing.Point(84, 40);
 			this.txtExecutable.Name = "txtExecutable";
 			this.txtExecutable.Size = new System.Drawing.Size(195, 20);
-			this.txtExecutable.TabIndex = 1;
+			this.txtExecutable.TabIndex = 2;
 			// 
 			// txtName
 			// 
 			this.txtName.Location = new System.Drawing.Point(84, 6);
 			this.txtName.Name = "txtName";
 			this.txtName.Size = new System.Drawing.Size(195, 20);
-			this.txtName.TabIndex = 0;
+			this.txtName.TabIndex = 1;
 			// 
 			// lstGenre
 			// 
@@ -128,7 +128,7 @@
 			this.lstGenre.Location = new System.Drawing.Point(84, 146);
 			this.lstGenre.Name = "lstGenre";
 			this.lstGenre.Size = new System.Drawing.Size(194, 21);
-			this.lstGenre.TabIndex = 3;
+			this.lstGenre.TabIndex = 5;
 			// 
 			// lstEnvironment
 			// 
@@ -138,7 +138,7 @@
 			this.lstEnvironment.Name = "lstEnvironment";
 			this.lstEnvironment.Size = new System.Drawing.Size(194, 21);
 			this.lstEnvironment.Sorted = true;
-			this.lstEnvironment.TabIndex = 4;
+			this.lstEnvironment.TabIndex = 6;
 			// 
 			// label5
 			// 
@@ -154,7 +154,7 @@
 			this.txtISO.Location = new System.Drawing.Point(84, 112);
 			this.txtISO.Name = "txtISO";
 			this.txtISO.Size = new System.Drawing.Size(195, 20);
-			this.txtISO.TabIndex = 2;
+			this.txtISO.TabIndex = 4;
 			// 
 			// label6
 			// 
@@ -170,7 +170,7 @@
 			this.txtArguments.Location = new System.Drawing.Point(84, 75);
 			this.txtArguments.Name = "txtArguments";
 			this.txtArguments.Size = new System.Drawing.Size(194, 20);
-			this.txtArguments.TabIndex = 12;
+			this.txtArguments.TabIndex = 3;
 			// 
 			// FormAddGame
 			// 
