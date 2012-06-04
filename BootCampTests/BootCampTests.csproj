@@ -3,7 +3,7 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProductVersion>9.0.21022</ProductVersion>
+    <ProductVersion>9.0.30729</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>{3A0014E8-4533-4292-8E1A-6A3ED2D2911A}</ProjectGuid>
     <OutputType>Library</OutputType>
@@ -47,7 +47,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Favorites.cs" />
     <Compile Include="AlphabeticGrouperTests.cs" />
     <Compile Include="GamesTests.cs" />
     <Compile Include="MockEnvironmentManager.cs" />

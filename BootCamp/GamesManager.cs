@@ -144,6 +144,9 @@ namespace BootCamp
 					if (reader.GetAttribute("RunTimestamp") != null)
 						game.RunTimestamp = DateTime.ParseExact(reader.GetAttribute("RunTimestamp"), "u", DateTimeFormatInfo.InvariantInfo);
 
+					if (reader.GetAttribute("Favorite") != null)
+						game.Favorite = reader.GetAttribute("Favorite") == "True";
+
 					reader.ReadStartElement();
 
 					_games.Add(game);
@@ -176,6 +179,7 @@ namespace BootCamp
 					writer.WriteAttributeString("ISO", game.ISO);
 					writer.WriteAttributeString("Environment", game.Environment.ToString());
 					writer.WriteAttributeString("Genre", game.Genre);
+					writer.WriteAttributeString("Favorite", game.Favorite.ToString());
 					writer.WriteAttributeString("RunCount", game.RunCount.ToString());
 					writer.WriteAttributeString("RunTimestamp", game.RunTimestamp.ToString("u", DateTimeFormatInfo.InvariantInfo));
 					writer.WriteEndElement();
@@ -190,41 +194,16 @@ namespace BootCamp
 		}
 
 		#region Favorites
-		private List<Game> _favorites = new List<Game>();
-		public int CountFavorites
-		{
-			get { return _favorites.Count; }
-		}
-
 		public void SetFavorite(Game game, bool favorite)
 		{
-			if (!_games.Contains(game)) return;
-
-			if (favorite && !_favorites.Contains(game))
-				_favorites.Add(game);
-
-			if (!favorite && _favorites.Contains(game))
-				_favorites.Remove(game);
+			game.Favorite = favorite;
+			Save();
 		}
 
 		public bool IsFavorite(Game game)
 		{
-			return _favorites.Contains(game);
+			return game.Favorite;
 		}
-
-		public void SaveFavorites()
-		{
-			Properties.Settings.Default.FavoritesList.Clear();
-			foreach (Game game in _favorites)
-				Properties.Settings.Default.FavoritesList.Add(game.GetHashCode().ToString());
-		}
-
-		public void LoadFavorites()
-		{
-			foreach (String hash in Properties.Settings.Default.FavoritesList)
-				_favorites.Add(_games.Find(g => g.GetHashCode().ToString() == hash));
-		}
-
 		#endregion
 	}
 }

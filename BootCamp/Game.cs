@@ -11,12 +11,13 @@ namespace BootCamp
 		public string Executable { get; set; }
 		public string Arguments { get; set; }
 		public string ISO { get; set; }
+		public bool Favorite { get; set; }
 
-		public Game() : this("", "", "", Environments.Windows, "")
+		public Game() : this("", "", "", Environments.Windows, "", false)
 		{
 		}
 
-		public Game(string name, string executable, string arguments, Environments environment, string iso)
+		public Game(string name, string executable, string arguments, Environments environment, string iso, bool favorite)
 		{
 			Name = name;
 			Environment = environment;
@@ -24,6 +25,7 @@ namespace BootCamp
 			Executable = executable;
 			Arguments = arguments;
 			ISO = iso;
+			Favorite = favorite;
 		}
 
 		public Result Run(EnvironmentManager envManager)
