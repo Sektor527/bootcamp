@@ -70,6 +70,15 @@
 			this.GroupAscending = new System.Windows.Forms.ToolStripMenuItem();
 			this.toolStripSeparator5 = new System.Windows.Forms.ToolStripSeparator();
 			this.inputSearch = new System.Windows.Forms.ToolStripTextBox();
+			this.toolStripDropDownButton3 = new System.Windows.Forms.ToolStripDropDownButton();
+			this.theEmulatorZoneToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+			this.c64comToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+			this.romsCentralToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+			this.romHustlerToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+			this.coolROMToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+			this.homeOfTheUnderdoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+			this.magnusC64GamesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+			this.theHouseOfGamesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.timer1 = new System.Windows.Forms.Timer(this.components);
 			toolStripSeparator3 = new System.Windows.Forms.ToolStripSeparator();
 			toolStripDropDownButton2 = new System.Windows.Forms.ToolStripDropDownButton();
@@ -278,7 +287,8 @@
             this.toolStripDropDownButton1,
             this.toolStripSeparator5,
             toolStripDropDownButton2,
-            this.inputSearch});
+            this.inputSearch,
+            this.toolStripDropDownButton3});
 			this.toolStrip1.Location = new System.Drawing.Point(0, 0);
 			this.toolStrip1.Name = "toolStrip1";
 			this.toolStrip1.Size = new System.Drawing.Size(652, 25);
@@ -418,6 +428,81 @@
 			this.inputSearch.KeyDown += new System.Windows.Forms.KeyEventHandler(this.OnSearchKeyDown);
 			this.inputSearch.TextChanged += new System.EventHandler(this.OnSearchChanged);
 			// 
+			// toolStripDropDownButton3
+			// 
+			this.toolStripDropDownButton3.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
+			this.toolStripDropDownButton3.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
+			this.toolStripDropDownButton3.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.theEmulatorZoneToolStripMenuItem,
+            this.c64comToolStripMenuItem,
+            this.romsCentralToolStripMenuItem,
+            this.romHustlerToolStripMenuItem,
+            this.coolROMToolStripMenuItem,
+            this.homeOfTheUnderdoToolStripMenuItem,
+            this.magnusC64GamesToolStripMenuItem,
+            this.theHouseOfGamesToolStripMenuItem});
+			this.toolStripDropDownButton3.Image = ((System.Drawing.Image)(resources.GetObject("toolStripDropDownButton3.Image")));
+			this.toolStripDropDownButton3.ImageTransparentColor = System.Drawing.Color.Magenta;
+			this.toolStripDropDownButton3.Name = "toolStripDropDownButton3";
+			this.toolStripDropDownButton3.Size = new System.Drawing.Size(47, 22);
+			this.toolStripDropDownButton3.Text = "Links";
+			// 
+			// theEmulatorZoneToolStripMenuItem
+			// 
+			this.theEmulatorZoneToolStripMenuItem.Name = "theEmulatorZoneToolStripMenuItem";
+			this.theEmulatorZoneToolStripMenuItem.Size = new System.Drawing.Size(202, 22);
+			this.theEmulatorZoneToolStripMenuItem.Text = "The Emulator Zone";
+			this.theEmulatorZoneToolStripMenuItem.Click += new System.EventHandler(this.theEmulatorZoneToolStripMenuItem_Click);
+			// 
+			// c64comToolStripMenuItem
+			// 
+			this.c64comToolStripMenuItem.Name = "c64comToolStripMenuItem";
+			this.c64comToolStripMenuItem.Size = new System.Drawing.Size(202, 22);
+			this.c64comToolStripMenuItem.Text = "C64.com";
+			this.c64comToolStripMenuItem.Click += new System.EventHandler(this.c64comToolStripMenuItem_Click);
+			// 
+			// romsCentralToolStripMenuItem
+			// 
+			this.romsCentralToolStripMenuItem.Name = "romsCentralToolStripMenuItem";
+			this.romsCentralToolStripMenuItem.Size = new System.Drawing.Size(202, 22);
+			this.romsCentralToolStripMenuItem.Text = "RomsCentral";
+			this.romsCentralToolStripMenuItem.Click += new System.EventHandler(this.romsCentralToolStripMenuItem_Click);
+			// 
+			// romHustlerToolStripMenuItem
+			// 
+			this.romHustlerToolStripMenuItem.Name = "romHustlerToolStripMenuItem";
+			this.romHustlerToolStripMenuItem.Size = new System.Drawing.Size(202, 22);
+			this.romHustlerToolStripMenuItem.Text = "Rom Hustler";
+			this.romHustlerToolStripMenuItem.Click += new System.EventHandler(this.romHustlerToolStripMenuItem_Click);
+			// 
+			// coolROMToolStripMenuItem
+			// 
+			this.coolROMToolStripMenuItem.Name = "coolROMToolStripMenuItem";
+			this.coolROMToolStripMenuItem.Size = new System.Drawing.Size(202, 22);
+			this.coolROMToolStripMenuItem.Text = "CoolROM";
+			this.coolROMToolStripMenuItem.Click += new System.EventHandler(this.coolROMToolStripMenuItem_Click);
+			// 
+			// homeOfTheUnderdoToolStripMenuItem
+			// 
+			this.homeOfTheUnderdoToolStripMenuItem.Name = "homeOfTheUnderdoToolStripMenuItem";
+			this.homeOfTheUnderdoToolStripMenuItem.Size = new System.Drawing.Size(202, 22);
+			this.homeOfTheUnderdoToolStripMenuItem.Text = "Home of the Underdogs";
+			this.homeOfTheUnderdoToolStripMenuItem.Click += new System.EventHandler(this.homeOfTheUnderdoToolStripMenuItem_Click);
+			// 
+			// magnusC64GamesToolStripMenuItem
+			// 
+			this.magnusC64GamesToolStripMenuItem.Name = "magnusC64GamesToolStripMenuItem";
+			this.magnusC64GamesToolStripMenuItem.Size = new System.Drawing.Size(202, 22);
+			this.magnusC64GamesToolStripMenuItem.Text = "Magnus\' C64 games";
+			this.magnusC64GamesToolStripMenuItem.Click += new System.EventHandler(this.magnusC64GamesToolStripMenuItem_Click);
+			// 
+			// theHouseOfGamesToolStripMenuItem
+			// 
+			this.theHouseOfGamesToolStripMenuItem.Name = "theHouseOfGamesToolStripMenuItem";
+			this.theHouseOfGamesToolStripMenuItem.Size = new System.Drawing.Size(202, 22);
+			this.theHouseOfGamesToolStripMenuItem.Text = "The House of Games";
+			this.theHouseOfGamesToolStripMenuItem.Click += new System.EventHandler(this.theHouseOfGamesToolStripMenuItem_Click);
+			// 
 			// FormMain
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -479,6 +564,15 @@
 		private System.Windows.Forms.ColumnHeader RunTimestamp;
 		private System.Windows.Forms.ToolStripMenuItem zMachineToolStripMenuItem;
 		private System.Windows.Forms.ToolStripTextBox inputSearch;
+		private System.Windows.Forms.ToolStripDropDownButton toolStripDropDownButton3;
+		private System.Windows.Forms.ToolStripMenuItem theEmulatorZoneToolStripMenuItem;
+		private System.Windows.Forms.ToolStripMenuItem c64comToolStripMenuItem;
+		private System.Windows.Forms.ToolStripMenuItem romsCentralToolStripMenuItem;
+		private System.Windows.Forms.ToolStripMenuItem romHustlerToolStripMenuItem;
+		private System.Windows.Forms.ToolStripMenuItem coolROMToolStripMenuItem;
+		private System.Windows.Forms.ToolStripMenuItem homeOfTheUnderdoToolStripMenuItem;
+		private System.Windows.Forms.ToolStripMenuItem magnusC64GamesToolStripMenuItem;
+		private System.Windows.Forms.ToolStripMenuItem theHouseOfGamesToolStripMenuItem;
 	}
 }
 

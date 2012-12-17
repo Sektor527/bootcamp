@@ -516,5 +516,45 @@ namespace BootCamp
 			
 			return base.ProcessCmdKey(ref msg, keyData);
 		}
+
+		private void theEmulatorZoneToolStripMenuItem_Click(object sender, EventArgs e)
+		{
+			System.Diagnostics.Process.Start("http://www.emulator-zone.com");
+		}
+
+		private void c64comToolStripMenuItem_Click(object sender, EventArgs e)
+		{
+			System.Diagnostics.Process.Start("http://www.c64.com");
+		}
+
+		private void romsCentralToolStripMenuItem_Click(object sender, EventArgs e)
+		{
+			System.Diagnostics.Process.Start("http://www.romscentral.com/gb.htm");
+		}
+
+		private void romHustlerToolStripMenuItem_Click(object sender, EventArgs e)
+		{
+			System.Diagnostics.Process.Start("http://romhustler.net/");
+		}
+
+		private void coolROMToolStripMenuItem_Click(object sender, EventArgs e)
+		{
+			System.Diagnostics.Process.Start("http://www.coolrom.com/");
+		}
+
+		private void homeOfTheUnderdoToolStripMenuItem_Click(object sender, EventArgs e)
+		{
+			System.Diagnostics.Process.Start("http://www.hotud.org/");
+		}
+
+		private void magnusC64GamesToolStripMenuItem_Click(object sender, EventArgs e)
+		{
+			System.Diagnostics.Process.Start("http://biphome.spray.se/magnus.welander/start.html");
+		}
+
+		private void theHouseOfGamesToolStripMenuItem_Click(object sender, EventArgs e)
+		{
+			System.Diagnostics.Process.Start("http://www.thehouseofgames.net/");
+		}
 	}
 }
