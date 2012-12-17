@@ -136,6 +136,8 @@ namespace BootCamp
 				case GroupCategory.Environment:
 					property = "Environment";
 					break;
+				default:
+					return;
 			}
 
 			PropertyInfo prop = typeof(Game).GetProperty(property);
