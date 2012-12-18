@@ -511,7 +511,7 @@
 			this.Controls.Add(this.toolStrip1);
 			this.Controls.Add(this.GamesList);
 			this.Name = "FormMain";
-			this.Text = "Boot Camp - v1.0";
+			this.Text = "Boot Camp - v1.1";
 			this.Load += new System.EventHandler(this.OnLoad);
 			this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.FormMain_FormClosing);
 			this.Resize += new System.EventHandler(this.OnResize);
