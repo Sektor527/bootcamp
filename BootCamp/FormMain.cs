@@ -231,6 +231,7 @@ namespace BootCamp
 				ListViewItem item = new ListViewItem(new[] { form.Game.Name, form.Game.Genre, form.Game.Environment.ToString() }, Program.GamesManager.IsFavorite(form.Game) ? 0 : -1) { Tag = form.Game };
 				GamesList.Items.Add(item);
 				AssignItemToGroup(item);
+				GamesList.Sort();
 			}
 		}
 
@@ -293,6 +294,7 @@ namespace BootCamp
 			item.SubItems[2].Text = form.Game.Environment.ToString();
 			item.ImageIndex = Program.GamesManager.IsFavorite(form.Game) ? 0 : 1;
 			AssignItemToGroup(item);
+			GamesList.Sort();
 		}
 
 		private void OnToggleFavorite(object sender, EventArgs e)
@@ -342,6 +344,7 @@ namespace BootCamp
 				ListViewItem item = new ListViewItem(new[] { form.Game.Name, form.Game.Genre, form.Game.Environment.ToString() }, Program.GamesManager.IsFavorite(form.Game) ? 0 : -1) { Tag = form.Game };
 				GamesList.Items.Add(item);
 				AssignItemToGroup(item);
+				GamesList.Sort();
 			}
 		}
 
