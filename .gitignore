@@ -7,3 +7,9 @@ bin/
 obj/
 *.VisualState.xml
 TestResult.xml
+
+# vim swap files
+*.swp
+
+# cmake
+build/
