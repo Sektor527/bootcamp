@@ -5,14 +5,11 @@
 class ListFilter
 {
 public:
-	enum Criterium
-	{
-		CATEGORY
-	};
-
 	void setList(const std::vector<Game>& list);
-	std::vector<Game> getFilteredList(Criterium criterium, const std::string& value) const;
+	virtual std::vector<int> getFilteredList(const std::string& category, Platform platform) const;
 
 private:
+	bool contains(std::string string, std::string substring) const;
+
 	std::vector<Game> _list;
 };
