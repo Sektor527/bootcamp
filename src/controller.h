@@ -3,6 +3,8 @@
 #include <string>
 #include <vector>
 
+class ListFilter;
+
 class Controller
 {
 public:
@@ -16,8 +18,13 @@ public:
 		MAX_COLUMNS
 	};
 
+	Controller();
+
+	void setFilter(ListFilter* filter);
+
 	virtual void addGame(const std::string& name, const std::string& category, Platform platform, const std::string& path, const std::string& args, const std::string& ISO);
 	virtual void removeGame(int index);
+	virtual void filter(const std::string& category, Platform platform);
 
 	virtual int getRowCount() const;
 	virtual int getColumnCount() const;
@@ -40,4 +47,8 @@ public:
 
 private:
 	std::vector<Game> _games;
+
+	ListFilter* _filter;
+	std::string _categoryFilter;
+	Platform _platformFilter;
 };

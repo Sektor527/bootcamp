@@ -1,8 +1,21 @@
 #include "controller.h"
+#include "ListFilter.h"
 #include <cassert>
 #include <algorithm>
 #include <sstream>
 #include <iomanip>
+
+Controller::Controller()
+: _filter(NULL)
+, _categoryFilter("")
+, _platformFilter(UNDEFINED)
+{
+}
+
+void Controller::setFilter(ListFilter* filter)
+{
+	_filter = filter;
+}
 
 void Controller::addGame(const std::string& name, const std::string& category, Platform platform, const std::string& path, const std::string& args, const std::string& ISO)
 {
@@ -22,9 +35,20 @@ void Controller::removeGame(int index)
 	_games.erase(_games.begin() + index);
 }
 
+void Controller::filter(const std::string& category, Platform platform)
+{
+	_categoryFilter = category;
+	_platformFilter = platform;
+}
+
 int Controller::getRowCount() const
 {
-	return _games.size();
+	assert(_filter);
+
+	_filter->setList(_games);
+	std::vector<int> filteredList = _filter->getFilteredList(_categoryFilter, _platformFilter);
+
+	return filteredList.size();
 }
 
 int Controller::getColumnCount() const
@@ -34,12 +58,18 @@ int Controller::getColumnCount() const
 
 std::string Controller::data(int row, int column) const
 {
+	assert(_filter);
+
+	_filter->setList(_games);
+	std::vector<int> filteredList = _filter->getFilteredList(_categoryFilter, _platformFilter);
+	assert(row >= 0 && row < filteredList.size());
+
 	switch (column)
 	{
-		case INDEX: return getID(row);
-		case NAME: return getName(row);
-		case CATEGORY: return getCategory(row);
-		case PLATFORM: return getStringFromPlatform(getPlatform(row));
+		case INDEX: return getID(filteredList[row]);
+		case NAME: return getName(filteredList[row]);
+		case CATEGORY: return getCategory(filteredList[row]);
+		case PLATFORM: return getStringFromPlatform(getPlatform(filteredList[row]));
 	}
 }
 
