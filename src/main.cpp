@@ -1,5 +1,6 @@
 #include "controller.h"
 #include "commandhandler.h"
+#include "listfilter.h"
 #include <fstream>
 
 void load(Controller* c);
@@ -11,9 +12,11 @@ int main(int argc, char** argv)
 
 	Launcher* l = new Launcher;
 	Controller* c = new Controller;
+	ListFilter* f = new ListFilter;
 
 	load(c);
 
+	c->setFilter(f);
 	CommandHandler handler;
 	handler.setController(c);
 	handler.setLauncher(l);

@@ -109,11 +109,39 @@ void CommandHandler::parseRemove(int argc, char** argv)
 
 void CommandHandler::parseList(int argc, char** argv)
 {
-	if (argc != 1)
+	int c;
+	std::string category = "";
+	std::string platform = "";
+	while ((c = getopt(argc, argv, "p:c:h")) != -1)
 	{
-		std::cout << "Usage: list" << std::endl;
-		return;
+		switch(c)
+		{
+		case 'p':
+			platform = optarg;
+			break;
+
+		case 'c':
+			category = optarg;
+			break;
+
+		case 'h':
+		default:
+			std::cout << "Usage: list [-c <filter>] [-p <filter>]" << std::endl
+					<< "\t-c\tGame category filter (can be a substring)\n"
+					<< "\t-p\tPlatform filter. One of the following (case insensitive):\n"
+					<< "\t\t\tWindows\n"
+					<< "\t\t\tDosbox\n"
+					<< "\t\t\tC64\n"
+					<< "\t\t\tScummVM\n"
+					<< "\t\t\tGameboy\n"
+					<< "\t\t\tNintendo64\n"
+					<< "\t\t\tSuperNintendo\n"
+					<< "\t\t\tGameAndWatch\n"
+					<< "\t\t\tZMachine\n";
+			return;
+		}
 	}
+	_controller->filter(category, Controller::getPlatformFromString(platform));
 
 	std::cout << _controller->getRowCount() << " games" << std::endl;
 

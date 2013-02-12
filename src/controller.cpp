@@ -129,6 +129,8 @@ Platform Controller::getPlatformFromString(std::string platform)
 	if (platform == "supernintendo") return SUPERNINTENDO;
 	if (platform == "gameandwatch")  return GAMEANDWATCH;
 	if (platform == "zmachine")      return ZMACHINE;
+
+	return UNDEFINED;
 }
 
 std::string Controller::getStringFromPlatform(Platform platform)
