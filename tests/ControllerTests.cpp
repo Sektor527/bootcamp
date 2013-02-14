@@ -49,49 +49,49 @@ TEST_F(ControllerTests, GetID)
 {
 	c.addGame("Darksun: Shattered Lands", "Roleplaying", DOSBOX, "path/to/game.exe", "", "");
 
-	ASSERT_EQ("   1", c.getID(0));
+	ASSERT_EQ("   1", c.getID(1));
 }
 
 TEST_F(ControllerTests, GetName)
 {
 	c.addGame("Darksun: Shattered Lands", "Roleplaying", DOSBOX, "path/to/game.exe", "", "");
 
-	ASSERT_EQ("Darksun: Shattered Lands", c.getName(0));
+	ASSERT_EQ("Darksun: Shattered Lands", c.getName(1));
 }
 
 TEST_F(ControllerTests, GetCategory)
 {
 	c.addGame("Darksun: Shattered Lands", "Roleplaying", DOSBOX, "path/to/game.exe", "", "");
 
-	ASSERT_EQ("Roleplaying", c.getCategory(0));
+	ASSERT_EQ("Roleplaying", c.getCategory(1));
 }
 
 TEST_F(ControllerTests, GetPlatform)
 {
 	c.addGame("Darksun: Shattered Lands", "Roleplaying", DOSBOX, "path/to/game.exe", "", "");
 
-	ASSERT_EQ(DOSBOX, c.getPlatform(0));
+	ASSERT_EQ(DOSBOX, c.getPlatform(1));
 }
 
 TEST_F(ControllerTests, GetPath)
 {
 	c.addGame("Darksun: Shattered Lands", "Roleplaying", DOSBOX, "path/to/game.exe", "", "");
 
-	ASSERT_EQ("path/to/game.exe", c.getPath(0));
+	ASSERT_EQ("path/to/game.exe", c.getPath(1));
 }
 
 TEST_F(ControllerTests, GetArguments)
 {
 	c.addGame("Darksun: Shattered Lands", "Roleplaying", DOSBOX, "path/to/game.exe", "-arg hello", "");
 
-	ASSERT_EQ("-arg hello", c.getArgs(0));
+	ASSERT_EQ("-arg hello", c.getArgs(1));
 }
 
 TEST_F(ControllerTests, GetISO)
 {
 	c.addGame("Darksun: Shattered Lands", "Roleplaying", DOSBOX, "path/to/game.exe", "-arg hello", "path/to/ISO");
 
-	ASSERT_EQ("path/to/ISO", c.getISO(0));
+	ASSERT_EQ("path/to/ISO", c.getISO(1));
 }
 
 TEST_F(ControllerTests, GetSecondName)
@@ -99,7 +99,7 @@ TEST_F(ControllerTests, GetSecondName)
 	c.addGame("Darksun: Shattered Lands", "Roleplaying", DOSBOX, "path/to/game.exe", "", "");
 	c.addGame("Dwarf Fortress", "Roleplaying", WINDOWS, "path/to/game.exe", "", "");
 
-	ASSERT_EQ("Dwarf Fortress", c.getName(1));
+	ASSERT_EQ("Dwarf Fortress", c.getName(2));
 }
 
 TEST_F(ControllerTests, RemoveGame)
@@ -109,7 +109,7 @@ TEST_F(ControllerTests, RemoveGame)
 	c.removeGame(0);
 
 	ASSERT_EQ(1, c.getRowCount());
-	ASSERT_EQ("Dwarf Fortress", c.getName(0));
+	ASSERT_EQ("Dwarf Fortress", c.getName(1));
 }
 
 TEST_F(ControllerTests, Filter)
@@ -145,8 +145,8 @@ TEST_F(ControllerTests, StreamInCorrectOrder)
 
 	in >> c;
 
-	ASSERT_EQ("Darksun: Shattered Lands", c.getName(0));
-	ASSERT_EQ("Dwarf Fortress", c.getName(1));
+	ASSERT_EQ("Darksun: Shattered Lands", c.getName(1));
+	ASSERT_EQ("Dwarf Fortress", c.getName(2));
 }
 
 TEST_F(ControllerTests, StreamOut)

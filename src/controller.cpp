@@ -66,54 +66,54 @@ std::string Controller::data(int row, int column) const
 
 	switch (column)
 	{
-		case INDEX: return getID(filteredList[row]);
-		case NAME: return getName(filteredList[row]);
-		case CATEGORY: return getCategory(filteredList[row]);
-		case PLATFORM: return getStringFromPlatform(getPlatform(filteredList[row]));
+		case INDEX: return getID(filteredList[row]+1);
+		case NAME: return getName(filteredList[row]+1);
+		case CATEGORY: return getCategory(filteredList[row]+1);
+		case PLATFORM: return getStringFromPlatform(getPlatform(filteredList[row]+1));
 	}
 }
 
 std::string Controller::getID(int index) const
 {
 	std::stringstream ss;
-	ss << std::setfill(' ') << std::setw(4) << index + 1;
+	ss << std::setfill(' ') << std::setw(4) << index;
 	return ss.str();
 }
 
 const std::string& Controller::getName(int index) const
 {
-	assert(index >= 0 && index < _games.size());
-	return _games[index].getName();
+	assert(index >= 1 && index <= _games.size());
+	return _games[index-1].getName();
 }
 
 const std::string& Controller::getCategory(int index) const
 {
-	assert(index >= 0 && index < _games.size());
-	return _games[index].getCategory();
+	assert(index >= 1 && index <= _games.size());
+	return _games[index-1].getCategory();
 }
 
 Platform Controller::getPlatform(int index) const
 {
-	assert(index >= 0 && index < _games.size());
-	return _games[index].getPlatform();
+	assert(index >= 1 && index <= _games.size());
+	return _games[index-1].getPlatform();
 }
 
 std::string Controller::getPath(int index) const
 {
-	assert(index >= 0 && index < _games.size());
-	return _games[index].getPath();
+	assert(index >= 1 && index <= _games.size());
+	return _games[index-1].getPath();
 }
 
 const std::string& Controller::getArgs(int index) const
 {
-	assert(index >= 0 && index < _games.size());
-	return _games[index].getArgs();
+	assert(index >= 1 && index <= _games.size());
+	return _games[index-1].getArgs();
 }
 
 std::string Controller::getISO(int index) const
 {
-	assert(index >= 0 && index < _games.size());
-	return _games[index].getISO();
+	assert(index >= 1 && index <= _games.size());
+	return _games[index-1].getISO();
 }
 
 Platform Controller::getPlatformFromString(std::string platform)
