@@ -3,6 +3,9 @@
 class UIManager
 {
 public:
+	UIManager();
+	~UIManager();
+
 	void start();
 
 };

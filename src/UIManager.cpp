@@ -1,9 +1,17 @@
 #include "UIManager.h"
 #include <curses.h>
 
-void UIManager::start()
+UIManager::UIManager()
 {
 	initscr();
-	getch();
+}
+
+UIManager::~UIManager()
+{
 	endwin();
+}
+
+void UIManager::start()
+{
+	getch();
 }
