@@ -20,6 +20,7 @@ void CommandHandler::parse(int argc, char** argv)
 	if (argc == 0)
 	{
 		UIManager ui;
+		ui.setController(_controller);
 		ui.start();
 		return;
 	}
