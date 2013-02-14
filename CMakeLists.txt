@@ -9,6 +9,7 @@ set(sources
 	${source_dir}/commandhandler.cpp
 	${source_dir}/launcher.cpp
 	${source_dir}/listfilter.cpp
+	${source_dir}/UIManager.cpp
 )
 
 set(tests_dir ${PROJECT_SOURCE_DIR}/tests)
@@ -28,8 +29,10 @@ set(GTEST_INCLUDE_DIR ${GTEST_DIR}/include)
 include_directories(${GMOCK_DIR} ${GTEST_DIR} ${GMOCK_INCLUDE_DIR} ${GTEST_INCLUDE_DIR} ${PROJECT_SOURCE_DIR}/../src)
 add_executable(tests ${test_sources} ${sources} ${GMOCK_DIR}/src/gmock-all.cc ${GMOCK_DIR}/gtest/src/gtest-all.cc)
 add_custom_command(TARGET tests POST_BUILD COMMAND tests)
+target_link_libraries(tests libpdcurses.a)
 
 # Build core library
 set(CMAKE_EXE_LINKER_FLAGS "-static-libgcc -static-libstdc++")
 include_directories(${PROJECT_SOURCE_DIR}/src)
 add_executable(core ${source_dir}/main.cpp ${sources})
+target_link_libraries(core libpdcurses.a)

@@ -1,4 +1,5 @@
 #include "commandhandler.h"
+#include "UIManager.h"
 #include <unistd.h>
 #include <cassert>
 #include <iostream>
@@ -18,15 +19,8 @@ void CommandHandler::parse(int argc, char** argv)
 {
 	if (argc == 0)
 	{
-		std::cout << "Missing command" << std::endl << std::endl
-			<< "Usage: bootcamp [command] [options]\n"
-			<< "Possible commands:\n"
-			<< "\tadd\t\tAdd a new game\n"
-			<< "\tremove, rm\tRemove a game\n"
-		  << "\tlist, ls\tShow list of games\n"
-			<< "\trun\t\tRun a game\n"
-			<< "\n\nUse 'bootcamp [command] -h' for specific options\n";
-
+		UIManager ui;
+		ui.start();
 		return;
 	}
 
