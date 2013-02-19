@@ -6,8 +6,6 @@
 UIManager::UIManager()
 : _controller(NULL)
 , _scrollPos(0)
-, _maxRows(50)
-, _firstRowPosition(3)
 , _quit(false)
 {
 	initscr();
@@ -44,29 +42,52 @@ void UIManager::processInput()
 	{
 		case 'q': _quit = true; break;
 		case 'k': _scrollPos = std::max(_scrollPos-1, 0); break;
-		case 'j': _scrollPos = std::min(_scrollPos+1, _controller->getRowCount() - _maxRows); break;
+		case 'j': _scrollPos = std::min(_scrollPos+1, _controller->getRowCount() - getWindowHeight()); break;
 	}
 }
 
 void UIManager::showGameList() const
 {
-	std::stringstream s;
-	s << _controller->getRowCount() << " games";
-	mvprintw(1, 5, s.str().c_str());
+	mvprintw(getWindowPosY(), 3, _scrollPos > 0 ? "^" : " ");
+	mvprintw(getWindowHeight() - 1, 3, _scrollPos < _controller->getRowCount() - getWindowHeight() ? "v" : " ");
 
-	mvprintw(_firstRowPosition - 1, 3, _scrollPos > 0 ? "^" : " ");
-	mvprintw(_firstRowPosition + _maxRows, 3, _scrollPos < _controller->getRowCount() - _maxRows ? "v" : " ");
-
-	for (int i = 0; i < std::min(_controller->getRowCount(), _maxRows); ++i)
+	for (int i = 0; i < std::min(_controller->getRowCount(), getWindowHeight() - 2); ++i)
 	{
-		move(i+_firstRowPosition, 0);
+		move(i+getWindowPosY()+1, 0);
 		clrtoeol();
 		
-		mvprintw(i+_firstRowPosition,  1, _controller->data(i + _scrollPos, 0).c_str());
-		mvprintw(i+_firstRowPosition,  7, _controller->data(i + _scrollPos, 1).c_str());
-		mvprintw(i+_firstRowPosition, 60, _controller->data(i + _scrollPos, 2).c_str());
+		mvprintw(i+getWindowPosY()+1,  1, _controller->data(i + _scrollPos, 0).c_str());
+		mvprintw(i+getWindowPosY()+1,  7, _controller->data(i + _scrollPos, 1).c_str());
+		mvprintw(i+getWindowPosY()+1, 60, _controller->data(i + _scrollPos, 2).c_str());
 	}
 
 	refresh();
 }
 
+int UIManager::getWindowPosX() const
+{
+	int x, y;
+	getbegyx(stdscr, y, x);
+	return x;
+}
+
+int UIManager::getWindowPosY() const
+{
+	int x, y;
+	getbegyx(stdscr, y, x);
+	return y;
+}
+
+int UIManager::getWindowWidth() const
+{
+	int x, y;
+	getmaxyx(stdscr, y, x);
+	return x;
+}
+
+int UIManager::getWindowHeight() const
+{
+	int x, y;
+	getmaxyx(stdscr, y, x);
+	return y;
+}

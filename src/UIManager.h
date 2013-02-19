@@ -15,11 +15,14 @@ private:
 	void processInput();
 	void showGameList() const;
 
+	int getWindowPosX() const;
+	int getWindowPosY() const;
+	int getWindowWidth() const;
+	int getWindowHeight() const;
+
 	Controller* _controller;
 
 	int _scrollPos;
-	int _maxRows;
-	int _firstRowPosition;
 
 	bool _quit;
 };
