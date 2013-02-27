@@ -30,5 +30,6 @@ add_executable(tests ${test_sources} ${sources} ${GMOCK_DIR}/src/gmock-all.cc ${
 add_custom_command(TARGET tests POST_BUILD COMMAND tests)
 
 # Build core library
+set(CMAKE_EXE_LINKER_FLAGS "-static-libgcc -static-libstdc++")
 include_directories(${PROJECT_SOURCE_DIR}/src)
 add_executable(core ${source_dir}/main.cpp ${sources})
