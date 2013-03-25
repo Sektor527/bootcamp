@@ -22,6 +22,7 @@ int main(int argc, char** argv)
 	load(configPath, c);
 
 	c->setFilter(f);
+	l->setWorkingDir(workingdir);
 	CommandHandler handler;
 	handler.setController(c);
 	handler.setLauncher(l);

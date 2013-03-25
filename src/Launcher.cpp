@@ -19,9 +19,14 @@ Launcher::Emulator Launcher::emulators[] = {
 	{ ZMACHINE,      "bootcamp\\emulators\\winfrotz\\",       "frotz.exe" },
 };
 
+void Launcher::setWorkingDir(const std::string& path)
+{
+	m_workingDir = path;
+}
+
 void Launcher::launch(const std::string& path, Platform platform, const std::string& iso)
 {
-	std::string newPath = convertPath(path);
+	std::string newPath = convertPath(m_workingDir + "\\" + path);
 
 	std::stringstream cmd;
 	std::stringstream workingDir;
@@ -39,11 +44,11 @@ void Launcher::launch(const std::string& path, Platform platform, const std::str
 
 		case DOSBOX:
 		{
-			workingDir << emulators[platform].workingdir;
+			workingDir << m_workingDir << emulators[platform].workingdir;
 
 			cmd << emulators[platform].command << " \"" << newPath << "\" -exit -noconsole -fullscreen";
 			if (!iso.empty())
-				cmd << " -c \"imgmount d '" << convertPath(iso) << "' -t iso\"";
+				cmd << " -c \"imgmount d '" << convertPath(m_workingDir + "\\" + iso) << "' -t iso\"";
 
 			break;
 		}
@@ -54,8 +59,8 @@ void Launcher::launch(const std::string& path, Platform platform, const std::str
 		case SUPERNINTENDO:
 		case ZMACHINE:
 		{
-			workingDir << emulators[platform].workingdir;
-			cmd << emulators[platform].command << " \"" << newPath << "\"";
+			workingDir << m_workingDir << emulators[platform].workingdir;
+			cmd << "\"" << emulators[platform].command << "\" \"" << newPath << "\"";
 			break;
 		}
 
