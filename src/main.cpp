@@ -3,6 +3,7 @@
 #include "listfilter.h"
 #include <fstream>
 #include <iostream>
+#include <gflags/gflags.h>
 
 std::string extractDirectory(const std::string& path);
 void load(const std::string& path, Controller* c);
@@ -10,6 +11,8 @@ void save(const std::string& path, Controller* c);
 
 int main(int argc, char** argv)
 {
+	google::ParseCommandLineFlags(&argc, &argv, true);
+
 	const std::string workingdir = extractDirectory(argv[0]);
 	const std::string configPath = workingdir + "bootcamp\\bootlist_new.cfg";
 
