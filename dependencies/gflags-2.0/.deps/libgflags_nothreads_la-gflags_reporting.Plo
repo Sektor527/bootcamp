@@ -1,0 +1,328 @@
+libgflags_nothreads_la-gflags_reporting.lo: src/gflags_reporting.cc \
+ src/config.h src/windows/port.h \
+ c:\msysgit\msysgit\mingw\bin\../lib/gcc/mingw32/4.7.0/../../../../include/windows.h \
+ c:\msysgit\msysgit\mingw\bin\../lib/gcc/mingw32/4.7.0/include/stdarg.h \
+ c:\msysgit\msysgit\mingw\bin\../lib/gcc/mingw32/4.7.0/../../../../include/windef.h \
+ c:\msysgit\msysgit\mingw\bin\../lib/gcc/mingw32/4.7.0/../../../../include/winnt.h \
+ c:\msysgit\msysgit\mingw\bin\../lib/gcc/mingw32/4.7.0/../../../../include/winerror.h \
+ c:\msysgit\msysgit\mingw\bin\../lib/gcc/mingw32/4.7.0/../../../../include/string.h \
+ c:\msysgit\msysgit\mingw\bin\../lib/gcc/mingw32/4.7.0/../../../../include/_mingw.h \
+ c:\msysgit\msysgit\mingw\bin\../lib/gcc/mingw32/4.7.0/include/stddef.h \
+ c:\msysgit\msysgit\mingw\bin\../lib/gcc/mingw32/4.7.0/../../../../include/basetsd.h \
+ c:\msysgit\msysgit\mingw\bin\../lib/gcc/mingw32/4.7.0/../../../../include/pshpack4.h \
+ c:\msysgit\msysgit\mingw\bin\../lib/gcc/mingw32/4.7.0/../../../../include/poppack.h \
+ c:\msysgit\msysgit\mingw\bin\../lib/gcc/mingw32/4.7.0/../../../../include/wincon.h \
+ c:\msysgit\msysgit\mingw\bin\../lib/gcc/mingw32/4.7.0/../../../../include/winbase.h \
+ c:\msysgit\msysgit\mingw\bin\../lib/gcc/mingw32/4.7.0/../../../../include/wingdi.h \
+ c:\msysgit\msysgit\mingw\bin\../lib/gcc/mingw32/4.7.0/../../../../include/winuser.h \
+ c:\msysgit\msysgit\mingw\bin\../lib/gcc/mingw32/4.7.0/../../../../include/winnls.h \
+ c:\msysgit\msysgit\mingw\bin\../lib/gcc/mingw32/4.7.0/../../../../include/winver.h \
+ c:\msysgit\msysgit\mingw\bin\../lib/gcc/mingw32/4.7.0/../../../../include/winnetwk.h \
+ c:\msysgit\msysgit\mingw\bin\../lib/gcc/mingw32/4.7.0/../../../../include/winreg.h \
+ c:\msysgit\msysgit\mingw\bin\../lib/gcc/mingw32/4.7.0/../../../../include/winsvc.h \
+ c:\msysgit\msysgit\mingw\bin\../lib/gcc/mingw32/4.7.0/../../../../include/direct.h \
+ c:\msysgit\msysgit\mingw\bin\../lib/gcc/mingw32/4.7.0/../../../../include/io.h \
+ c:\msysgit\msysgit\mingw\bin\../lib/gcc/mingw32/4.7.0/../../../../include/sys/types.h \
+ c:\msysgit\msysgit\mingw\bin\../lib/gcc/mingw32/4.7.0/../../../../include/stdlib.h \
+ c:\msysgit\msysgit\mingw\bin\../lib/gcc/mingw32/4.7.0/../../../../include/stdio.h \
+ c:\msysgit\msysgit\mingw\bin\../lib/gcc/mingw32/4.7.0/../../../../include/ctype.h \
+ c:\msysgit\msysgit\mingw\bin\../lib/gcc/mingw32/4.7.0/../../../../include/assert.h \
+ c:\msysgit\msysgit\mingw\bin\../lib/gcc/mingw32/4.7.0/include/c++/string \
+ c:\msysgit\msysgit\mingw\bin\../lib/gcc/mingw32/4.7.0/include/c++/mingw32/bits/c++config.h \
+ c:\msysgit\msysgit\mingw\bin\../lib/gcc/mingw32/4.7.0/include/c++/mingw32/bits/os_defines.h \
+ c:\msysgit\msysgit\mingw\bin\../lib/gcc/mingw32/4.7.0/include/c++/mingw32/bits/cpu_defines.h \
+ c:\msysgit\msysgit\mingw\bin\../lib/gcc/mingw32/4.7.0/include/c++/bits/stringfwd.h \
+ c:\msysgit\msysgit\mingw\bin\../lib/gcc/mingw32/4.7.0/include/c++/bits/char_traits.h \
+ c:\msysgit\msysgit\mingw\bin\../lib/gcc/mingw32/4.7.0/include/c++/bits/stl_algobase.h \
+ c:\msysgit\msysgit\mingw\bin\../lib/gcc/mingw32/4.7.0/include/c++/bits/functexcept.h \
+ c:\msysgit\msysgit\mingw\bin\../lib/gcc/mingw32/4.7.0/include/c++/bits/exception_defines.h \
+ c:\msysgit\msysgit\mingw\bin\../lib/gcc/mingw32/4.7.0/include/c++/bits/cpp_type_traits.h \
+ c:\msysgit\msysgit\mingw\bin\../lib/gcc/mingw32/4.7.0/include/c++/ext/type_traits.h \
+ c:\msysgit\msysgit\mingw\bin\../lib/gcc/mingw32/4.7.0/include/c++/ext/numeric_traits.h \
+ c:\msysgit\msysgit\mingw\bin\../lib/gcc/mingw32/4.7.0/include/c++/bits/stl_pair.h \
+ c:\msysgit\msysgit\mingw\bin\../lib/gcc/mingw32/4.7.0/include/c++/bits/move.h \
+ c:\msysgit\msysgit\mingw\bin\../lib/gcc/mingw32/4.7.0/include/c++/bits/concept_check.h \
+ c:\msysgit\msysgit\mingw\bin\../lib/gcc/mingw32/4.7.0/include/c++/bits/stl_iterator_base_types.h \
+ c:\msysgit\msysgit\mingw\bin\../lib/gcc/mingw32/4.7.0/include/c++/bits/stl_iterator_base_funcs.h \
+ c:\msysgit\msysgit\mingw\bin\../lib/gcc/mingw32/4.7.0/include/c++/bits/stl_iterator.h \
+ c:\msysgit\msysgit\mingw\bin\../lib/gcc/mingw32/4.7.0/include/c++/debug/debug.h \
+ c:\msysgit\msysgit\mingw\bin\../lib/gcc/mingw32/4.7.0/include/c++/bits/postypes.h \
+ c:\msysgit\msysgit\mingw\bin\../lib/gcc/mingw32/4.7.0/include/c++/cwchar \
+ c:\msysgit\msysgit\mingw\bin\../lib/gcc/mingw32/4.7.0/../../../../include/wchar.h \
+ c:\msysgit\msysgit\mingw\bin\../lib/gcc/mingw32/4.7.0/../../../../include/wctype.h \
+ c:\msysgit\msysgit\mingw\bin\../lib/gcc/mingw32/4.7.0/include/stdint.h \
+ c:\msysgit\msysgit\mingw\bin\../lib/gcc/mingw32/4.7.0/../../../../include/stdint.h \
+ c:\msysgit\msysgit\mingw\bin\../lib/gcc/mingw32/4.7.0/include/c++/bits/allocator.h \
+ c:\msysgit\msysgit\mingw\bin\../lib/gcc/mingw32/4.7.0/include/c++/mingw32/bits/c++allocator.h \
+ c:\msysgit\msysgit\mingw\bin\../lib/gcc/mingw32/4.7.0/include/c++/ext/new_allocator.h \
+ c:\msysgit\msysgit\mingw\bin\../lib/gcc/mingw32/4.7.0/include/c++/new \
+ c:\msysgit\msysgit\mingw\bin\../lib/gcc/mingw32/4.7.0/include/c++/exception \
+ c:\msysgit\msysgit\mingw\bin\../lib/gcc/mingw32/4.7.0/include/c++/bits/atomic_lockfree_defines.h \
+ c:\msysgit\msysgit\mingw\bin\../lib/gcc/mingw32/4.7.0/include/c++/bits/localefwd.h \
+ c:\msysgit\msysgit\mingw\bin\../lib/gcc/mingw32/4.7.0/include/c++/mingw32/bits/c++locale.h \
+ c:\msysgit\msysgit\mingw\bin\../lib/gcc/mingw32/4.7.0/include/c++/clocale \
+ c:\msysgit\msysgit\mingw\bin\../lib/gcc/mingw32/4.7.0/../../../../include/locale.h \
+ c:\msysgit\msysgit\mingw\bin\../lib/gcc/mingw32/4.7.0/include/c++/iosfwd \
+ c:\msysgit\msysgit\mingw\bin\../lib/gcc/mingw32/4.7.0/include/c++/cctype \
+ c:\msysgit\msysgit\mingw\bin\../lib/gcc/mingw32/4.7.0/include/c++/bits/ostream_insert.h \
+ c:\msysgit\msysgit\mingw\bin\../lib/gcc/mingw32/4.7.0/include/c++/bits/cxxabi_forced.h \
+ c:\msysgit\msysgit\mingw\bin\../lib/gcc/mingw32/4.7.0/include/c++/bits/stl_function.h \
+ c:\msysgit\msysgit\mingw\bin\../lib/gcc/mingw32/4.7.0/include/c++/backward/binders.h \
+ c:\msysgit\msysgit\mingw\bin\../lib/gcc/mingw32/4.7.0/include/c++/bits/range_access.h \
+ c:\msysgit\msysgit\mingw\bin\../lib/gcc/mingw32/4.7.0/include/c++/bits/basic_string.h \
+ c:\msysgit\msysgit\mingw\bin\../lib/gcc/mingw32/4.7.0/include/c++/ext/atomicity.h \
+ c:\msysgit\msysgit\mingw\bin\../lib/gcc/mingw32/4.7.0/include/c++/mingw32/bits/gthr.h \
+ c:\msysgit\msysgit\mingw\bin\../lib/gcc/mingw32/4.7.0/include/c++/mingw32/bits/gthr-default.h \
+ c:\msysgit\msysgit\mingw\bin\../lib/gcc/mingw32/4.7.0/../../../../include/errno.h \
+ c:\msysgit\msysgit\mingw\bin\../lib/gcc/mingw32/4.7.0/include/c++/mingw32/bits/atomic_word.h \
+ c:\msysgit\msysgit\mingw\bin\../lib/gcc/mingw32/4.7.0/include/c++/bits/basic_string.tcc \
+ c:\msysgit\msysgit\mingw\bin\../lib/gcc/mingw32/4.7.0/include/c++/vector \
+ c:\msysgit\msysgit\mingw\bin\../lib/gcc/mingw32/4.7.0/include/c++/bits/stl_construct.h \
+ c:\msysgit\msysgit\mingw\bin\../lib/gcc/mingw32/4.7.0/include/c++/ext/alloc_traits.h \
+ c:\msysgit\msysgit\mingw\bin\../lib/gcc/mingw32/4.7.0/include/c++/bits/stl_uninitialized.h \
+ c:\msysgit\msysgit\mingw\bin\../lib/gcc/mingw32/4.7.0/include/c++/bits/stl_vector.h \
+ c:\msysgit\msysgit\mingw\bin\../lib/gcc/mingw32/4.7.0/include/c++/bits/stl_bvector.h \
+ c:\msysgit\msysgit\mingw\bin\../lib/gcc/mingw32/4.7.0/include/c++/bits/vector.tcc \
+ src/gflags/gflags.h src/gflags/gflags_declare.h \
+ c:\msysgit\msysgit\mingw\bin\../lib/gcc/mingw32/4.7.0/../../../../include/inttypes.h \
+ src/gflags/gflags_completions.h src/util.h \
+ c:\msysgit\msysgit\mingw\bin\../lib/gcc/mingw32/4.7.0/include/c++/iostream \
+ c:\msysgit\msysgit\mingw\bin\../lib/gcc/mingw32/4.7.0/include/c++/ostream \
+ c:\msysgit\msysgit\mingw\bin\../lib/gcc/mingw32/4.7.0/include/c++/ios \
+ c:\msysgit\msysgit\mingw\bin\../lib/gcc/mingw32/4.7.0/include/c++/bits/ios_base.h \
+ c:\msysgit\msysgit\mingw\bin\../lib/gcc/mingw32/4.7.0/include/c++/bits/locale_classes.h \
+ c:\msysgit\msysgit\mingw\bin\../lib/gcc/mingw32/4.7.0/include/c++/bits/locale_classes.tcc \
+ c:\msysgit\msysgit\mingw\bin\../lib/gcc/mingw32/4.7.0/include/c++/streambuf \
+ c:\msysgit\msysgit\mingw\bin\../lib/gcc/mingw32/4.7.0/include/c++/bits/streambuf.tcc \
+ c:\msysgit\msysgit\mingw\bin\../lib/gcc/mingw32/4.7.0/include/c++/bits/basic_ios.h \
+ c:\msysgit\msysgit\mingw\bin\../lib/gcc/mingw32/4.7.0/include/c++/bits/locale_facets.h \
+ c:\msysgit\msysgit\mingw\bin\../lib/gcc/mingw32/4.7.0/include/c++/cwctype \
+ c:\msysgit\msysgit\mingw\bin\../lib/gcc/mingw32/4.7.0/include/c++/mingw32/bits/ctype_base.h \
+ c:\msysgit\msysgit\mingw\bin\../lib/gcc/mingw32/4.7.0/include/c++/bits/streambuf_iterator.h \
+ c:\msysgit\msysgit\mingw\bin\../lib/gcc/mingw32/4.7.0/include/c++/mingw32/bits/ctype_inline.h \
+ c:\msysgit\msysgit\mingw\bin\../lib/gcc/mingw32/4.7.0/include/c++/bits/locale_facets.tcc \
+ c:\msysgit\msysgit\mingw\bin\../lib/gcc/mingw32/4.7.0/include/c++/bits/basic_ios.tcc \
+ c:\msysgit\msysgit\mingw\bin\../lib/gcc/mingw32/4.7.0/include/c++/bits/ostream.tcc \
+ c:\msysgit\msysgit\mingw\bin\../lib/gcc/mingw32/4.7.0/include/c++/istream \
+ c:\msysgit\msysgit\mingw\bin\../lib/gcc/mingw32/4.7.0/include/c++/bits/istream.tcc \
+ c:\msysgit\msysgit\mingw\bin\../lib/gcc/mingw32/4.7.0/../../../../include/sys/stat.h
+
+src/config.h:
+
+src/windows/port.h:
+
+c:\msysgit\msysgit\mingw\bin\../lib/gcc/mingw32/4.7.0/../../../../include/windows.h:
+
+c:\msysgit\msysgit\mingw\bin\../lib/gcc/mingw32/4.7.0/include/stdarg.h:
+
+c:\msysgit\msysgit\mingw\bin\../lib/gcc/mingw32/4.7.0/../../../../include/windef.h:
+
+c:\msysgit\msysgit\mingw\bin\../lib/gcc/mingw32/4.7.0/../../../../include/winnt.h:
+
+c:\msysgit\msysgit\mingw\bin\../lib/gcc/mingw32/4.7.0/../../../../include/winerror.h:
+
+c:\msysgit\msysgit\mingw\bin\../lib/gcc/mingw32/4.7.0/../../../../include/string.h:
+
+c:\msysgit\msysgit\mingw\bin\../lib/gcc/mingw32/4.7.0/../../../../include/_mingw.h:
+
+c:\msysgit\msysgit\mingw\bin\../lib/gcc/mingw32/4.7.0/include/stddef.h:
+
+c:\msysgit\msysgit\mingw\bin\../lib/gcc/mingw32/4.7.0/../../../../include/basetsd.h:
+
+c:\msysgit\msysgit\mingw\bin\../lib/gcc/mingw32/4.7.0/../../../../include/pshpack4.h:
+
+c:\msysgit\msysgit\mingw\bin\../lib/gcc/mingw32/4.7.0/../../../../include/poppack.h:
+
+c:\msysgit\msysgit\mingw\bin\../lib/gcc/mingw32/4.7.0/../../../../include/wincon.h:
+
+c:\msysgit\msysgit\mingw\bin\../lib/gcc/mingw32/4.7.0/../../../../include/winbase.h:
+
+c:\msysgit\msysgit\mingw\bin\../lib/gcc/mingw32/4.7.0/../../../../include/wingdi.h:
+
+c:\msysgit\msysgit\mingw\bin\../lib/gcc/mingw32/4.7.0/../../../../include/winuser.h:
+
+c:\msysgit\msysgit\mingw\bin\../lib/gcc/mingw32/4.7.0/../../../../include/winnls.h:
+
+c:\msysgit\msysgit\mingw\bin\../lib/gcc/mingw32/4.7.0/../../../../include/winver.h:
+
+c:\msysgit\msysgit\mingw\bin\../lib/gcc/mingw32/4.7.0/../../../../include/winnetwk.h:
+
+c:\msysgit\msysgit\mingw\bin\../lib/gcc/mingw32/4.7.0/../../../../include/winreg.h:
+
+c:\msysgit\msysgit\mingw\bin\../lib/gcc/mingw32/4.7.0/../../../../include/winsvc.h:
+
+c:\msysgit\msysgit\mingw\bin\../lib/gcc/mingw32/4.7.0/../../../../include/direct.h:
+
+c:\msysgit\msysgit\mingw\bin\../lib/gcc/mingw32/4.7.0/../../../../include/io.h:
+
+c:\msysgit\msysgit\mingw\bin\../lib/gcc/mingw32/4.7.0/../../../../include/sys/types.h:
+
+c:\msysgit\msysgit\mingw\bin\../lib/gcc/mingw32/4.7.0/../../../../include/stdlib.h:
+
+c:\msysgit\msysgit\mingw\bin\../lib/gcc/mingw32/4.7.0/../../../../include/stdio.h:
+
+c:\msysgit\msysgit\mingw\bin\../lib/gcc/mingw32/4.7.0/../../../../include/ctype.h:
+
+c:\msysgit\msysgit\mingw\bin\../lib/gcc/mingw32/4.7.0/../../../../include/assert.h:
+
+c:\msysgit\msysgit\mingw\bin\../lib/gcc/mingw32/4.7.0/include/c++/string:
+
+c:\msysgit\msysgit\mingw\bin\../lib/gcc/mingw32/4.7.0/include/c++/mingw32/bits/c++config.h:
+
+c:\msysgit\msysgit\mingw\bin\../lib/gcc/mingw32/4.7.0/include/c++/mingw32/bits/os_defines.h:
+
+c:\msysgit\msysgit\mingw\bin\../lib/gcc/mingw32/4.7.0/include/c++/mingw32/bits/cpu_defines.h:
+
+c:\msysgit\msysgit\mingw\bin\../lib/gcc/mingw32/4.7.0/include/c++/bits/stringfwd.h:
+
+c:\msysgit\msysgit\mingw\bin\../lib/gcc/mingw32/4.7.0/include/c++/bits/char_traits.h:
+
+c:\msysgit\msysgit\mingw\bin\../lib/gcc/mingw32/4.7.0/include/c++/bits/stl_algobase.h:
+
+c:\msysgit\msysgit\mingw\bin\../lib/gcc/mingw32/4.7.0/include/c++/bits/functexcept.h:
+
+c:\msysgit\msysgit\mingw\bin\../lib/gcc/mingw32/4.7.0/include/c++/bits/exception_defines.h:
+
+c:\msysgit\msysgit\mingw\bin\../lib/gcc/mingw32/4.7.0/include/c++/bits/cpp_type_traits.h:
+
+c:\msysgit\msysgit\mingw\bin\../lib/gcc/mingw32/4.7.0/include/c++/ext/type_traits.h:
+
+c:\msysgit\msysgit\mingw\bin\../lib/gcc/mingw32/4.7.0/include/c++/ext/numeric_traits.h:
+
+c:\msysgit\msysgit\mingw\bin\../lib/gcc/mingw32/4.7.0/include/c++/bits/stl_pair.h:
+
+c:\msysgit\msysgit\mingw\bin\../lib/gcc/mingw32/4.7.0/include/c++/bits/move.h:
+
+c:\msysgit\msysgit\mingw\bin\../lib/gcc/mingw32/4.7.0/include/c++/bits/concept_check.h:
+
+c:\msysgit\msysgit\mingw\bin\../lib/gcc/mingw32/4.7.0/include/c++/bits/stl_iterator_base_types.h:
+
+c:\msysgit\msysgit\mingw\bin\../lib/gcc/mingw32/4.7.0/include/c++/bits/stl_iterator_base_funcs.h:
+
+c:\msysgit\msysgit\mingw\bin\../lib/gcc/mingw32/4.7.0/include/c++/bits/stl_iterator.h:
+
+c:\msysgit\msysgit\mingw\bin\../lib/gcc/mingw32/4.7.0/include/c++/debug/debug.h:
+
+c:\msysgit\msysgit\mingw\bin\../lib/gcc/mingw32/4.7.0/include/c++/bits/postypes.h:
+
+c:\msysgit\msysgit\mingw\bin\../lib/gcc/mingw32/4.7.0/include/c++/cwchar:
+
+c:\msysgit\msysgit\mingw\bin\../lib/gcc/mingw32/4.7.0/../../../../include/wchar.h:
+
+c:\msysgit\msysgit\mingw\bin\../lib/gcc/mingw32/4.7.0/../../../../include/wctype.h:
+
+c:\msysgit\msysgit\mingw\bin\../lib/gcc/mingw32/4.7.0/include/stdint.h:
+
+c:\msysgit\msysgit\mingw\bin\../lib/gcc/mingw32/4.7.0/../../../../include/stdint.h:
+
+c:\msysgit\msysgit\mingw\bin\../lib/gcc/mingw32/4.7.0/include/c++/bits/allocator.h:
+
+c:\msysgit\msysgit\mingw\bin\../lib/gcc/mingw32/4.7.0/include/c++/mingw32/bits/c++allocator.h:
+
+c:\msysgit\msysgit\mingw\bin\../lib/gcc/mingw32/4.7.0/include/c++/ext/new_allocator.h:
+
+c:\msysgit\msysgit\mingw\bin\../lib/gcc/mingw32/4.7.0/include/c++/new:
+
+c:\msysgit\msysgit\mingw\bin\../lib/gcc/mingw32/4.7.0/include/c++/exception:
+
+c:\msysgit\msysgit\mingw\bin\../lib/gcc/mingw32/4.7.0/include/c++/bits/atomic_lockfree_defines.h:
+
+c:\msysgit\msysgit\mingw\bin\../lib/gcc/mingw32/4.7.0/include/c++/bits/localefwd.h:
+
+c:\msysgit\msysgit\mingw\bin\../lib/gcc/mingw32/4.7.0/include/c++/mingw32/bits/c++locale.h:
+
+c:\msysgit\msysgit\mingw\bin\../lib/gcc/mingw32/4.7.0/include/c++/clocale:
+
+c:\msysgit\msysgit\mingw\bin\../lib/gcc/mingw32/4.7.0/../../../../include/locale.h:
+
+c:\msysgit\msysgit\mingw\bin\../lib/gcc/mingw32/4.7.0/include/c++/iosfwd:
+
+c:\msysgit\msysgit\mingw\bin\../lib/gcc/mingw32/4.7.0/include/c++/cctype:
+
+c:\msysgit\msysgit\mingw\bin\../lib/gcc/mingw32/4.7.0/include/c++/bits/ostream_insert.h:
+
+c:\msysgit\msysgit\mingw\bin\../lib/gcc/mingw32/4.7.0/include/c++/bits/cxxabi_forced.h:
+
+c:\msysgit\msysgit\mingw\bin\../lib/gcc/mingw32/4.7.0/include/c++/bits/stl_function.h:
+
+c:\msysgit\msysgit\mingw\bin\../lib/gcc/mingw32/4.7.0/include/c++/backward/binders.h:
+
+c:\msysgit\msysgit\mingw\bin\../lib/gcc/mingw32/4.7.0/include/c++/bits/range_access.h:
+
+c:\msysgit\msysgit\mingw\bin\../lib/gcc/mingw32/4.7.0/include/c++/bits/basic_string.h:
+
+c:\msysgit\msysgit\mingw\bin\../lib/gcc/mingw32/4.7.0/include/c++/ext/atomicity.h:
+
+c:\msysgit\msysgit\mingw\bin\../lib/gcc/mingw32/4.7.0/include/c++/mingw32/bits/gthr.h:
+
+c:\msysgit\msysgit\mingw\bin\../lib/gcc/mingw32/4.7.0/include/c++/mingw32/bits/gthr-default.h:
+
+c:\msysgit\msysgit\mingw\bin\../lib/gcc/mingw32/4.7.0/../../../../include/errno.h:
+
+c:\msysgit\msysgit\mingw\bin\../lib/gcc/mingw32/4.7.0/include/c++/mingw32/bits/atomic_word.h:
+
+c:\msysgit\msysgit\mingw\bin\../lib/gcc/mingw32/4.7.0/include/c++/bits/basic_string.tcc:
+
+c:\msysgit\msysgit\mingw\bin\../lib/gcc/mingw32/4.7.0/include/c++/vector:
+
+c:\msysgit\msysgit\mingw\bin\../lib/gcc/mingw32/4.7.0/include/c++/bits/stl_construct.h:
+
+c:\msysgit\msysgit\mingw\bin\../lib/gcc/mingw32/4.7.0/include/c++/ext/alloc_traits.h:
+
+c:\msysgit\msysgit\mingw\bin\../lib/gcc/mingw32/4.7.0/include/c++/bits/stl_uninitialized.h:
+
+c:\msysgit\msysgit\mingw\bin\../lib/gcc/mingw32/4.7.0/include/c++/bits/stl_vector.h:
+
+c:\msysgit\msysgit\mingw\bin\../lib/gcc/mingw32/4.7.0/include/c++/bits/stl_bvector.h:
+
+c:\msysgit\msysgit\mingw\bin\../lib/gcc/mingw32/4.7.0/include/c++/bits/vector.tcc:
+
+src/gflags/gflags.h:
+
+src/gflags/gflags_declare.h:
+
+c:\msysgit\msysgit\mingw\bin\../lib/gcc/mingw32/4.7.0/../../../../include/inttypes.h:
+
+src/gflags/gflags_completions.h:
+
+src/util.h:
+
+c:\msysgit\msysgit\mingw\bin\../lib/gcc/mingw32/4.7.0/include/c++/iostream:
+
+c:\msysgit\msysgit\mingw\bin\../lib/gcc/mingw32/4.7.0/include/c++/ostream:
+
+c:\msysgit\msysgit\mingw\bin\../lib/gcc/mingw32/4.7.0/include/c++/ios:
+
+c:\msysgit\msysgit\mingw\bin\../lib/gcc/mingw32/4.7.0/include/c++/bits/ios_base.h:
+
+c:\msysgit\msysgit\mingw\bin\../lib/gcc/mingw32/4.7.0/include/c++/bits/locale_classes.h:
+
+c:\msysgit\msysgit\mingw\bin\../lib/gcc/mingw32/4.7.0/include/c++/bits/locale_classes.tcc:
+
+c:\msysgit\msysgit\mingw\bin\../lib/gcc/mingw32/4.7.0/include/c++/streambuf:
+
+c:\msysgit\msysgit\mingw\bin\../lib/gcc/mingw32/4.7.0/include/c++/bits/streambuf.tcc:
+
+c:\msysgit\msysgit\mingw\bin\../lib/gcc/mingw32/4.7.0/include/c++/bits/basic_ios.h:
+
+c:\msysgit\msysgit\mingw\bin\../lib/gcc/mingw32/4.7.0/include/c++/bits/locale_facets.h:
+
+c:\msysgit\msysgit\mingw\bin\../lib/gcc/mingw32/4.7.0/include/c++/cwctype:
+
+c:\msysgit\msysgit\mingw\bin\../lib/gcc/mingw32/4.7.0/include/c++/mingw32/bits/ctype_base.h:
+
+c:\msysgit\msysgit\mingw\bin\../lib/gcc/mingw32/4.7.0/include/c++/bits/streambuf_iterator.h:
+
+c:\msysgit\msysgit\mingw\bin\../lib/gcc/mingw32/4.7.0/include/c++/mingw32/bits/ctype_inline.h:
+
+c:\msysgit\msysgit\mingw\bin\../lib/gcc/mingw32/4.7.0/include/c++/bits/locale_facets.tcc:
+
+c:\msysgit\msysgit\mingw\bin\../lib/gcc/mingw32/4.7.0/include/c++/bits/basic_ios.tcc:
+
+c:\msysgit\msysgit\mingw\bin\../lib/gcc/mingw32/4.7.0/include/c++/bits/ostream.tcc:
+
+c:\msysgit\msysgit\mingw\bin\../lib/gcc/mingw32/4.7.0/include/c++/istream:
+
+c:\msysgit\msysgit\mingw\bin\../lib/gcc/mingw32/4.7.0/include/c++/bits/istream.tcc:
+
+c:\msysgit\msysgit\mingw\bin\../lib/gcc/mingw32/4.7.0/../../../../include/sys/stat.h:
