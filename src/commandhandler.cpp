@@ -5,6 +5,15 @@
 #include <iostream>
 #include <sstream>
 
+#include <gflags/gflags.h>
+
+DEFINE_string(name, "", "Name of the game");
+DEFINE_string(category, "", "Game category (like RPG, FPS, ...)");
+DEFINE_string(platform, "", "Platform (Windows, Dosbox, C64, ScummVM, Gameboy, Nintendo64, SuperNintendo, GameAndWatch, ZMachine)");
+DEFINE_string(executable, "", "Path to the executable");
+DEFINE_string(arguments, "", "Arguments for the executable");
+DEFINE_string(iso, "", "Path to the ISO file");
+
 void CommandHandler::setController(Controller* controller)
 {
 	_controller = controller;
@@ -35,57 +44,8 @@ void CommandHandler::parse(int argc, char** argv)
 
 void CommandHandler::parseAdd(int argc, char** argv)
 {
-	std::string name;
-	std::string category;
-	Platform platform;
-	std::string path;
-	std::string args;
-	std::string iso;
-
-	int c;
-	while ((c = getopt(argc, argv, "hn:p:c:x:a:i:")) != -1)
-	{
-		switch (c)
-		{
-			case 'h':
-				std::cout << "Usage: bootcamp add -n <Name> -c <Category> -p <Platform> -x <Executable>\n\n"
-					<< "\t-n\tName of the game\n"
-					<< "\t-c\tGame category (like RPG, FPS, ...)\n"
-					<< "\t-p\tPlatform. One of the following (case insensitive):\n"
-					<< "\t\t\tWindows\n"
-					<< "\t\t\tDosbox\n"
-					<< "\t\t\tC64\n"
-					<< "\t\t\tScummVM\n"
-					<< "\t\t\tGameboy\n"
-					<< "\t\t\tNintendo64\n"
-					<< "\t\t\tSuperNintendo\n"
-					<< "\t\t\tGameAndWatch\n"
-					<< "\t\t\tZMachine\n"
-					<< "\t-x\tPath to the executable\n";
-				return;
-
-			case 'n':
-				name = optarg;
-				break;
-			case 'p':
-				platform = Controller::getPlatformFromString(optarg);
-				break;
-			case 'c':
-				category = optarg;
-				break;
-			case 'x':
-				path = optarg;
-				break;
-			case 'a':
-				args = optarg;
-				break;
-			case 'i':
-				iso = optarg;
-				break;
-		}
-	}
-
-	_controller->addGame(name, category, platform, path, args, iso);
+	Platform platform = Controller::getPlatformFromString(FLAGS_platform);
+	_controller->addGame(FLAGS_name, FLAGS_category, platform, FLAGS_executable, FLAGS_arguments, FLAGS_iso);
 }
 
 void CommandHandler::parseRemove(int argc, char** argv)

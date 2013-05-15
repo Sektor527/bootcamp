@@ -1,4 +1,5 @@
 #include "gmock/gmock.h"
+#include <gflags/gflags.h>
 #include "commandhandler.h"
 #include "controller.h"
 #include "launcher.h"
@@ -48,8 +49,11 @@ TEST_F(CommandHandlerAddTests, Parse)
 {
 	EXPECT_CALL(controller, addGame(_,_,_,_,_,_));
 
-	char* argv[] = { "add", "-n", "name", "-c", "category", "-p", "c64", "-x", "\"path/to/game.exe\"", "-a", "-h", "hello", "-i", "path/to/iso" };
+	char* argv[] = { "add" };
 	int argc = sizeof(argv)/sizeof(char*);
+
+	char** argv2 = argv;
+	google::ParseCommandLineFlags(&argc, &argv2, true);
 
 	handler.parse(argc, argv);
 }
@@ -58,8 +62,11 @@ TEST_F(CommandHandlerAddTests, ParseCorrectName)
 {
 	EXPECT_CALL(controller, addGame("name",_,_,_,_,_));
 
-	char* argv[] = { "add", "-n", "name", "-c", "category", "-p", "c64", "-x", "\"path/to/game.exe\"", "-a", "-h", "hello", "-i", "path/to/iso" };
+	char* argv[] = { "add", "--name=name" };
 	int argc = sizeof(argv)/sizeof(char*);
+
+	char** argv2 = argv;
+	google::ParseCommandLineFlags(&argc, &argv2, true);
 
 	handler.parse(argc, argv);
 }
@@ -68,8 +75,11 @@ TEST_F(CommandHandlerAddTests, ParseCorrectNameWithMultipleWords)
 {
 	EXPECT_CALL(controller, addGame("name test",_,_,_,_,_));
 
-	char* argv[] = { "add", "-n", "name test", "-c", "category", "-p", "c64", "-x", "\"path/to/game.exe\"", "-a", "-h", "hello", "-i", "path/to/iso" };
+	char* argv[] = { "add", "--name=name test" };
 	int argc = sizeof(argv)/sizeof(char*);
+
+	char** argv2 = argv;
+	google::ParseCommandLineFlags(&argc, &argv2, true);
 
 	handler.parse(argc, argv);
 }
@@ -78,8 +88,11 @@ TEST_F(CommandHandlerAddTests, ParseCorrectCategory)
 {
 	EXPECT_CALL(controller, addGame(_,"category",_,_,_,_));
 
-	char* argv[] = { "add", "-n", "name", "test", "-c", "category", "-p", "c64", "-x", "\"path/to/game.exe\"", "-a", "-h", "hello", "-i", "path/to/iso" };
+	char* argv[] = { "add", "--category=category" };
 	int argc = sizeof(argv)/sizeof(char*);
+
+	char** argv2 = argv;
+	google::ParseCommandLineFlags(&argc, &argv2, true);
 
 	handler.parse(argc, argv);
 }
@@ -88,8 +101,11 @@ TEST_F(CommandHandlerAddTests, ParseCorrectPlatform)
 {
 	EXPECT_CALL(controller, addGame(_,_,C64,_,_,_));
 
-	char* argv[] = { "add", "-n", "name", "test", "-c", "category", "-p", "c64", "-x", "\"path/to/game.exe\"", "-a", "-h", "hello", "-i", "path/to/iso" };
+	char* argv[] = { "add", "--platform=c64" };
 	int argc = sizeof(argv)/sizeof(char*);
+
+	char** argv2 = argv;
+	google::ParseCommandLineFlags(&argc, &argv2, true);
 
 	handler.parse(argc, argv);
 }
