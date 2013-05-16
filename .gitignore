@@ -12,4 +12,4 @@ TestResult.xml
 *.swp
 
 # cmake
-build/
+build*/
