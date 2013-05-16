@@ -28,7 +28,7 @@ int main(int argc, char** argv)
 	handler.setLauncher(l);
 	handler.parse(argc, argv);
 
-	//save(configPath, c);
+	save(configPath, c);
 
 	return 0;
 }
