@@ -1,4 +1,4 @@
-#include "controller.h"
+#include "GameController.h"
 #include "commandhandler.h"
 #include "listfilter.h"
 #include <fstream>
@@ -6,8 +6,8 @@
 #include <gflags/gflags.h>
 
 std::string extractDirectory(const std::string& path);
-void load(const std::string& path, Controller* c);
-void save(const std::string& path, Controller* c);
+void load(const std::string& path, GameController* c);
+void save(const std::string& path, GameController* c);
 
 int main(int argc, char** argv)
 {
@@ -19,19 +19,19 @@ int main(int argc, char** argv)
 	argc--; argv++;
 
 	Launcher* l = new Launcher;
-	Controller* c = new Controller;
+	GameController* gc = new GameController;
 	ListFilter* f = new ListFilter;
 
-	load(configPath, c);
+	load(configPath, gc);
 
-	c->setFilter(f);
+	gc->setFilter(f);
 	l->setWorkingDir(workingdir);
 	CommandHandler handler;
-	handler.setController(c);
+	handler.setGameController(gc);
 	handler.setLauncher(l);
 	handler.parse(argc, argv);
 
-	save(configPath, c);
+	save(configPath, gc);
 
 	return 0;
 }
@@ -42,14 +42,14 @@ std::string extractDirectory(const std::string& path)
 	return path.substr(0, lastseparator+1);
 }
 
-void load(const std::string& path, Controller* c)
+void load(const std::string& path, GameController* c)
 {
 	std::ifstream file(path.c_str());
 
 	file >> *c;
 }
 
-void save(const std::string& path, Controller* c)
+void save(const std::string& path, GameController* c)
 {
 	std::ofstream file(path.c_str());
 

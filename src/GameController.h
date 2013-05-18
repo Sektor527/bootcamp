@@ -5,7 +5,7 @@
 
 class ListFilter;
 
-class Controller
+class GameController
 {
 public:
 	enum Columns
@@ -18,7 +18,7 @@ public:
 		MAX_COLUMNS
 	};
 
-	Controller();
+	GameController();
 
 	void setFilter(ListFilter* filter);
 
@@ -42,8 +42,8 @@ public:
 	static Platform getPlatformFromString(std::string platform);
 	static std::string getStringFromPlatform(Platform platform);
 
-	friend std::ostream& operator<< (std::ostream& out, const Controller& controller);
-	friend std::istream& operator>> (std::istream& in, Controller& controller);
+	friend std::ostream& operator<< (std::ostream& out, const GameController& controller);
+	friend std::istream& operator>> (std::istream& in, GameController& controller);
 
 private:
 	std::vector<Game> _games;

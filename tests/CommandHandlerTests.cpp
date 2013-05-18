@@ -1,7 +1,7 @@
 #include "gmock/gmock.h"
 #include <gflags/gflags.h>
 #include "commandhandler.h"
-#include "controller.h"
+#include "GameController.h"
 #include "launcher.h"
 #include "game.h"
 #include <unistd.h>
@@ -13,7 +13,7 @@ using testing::StrEq;
 using testing::Return;
 using testing::ReturnRef;
 
-class MockController : public Controller
+class MockController : public GameController
 {
 public:
 	MOCK_CONST_METHOD0(getRowCount, int());
@@ -36,7 +36,7 @@ public:
 	void SetUp()
 	{
 		optind = 1;
-		handler.setController(&controller);
+		handler.setGameController(&controller);
 	}
 
 protected:
@@ -116,7 +116,7 @@ TEST(CommandHandlerRemoveTests, Parse)
 	EXPECT_CALL(controller, removeGame(_));
 
 	CommandHandler handler;
-	handler.setController(&controller);
+	handler.setGameController(&controller);
 	char* argv[] = { "remove", "1" };
 	int argc = sizeof(argv)/sizeof(char*);
 	handler.parse(argc, argv);
@@ -128,7 +128,7 @@ TEST(CommandHandlerRemoveTests, ParseCorrectParameter)
 	EXPECT_CALL(controller, removeGame(27));
 
 	CommandHandler handler;
-	handler.setController(&controller);
+	handler.setGameController(&controller);
 	char* argv[] = { "remove", "27" };
 	int argc = sizeof(argv)/sizeof(char*);
 	handler.parse(argc, argv);
@@ -147,7 +147,7 @@ TEST(CommandHandlerRunTests, Parse)
 	EXPECT_CALL(launcher, launch("abc", DOSBOX, "iso"));
 
 	CommandHandler handler;
-	handler.setController(&controller);
+	handler.setGameController(&controller);
 	handler.setLauncher(&launcher);
 	char* argv[] = { "run", "27" };
 	int argc = sizeof(argv)/sizeof(char*);
@@ -167,7 +167,7 @@ TEST(CommandHandlerRunTests, PathWithSpaces)
 	EXPECT_CALL(launcher, launch("path to/my/game executable.exe", _, _));
 
 	CommandHandler handler;
-	handler.setController(&controller);
+	handler.setGameController(&controller);
 	handler.setLauncher(&launcher);
 	char* argv[] = { "run", "27" };
 	int argc = sizeof(argv)/sizeof(char*);
@@ -187,7 +187,7 @@ TEST(CommandHandlerRunTests, IsoWithSpaces)
 	EXPECT_CALL(launcher, launch(_, _, "path to/my/iso file.cue"));
 
 	CommandHandler handler;
-	handler.setController(&controller);
+	handler.setGameController(&controller);
 	handler.setLauncher(&launcher);
 	char* argv[] = { "run", "27" };
 	int argc = sizeof(argv)/sizeof(char*);

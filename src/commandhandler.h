@@ -1,11 +1,13 @@
 #pragma once
-#include "controller.h"
 #include "Launcher.h"
+
+class GameController;
+class PlatformController;
 
 class CommandHandler
 {
 public:
-	void setController(Controller* controller);
+	void setGameController(GameController* controller);
 	void setLauncher(Launcher* launcher);
 	void parse(int argc, char** argv);
 
@@ -16,6 +18,6 @@ private:
 	void parseRun(int argc, char** argv);
 
 private:
-	Controller* _controller;
+	GameController* _gameController;
 	Launcher* _launcher;
 };

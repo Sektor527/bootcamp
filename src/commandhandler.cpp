@@ -1,4 +1,5 @@
 #include "commandhandler.h"
+#include "GameController.h"
 #include "UIManager.h"
 #include <unistd.h>
 #include <cassert>
@@ -14,9 +15,9 @@ DEFINE_string(executable, "", "Path to the executable");
 DEFINE_string(arguments, "", "Arguments for the executable");
 DEFINE_string(iso, "", "Path to the ISO file");
 
-void CommandHandler::setController(Controller* controller)
+void CommandHandler::setGameController(GameController* controller)
 {
-	_controller = controller;
+	_gameController = controller;
 }
 
 void CommandHandler::setLauncher(Launcher* launcher)
@@ -29,7 +30,7 @@ void CommandHandler::parse(int argc, char** argv)
 	if (argc == 0)
 	{
 		UIManager ui;
-		ui.setController(_controller);
+		ui.setController(_gameController);
 		ui.start();
 		return;
 	}
@@ -44,7 +45,7 @@ void CommandHandler::parse(int argc, char** argv)
 
 void CommandHandler::parseAdd(int argc, char** argv)
 {
-	_controller->addGame(FLAGS_name, FLAGS_category, Controller::getPlatformFromString(FLAGS_platform), FLAGS_executable, FLAGS_arguments, FLAGS_iso);
+	_gameController->addGame(FLAGS_name, FLAGS_category, GameController::getPlatformFromString(FLAGS_platform), FLAGS_executable, FLAGS_arguments, FLAGS_iso);
 }
 
 void CommandHandler::parseRemove(int argc, char** argv)
@@ -58,19 +59,19 @@ void CommandHandler::parseRemove(int argc, char** argv)
 	std::stringstream ss(argv[1]);
 	int index;
 	ss >> index;
-	_controller->removeGame(index);
+	_gameController->removeGame(index);
 }
 
 void CommandHandler::parseList(int argc, char** argv)
 {
-	_controller->filter(FLAGS_category, Controller::getPlatformFromString(FLAGS_platform));
+	_gameController->filter(FLAGS_category, GameController::getPlatformFromString(FLAGS_platform));
 
-	std::cout << _controller->getRowCount() << " games" << std::endl;
-	for (int i = 0; i < _controller->getRowCount(); ++i)
+	std::cout << _gameController->getRowCount() << " games" << std::endl;
+	for (int i = 0; i < _gameController->getRowCount(); ++i)
 	{
-		std::cout << _controller->data(i, Controller::INDEX) << " - "
-		          << _controller->data(i, Controller::NAME) << " "
-							<< "(" << _controller->data(i, Controller::CATEGORY) << ")"
+		std::cout << _gameController->data(i, GameController::INDEX) << " - "
+		          << _gameController->data(i, GameController::NAME) << " "
+							<< "(" << _gameController->data(i, GameController::CATEGORY) << ")"
 							<< std::endl;
 	}
 }
@@ -87,11 +88,11 @@ void CommandHandler::parseRun(int argc, char** argv)
 	int index;
 	ss >> index;
 	
-	if (index < 0 || index > _controller->getRowCount())
+	if (index < 0 || index > _gameController->getRowCount())
 	{
 		std::cout << "Error: given index does not exist" << std::endl;
 		return;
 	}
 
-	_launcher->launch(_controller->getPath(index), _controller->getPlatform(index), _controller->getISO(index));
+	_launcher->launch(_gameController->getPath(index), _gameController->getPlatform(index), _gameController->getISO(index));
 }

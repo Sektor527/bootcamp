@@ -1,23 +1,23 @@
-#include "controller.h"
+#include "GameController.h"
 #include "ListFilter.h"
 #include <cassert>
 #include <algorithm>
 #include <sstream>
 #include <iomanip>
 
-Controller::Controller()
+GameController::GameController()
 : _filter(NULL)
 , _categoryFilter("")
 , _platformFilter(UNDEFINED)
 {
 }
 
-void Controller::setFilter(ListFilter* filter)
+void GameController::setFilter(ListFilter* filter)
 {
 	_filter = filter;
 }
 
-void Controller::addGame(const std::string& name, const std::string& category, Platform platform, const std::string& path, const std::string& args, const std::string& ISO)
+void GameController::addGame(const std::string& name, const std::string& category, Platform platform, const std::string& path, const std::string& args, const std::string& ISO)
 {
 	Game g;
 	g.setName(name);
@@ -30,18 +30,18 @@ void Controller::addGame(const std::string& name, const std::string& category, P
 	_games.push_back(g);
 }
 
-void Controller::removeGame(int index)
+void GameController::removeGame(int index)
 {
 	_games.erase(_games.begin() + index);
 }
 
-void Controller::filter(const std::string& category, Platform platform)
+void GameController::filter(const std::string& category, Platform platform)
 {
 	_categoryFilter = category;
 	_platformFilter = platform;
 }
 
-int Controller::getRowCount() const
+int GameController::getRowCount() const
 {
 	assert(_filter);
 
@@ -51,12 +51,12 @@ int Controller::getRowCount() const
 	return filteredList.size();
 }
 
-int Controller::getColumnCount() const
+int GameController::getColumnCount() const
 {
 	return MAX_COLUMNS;
 }
 
-std::string Controller::data(int row, int column) const
+std::string GameController::data(int row, int column) const
 {
 	assert(_filter);
 
@@ -73,50 +73,50 @@ std::string Controller::data(int row, int column) const
 	}
 }
 
-std::string Controller::getID(int index) const
+std::string GameController::getID(int index) const
 {
 	std::stringstream ss;
 	ss << std::setfill(' ') << std::setw(4) << index;
 	return ss.str();
 }
 
-const std::string& Controller::getName(int index) const
+const std::string& GameController::getName(int index) const
 {
 	assert(index >= 1 && index <= _games.size());
 	return _games[index-1].getName();
 }
 
-const std::string& Controller::getCategory(int index) const
+const std::string& GameController::getCategory(int index) const
 {
 	assert(index >= 1 && index <= _games.size());
 	return _games[index-1].getCategory();
 }
 
-Platform Controller::getPlatform(int index) const
+Platform GameController::getPlatform(int index) const
 {
 	assert(index >= 1 && index <= _games.size());
 	return _games[index-1].getPlatform();
 }
 
-std::string Controller::getPath(int index) const
+std::string GameController::getPath(int index) const
 {
 	assert(index >= 1 && index <= _games.size());
 	return _games[index-1].getPath();
 }
 
-const std::string& Controller::getArgs(int index) const
+const std::string& GameController::getArgs(int index) const
 {
 	assert(index >= 1 && index <= _games.size());
 	return _games[index-1].getArgs();
 }
 
-std::string Controller::getISO(int index) const
+std::string GameController::getISO(int index) const
 {
 	assert(index >= 1 && index <= _games.size());
 	return _games[index-1].getISO();
 }
 
-Platform Controller::getPlatformFromString(std::string platform)
+Platform GameController::getPlatformFromString(std::string platform)
 {
 	std::transform(platform.begin(), platform.end(), platform.begin(), ::tolower);
 
@@ -133,7 +133,7 @@ Platform Controller::getPlatformFromString(std::string platform)
 	return UNDEFINED;
 }
 
-std::string Controller::getStringFromPlatform(Platform platform)
+std::string GameController::getStringFromPlatform(Platform platform)
 {
 	switch (platform)
 	{
@@ -149,7 +149,7 @@ std::string Controller::getStringFromPlatform(Platform platform)
 	}
 }
 
-std::ostream& operator<< (std::ostream& out, const Controller& controller)
+std::ostream& operator<< (std::ostream& out, const GameController& controller)
 {
 	for (std::vector<Game>::const_iterator it = controller._games.begin(); it != controller._games.end(); ++it)
 	{
@@ -157,7 +157,7 @@ std::ostream& operator<< (std::ostream& out, const Controller& controller)
 	}
 }
 
-std::istream& operator>> (std::istream& in, Controller& controller)
+std::istream& operator>> (std::istream& in, GameController& controller)
 {
 	while (in.good())
 	{

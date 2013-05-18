@@ -1,6 +1,6 @@
 #include "gmock/gmock.h"
 #include "Game.h"
-#include "controller.h"
+#include "GameController.h"
 #include "ListFilter.h"
 #include <vector>
 
@@ -12,7 +12,7 @@ public:
 	MOCK_CONST_METHOD2(getFilteredList, std::vector<int>(const std::string&, Platform));
 };
 
-class ControllerTests : public ::testing::Test
+class GameControllerTests : public ::testing::Test
 {
 public:
 	virtual void SetUp()
@@ -26,18 +26,18 @@ public:
 		delete filter;
 	}
 
-	Controller c;
+	GameController c;
 	ListFilter* filter;
 };
 
-TEST_F(ControllerTests, AddGame)
+TEST_F(GameControllerTests, AddGame)
 {
 	c.addGame("Darksun: Shattered Lands", "Roleplaying", DOSBOX, "path/to/game.exe", "", "");
 
 	ASSERT_EQ(1, c.getRowCount());
 }
 
-TEST_F(ControllerTests, AddTwoGames)
+TEST_F(GameControllerTests, AddTwoGames)
 {
 	c.addGame("Darksun: Shattered Lands", "Roleplaying", DOSBOX, "path/to/game.exe", "", "");
 	c.addGame("Dwarf Fortress", "Roleplaying", WINDOWS, "path/to/game.exe", "", "");
@@ -45,56 +45,56 @@ TEST_F(ControllerTests, AddTwoGames)
 	ASSERT_EQ(2, c.getRowCount());
 }
 
-TEST_F(ControllerTests, GetID)
+TEST_F(GameControllerTests, GetID)
 {
 	c.addGame("Darksun: Shattered Lands", "Roleplaying", DOSBOX, "path/to/game.exe", "", "");
 
 	ASSERT_EQ("   1", c.getID(1));
 }
 
-TEST_F(ControllerTests, GetName)
+TEST_F(GameControllerTests, GetName)
 {
 	c.addGame("Darksun: Shattered Lands", "Roleplaying", DOSBOX, "path/to/game.exe", "", "");
 
 	ASSERT_EQ("Darksun: Shattered Lands", c.getName(1));
 }
 
-TEST_F(ControllerTests, GetCategory)
+TEST_F(GameControllerTests, GetCategory)
 {
 	c.addGame("Darksun: Shattered Lands", "Roleplaying", DOSBOX, "path/to/game.exe", "", "");
 
 	ASSERT_EQ("Roleplaying", c.getCategory(1));
 }
 
-TEST_F(ControllerTests, GetPlatform)
+TEST_F(GameControllerTests, GetPlatform)
 {
 	c.addGame("Darksun: Shattered Lands", "Roleplaying", DOSBOX, "path/to/game.exe", "", "");
 
 	ASSERT_EQ(DOSBOX, c.getPlatform(1));
 }
 
-TEST_F(ControllerTests, GetPath)
+TEST_F(GameControllerTests, GetPath)
 {
 	c.addGame("Darksun: Shattered Lands", "Roleplaying", DOSBOX, "path/to/game.exe", "", "");
 
 	ASSERT_EQ("path/to/game.exe", c.getPath(1));
 }
 
-TEST_F(ControllerTests, GetArguments)
+TEST_F(GameControllerTests, GetArguments)
 {
 	c.addGame("Darksun: Shattered Lands", "Roleplaying", DOSBOX, "path/to/game.exe", "-arg hello", "");
 
 	ASSERT_EQ("-arg hello", c.getArgs(1));
 }
 
-TEST_F(ControllerTests, GetISO)
+TEST_F(GameControllerTests, GetISO)
 {
 	c.addGame("Darksun: Shattered Lands", "Roleplaying", DOSBOX, "path/to/game.exe", "-arg hello", "path/to/ISO");
 
 	ASSERT_EQ("path/to/ISO", c.getISO(1));
 }
 
-TEST_F(ControllerTests, GetSecondName)
+TEST_F(GameControllerTests, GetSecondName)
 {
 	c.addGame("Darksun: Shattered Lands", "Roleplaying", DOSBOX, "path/to/game.exe", "", "");
 	c.addGame("Dwarf Fortress", "Roleplaying", WINDOWS, "path/to/game.exe", "", "");
@@ -102,7 +102,7 @@ TEST_F(ControllerTests, GetSecondName)
 	ASSERT_EQ("Dwarf Fortress", c.getName(2));
 }
 
-TEST_F(ControllerTests, RemoveGame)
+TEST_F(GameControllerTests, RemoveGame)
 {
 	c.addGame("Darksun: Shattered Lands", "Roleplaying", DOSBOX, "path/to/game.exe", "", "");
 	c.addGame("Dwarf Fortress", "Roleplaying", WINDOWS, "path/to/game.exe", "", "");
@@ -112,7 +112,7 @@ TEST_F(ControllerTests, RemoveGame)
 	ASSERT_EQ("Dwarf Fortress", c.getName(1));
 }
 
-TEST_F(ControllerTests, Filter)
+TEST_F(GameControllerTests, Filter)
 {
 	MockFilter f;
 	EXPECT_CALL(f, getFilteredList("Test", C64));
@@ -126,7 +126,7 @@ TEST_F(ControllerTests, Filter)
 	ASSERT_EQ(0, c.getRowCount());
 }
 
-TEST_F(ControllerTests, StreamInCorrectNumber)
+TEST_F(GameControllerTests, StreamInCorrectNumber)
 {
 	std::stringstream in;
 	in << "Darksun: Shattered Lands|programs/dsun/dsun.exe|-f -p test|2|Roleplaying||1" << std::endl;
@@ -137,7 +137,7 @@ TEST_F(ControllerTests, StreamInCorrectNumber)
 	ASSERT_EQ(2, c.getRowCount());
 }
 
-TEST_F(ControllerTests, StreamInCorrectOrder)
+TEST_F(GameControllerTests, StreamInCorrectOrder)
 {
 	std::stringstream in;
 	in << "Darksun: Shattered Lands|programs/dsun/dsun.exe|-f -p test|2|Roleplaying||1" << std::endl;
@@ -149,7 +149,7 @@ TEST_F(ControllerTests, StreamInCorrectOrder)
 	ASSERT_EQ("Dwarf Fortress", c.getName(2));
 }
 
-TEST_F(ControllerTests, StreamOut)
+TEST_F(GameControllerTests, StreamOut)
 {
 	c.addGame("n1", "c1", WINDOWS, "p1", "a1", "i1");
 	c.addGame("n2", "c2", DOSBOX, "p2", "a2", "i2");

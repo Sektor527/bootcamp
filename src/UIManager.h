@@ -1,6 +1,6 @@
 #pragma once
 
-class Controller;
+class GameController;
 
 class UIManager
 {
@@ -8,7 +8,7 @@ public:
 	UIManager();
 	~UIManager();
 
-	void setController(Controller* controller);
+	void setController(GameController* controller);
 	void start();
 
 private:
@@ -20,7 +20,7 @@ private:
 	int getWindowWidth() const;
 	int getWindowHeight() const;
 
-	Controller* _controller;
+	GameController* _controller;
 
 	int _scrollPos;
 

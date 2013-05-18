@@ -1,5 +1,5 @@
 #include "UIManager.h"
-#include "Controller.h"
+#include "GameController.h"
 #include <curses.h>
 #include <sstream>
 
@@ -21,7 +21,7 @@ UIManager::~UIManager()
 	endwin();
 }
 
-void UIManager::setController(Controller* controller)
+void UIManager::setController(GameController* controller)
 {
 	_controller = controller;
 }

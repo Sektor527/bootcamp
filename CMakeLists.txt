@@ -5,7 +5,7 @@ project(Bootcamp)
 set(source_dir ${PROJECT_SOURCE_DIR}/src)
 set(sources
 	${source_dir}/Game.cpp
-	${source_dir}/controller.cpp
+	${source_dir}/GameController.cpp
 	${source_dir}/commandhandler.cpp
 	${source_dir}/launcher.cpp
 	${source_dir}/listfilter.cpp
@@ -16,7 +16,7 @@ set(tests_dir ${PROJECT_SOURCE_DIR}/tests)
 set(test_sources
 	${tests_dir}/main.cpp
 	${tests_dir}/GameTests.cpp
-	${tests_dir}/ControllerTests.cpp
+	${tests_dir}/GameControllerTests.cpp
 	${tests_dir}/CommandHandlerTests.cpp
 	${tests_dir}/ListFilterTests.cpp
 )
