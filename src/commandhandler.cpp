@@ -44,8 +44,7 @@ void CommandHandler::parse(int argc, char** argv)
 
 void CommandHandler::parseAdd(int argc, char** argv)
 {
-	Platform platform = Controller::getPlatformFromString(FLAGS_platform);
-	_controller->addGame(FLAGS_name, FLAGS_category, platform, FLAGS_executable, FLAGS_arguments, FLAGS_iso);
+	_controller->addGame(FLAGS_name, FLAGS_category, Controller::getPlatformFromString(FLAGS_platform), FLAGS_executable, FLAGS_arguments, FLAGS_iso);
 }
 
 void CommandHandler::parseRemove(int argc, char** argv)
@@ -64,42 +63,9 @@ void CommandHandler::parseRemove(int argc, char** argv)
 
 void CommandHandler::parseList(int argc, char** argv)
 {
-	int c;
-	std::string category = "";
-	std::string platform = "";
-	while ((c = getopt(argc, argv, "p:c:h")) != -1)
-	{
-		switch(c)
-		{
-		case 'p':
-			platform = optarg;
-			break;
-
-		case 'c':
-			category = optarg;
-			break;
-
-		case 'h':
-		default:
-			std::cout << "Usage: list [-c <filter>] [-p <filter>]" << std::endl
-					<< "\t-c\tGame category filter (can be a substring)\n"
-					<< "\t-p\tPlatform filter. One of the following (case insensitive):\n"
-					<< "\t\t\tWindows\n"
-					<< "\t\t\tDosbox\n"
-					<< "\t\t\tC64\n"
-					<< "\t\t\tScummVM\n"
-					<< "\t\t\tGameboy\n"
-					<< "\t\t\tNintendo64\n"
-					<< "\t\t\tSuperNintendo\n"
-					<< "\t\t\tGameAndWatch\n"
-					<< "\t\t\tZMachine\n";
-			return;
-		}
-	}
-	_controller->filter(category, Controller::getPlatformFromString(platform));
+	_controller->filter(FLAGS_category, Controller::getPlatformFromString(FLAGS_platform));
 
 	std::cout << _controller->getRowCount() << " games" << std::endl;
-
 	for (int i = 0; i < _controller->getRowCount(); ++i)
 	{
 		std::cout << _controller->data(i, Controller::INDEX) << " - "
