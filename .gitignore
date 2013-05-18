@@ -4,6 +4,7 @@
 *.ncb
 *.obj
 bin/
+!dependencies/pdcurses/bin
 obj/
 *.VisualState.xml
 TestResult.xml
