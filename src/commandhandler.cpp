@@ -46,6 +46,7 @@ void CommandHandler::parse(int argc, char** argv)
 	if (command == "add") parseAdd(argc, argv);
 	if (command == "remove" || command == "rm") parseRemove(argc, argv);
 	if (command == "list" || command == "ls") parseList(argc, argv);
+	if (command == "lsp") parseListPlatform(argc, argv);
 	if (command == "run") parseRun(argc, argv);
 }
 
@@ -79,6 +80,14 @@ void CommandHandler::parseList(int argc, char** argv)
 		          << _gameController->data(i, GameController::NAME) << " "
 							<< "(" << _gameController->data(i, GameController::CATEGORY) << ")"
 							<< std::endl;
+	}
+}
+
+void CommandHandler::parseListPlatform(int argc, char** argv)
+{
+	for (int i = 0; i < _platformController->getRowCount(); ++i)
+	{
+		std::cout << _platformController->data(i, PlatformController::NAME) << std::endl;
 	}
 }
 
