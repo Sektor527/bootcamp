@@ -39,9 +39,6 @@ public:
 	virtual const std::string& getArgs(int index) const;
 	virtual std::string getISO(int index) const;
 
-	static Platform getPlatformFromString(std::string platform);
-	static std::string getStringFromPlatform(Platform platform);
-
 	friend std::ostream& operator<< (std::ostream& out, const GameController& controller);
 	friend std::istream& operator>> (std::istream& in, GameController& controller);
 

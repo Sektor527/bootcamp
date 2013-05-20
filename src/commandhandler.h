@@ -8,6 +8,7 @@ class CommandHandler
 {
 public:
 	void setGameController(GameController* controller);
+	void setPlatformController(PlatformController* controller);
 	void setLauncher(Launcher* launcher);
 	void parse(int argc, char** argv);
 
@@ -19,5 +20,6 @@ private:
 
 private:
 	GameController* _gameController;
+	PlatformController* _platformController;
 	Launcher* _launcher;
 };

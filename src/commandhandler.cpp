@@ -1,5 +1,6 @@
 #include "commandhandler.h"
 #include "GameController.h"
+#include "PlatformController.h"
 #include "UIManager.h"
 #include <unistd.h>
 #include <cassert>
@@ -18,6 +19,11 @@ DEFINE_string(iso, "", "Path to the ISO file");
 void CommandHandler::setGameController(GameController* controller)
 {
 	_gameController = controller;
+}
+
+void CommandHandler::setPlatformController(PlatformController* controller)
+{
+	_platformController = controller;
 }
 
 void CommandHandler::setLauncher(Launcher* launcher)
@@ -45,7 +51,7 @@ void CommandHandler::parse(int argc, char** argv)
 
 void CommandHandler::parseAdd(int argc, char** argv)
 {
-	_gameController->addGame(FLAGS_name, FLAGS_category, GameController::getPlatformFromString(FLAGS_platform), FLAGS_executable, FLAGS_arguments, FLAGS_iso);
+	_gameController->addGame(FLAGS_name, FLAGS_category, PlatformController::getPlatformFromString(FLAGS_platform), FLAGS_executable, FLAGS_arguments, FLAGS_iso);
 }
 
 void CommandHandler::parseRemove(int argc, char** argv)
@@ -64,7 +70,7 @@ void CommandHandler::parseRemove(int argc, char** argv)
 
 void CommandHandler::parseList(int argc, char** argv)
 {
-	_gameController->filter(FLAGS_category, GameController::getPlatformFromString(FLAGS_platform));
+	_gameController->filter(FLAGS_category, PlatformController::getPlatformFromString(FLAGS_platform));
 
 	std::cout << _gameController->getRowCount() << " games" << std::endl;
 	for (int i = 0; i < _gameController->getRowCount(); ++i)

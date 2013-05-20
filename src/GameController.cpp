@@ -1,7 +1,7 @@
 #include "GameController.h"
+#include "PlatformController.h"
 #include "ListFilter.h"
 #include <cassert>
-#include <algorithm>
 #include <sstream>
 #include <iomanip>
 
@@ -69,7 +69,7 @@ std::string GameController::data(int row, int column) const
 		case INDEX: return getID(filteredList[row]+1);
 		case NAME: return getName(filteredList[row]+1);
 		case CATEGORY: return getCategory(filteredList[row]+1);
-		case PLATFORM: return getStringFromPlatform(getPlatform(filteredList[row]+1));
+		case PLATFORM: return PlatformController::getStringFromPlatform(getPlatform(filteredList[row]+1));
 	}
 }
 
@@ -114,39 +114,6 @@ std::string GameController::getISO(int index) const
 {
 	assert(index >= 1 && index <= _games.size());
 	return _games[index-1].getISO();
-}
-
-Platform GameController::getPlatformFromString(std::string platform)
-{
-	std::transform(platform.begin(), platform.end(), platform.begin(), ::tolower);
-
-	if (platform == "windows")       return WINDOWS;
-	if (platform == "dosbox")        return DOSBOX;
-	if (platform == "c64")           return C64;
-	if (platform == "scummvm")       return SCUMMVM;
-	if (platform == "gameboy")       return GAMEBOY;
-	if (platform == "nintendo64")    return NINTENDO64;
-	if (platform == "supernintendo") return SUPERNINTENDO;
-	if (platform == "gameandwatch")  return GAMEANDWATCH;
-	if (platform == "zmachine")      return ZMACHINE;
-
-	return UNDEFINED;
-}
-
-std::string GameController::getStringFromPlatform(Platform platform)
-{
-	switch (platform)
-	{
-		case WINDOWS:       return "windows";
-		case DOSBOX:        return "dosbox";
-		case C64:           return "c64";
-		case SCUMMVM:       return "scummvm";
-		case GAMEBOY:       return "gameboy";
-		case NINTENDO64:    return "nintendo64";
-		case SUPERNINTENDO: return "supernintendo";
-		case GAMEANDWATCH:  return "gameandwatch";
-		case ZMACHINE:      return "zmachine";
-	}
 }
 
 std::ostream& operator<< (std::ostream& out, const GameController& controller)
