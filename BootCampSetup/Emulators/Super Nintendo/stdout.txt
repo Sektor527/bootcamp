@@ -1,6 +1,0 @@
-Reading config file K:\BootCamp\Emulators\Super Nintendo/snes9x.cfg
-Saving	config file	K:\BootCamp\Emulators\Super Nintendo/snes9x.cfg
-Found ROM file header (and ignored it).
-Map_LoROMMap
-"POPULOUS" [checksum ok] LoROM, 4Mbits, Type: ROM, Mode: 20, TV: NTSC, S-RAM: 0KB, ROMId:  Company: 51 CRC32: 2DF4AA0F
-Saving	config file	K:\BootCamp\Emulators\Super Nintendo/snes9x.cfg
