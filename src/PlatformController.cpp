@@ -10,7 +10,7 @@ int PlatformController::getRowCount() const
 
 int PlatformController::getColumnCount() const
 {
-	return 2;
+	return MAX_COLUMNS;
 }
 
 std::string PlatformController::data(int row, int column) const

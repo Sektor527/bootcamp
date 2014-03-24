@@ -7,6 +7,7 @@ set(sources
 	${source_dir}/Game.cpp
 	${source_dir}/GameController.cpp
 	${source_dir}/PlatformController.cpp
+	${source_dir}/CategoryController.cpp
 	${source_dir}/commandhandler.cpp
 	${source_dir}/launcher.cpp
 	${source_dir}/listfilter.cpp
@@ -19,6 +20,7 @@ set(test_sources
 	${tests_dir}/GameTests.cpp
 	${tests_dir}/GameControllerTests.cpp
 	${tests_dir}/PlatformControllerTests.cpp
+	${tests_dir}/CategoryControllerTests.cpp
 	${tests_dir}/CommandHandlerTests.cpp
 	${tests_dir}/ListFilterTests.cpp
 )

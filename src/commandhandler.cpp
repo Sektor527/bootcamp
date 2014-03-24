@@ -1,6 +1,7 @@
 #include "commandhandler.h"
 #include "GameController.h"
 #include "PlatformController.h"
+#include "CategoryController.h"
 #include "UIManager.h"
 #include <unistd.h>
 #include <cassert>
@@ -26,6 +27,11 @@ void CommandHandler::setPlatformController(PlatformController* controller)
 	_platformController = controller;
 }
 
+void CommandHandler::setCategoryController(CategoryController* controller)
+{
+	_categoryController = controller;
+}
+
 void CommandHandler::setLauncher(Launcher* launcher)
 {
 	_launcher = launcher;
@@ -47,6 +53,7 @@ void CommandHandler::parse(int argc, char** argv)
 	if (command == "remove" || command == "rm") parseRemove(argc, argv);
 	if (command == "list" || command == "ls") parseList(argc, argv);
 	if (command == "lsp") parseListPlatform(argc, argv);
+	if (command == "lsc") parseListCategory(argc, argv);
 	if (command == "run") parseRun(argc, argv);
 }
 
@@ -88,6 +95,14 @@ void CommandHandler::parseListPlatform(int argc, char** argv)
 	for (int i = 0; i < _platformController->getRowCount(); ++i)
 	{
 		std::cout << _platformController->data(i, PlatformController::NAME) << std::endl;
+	}
+}
+
+void CommandHandler::parseListCategory(int argc, char** argv)
+{
+	for (int i = 0; i < _categoryController->getRowCount(); ++i)
+	{
+		std::cout << _categoryController->data(i, CategoryController::NAME) << std::endl;
 	}
 }
 
