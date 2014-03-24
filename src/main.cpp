@@ -1,5 +1,6 @@
 #include "GameController.h"
 #include "PlatformController.h"
+#include "CategoryController.h"
 #include "commandhandler.h"
 #include "listfilter.h"
 #include <fstream>
@@ -22,15 +23,18 @@ int main(int argc, char** argv)
 	Launcher* l = new Launcher;
 	GameController* gc = new GameController;
 	PlatformController* pc = new PlatformController;
+	CategoryController* cc = new CategoryController;
 	ListFilter* f = new ListFilter;
 
 	load(configPath, gc);
 
 	gc->setFilter(f);
+	cc->setGameController(gc);
 	l->setWorkingDir(workingdir);
 	CommandHandler handler;
 	handler.setGameController(gc);
 	handler.setPlatformController(pc);
+	handler.setCategoryController(cc);
 	handler.setLauncher(l);
 	handler.parse(argc, argv);
 
